@@ -1,16 +1,23 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
+
+import { Button, Input } from "@nextui-org/react";
+import axios from "axios";
 
 import Header from "./components/Header";
-import { Button, Input } from "@nextui-org/react";
+
 const filePath = "/file.svg";
-const localizationPath = "/localization.svg";
-const voiceoverPath = "/voiceover.svg";
-const aiDiPath = "/ai+di.svg";
-const ourApproachPath = "/our-approach.svg";
 const itemPath = "/item.svg";
+const aiDiPath = "/ai+di.svg";
+const voiceoverPath = "/voiceover.svg";
+const localizationPath = "/localization.svg";
+const ourApproachPath = "/our-approach.svg";
 
 function App() {
   const scrollContainerRef = useRef(null);
+  const [email, setEmail] = useState("");
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitMessage, setSubmitMessage] = useState(false);
+  const [isEmailValid, setIsEmailValid] = useState(false);
 
   useEffect(() => {
     if (scrollContainerRef.current) {
@@ -21,6 +28,39 @@ function App() {
       scrollContainerRef.current.scrollLeft = centerPosition;
     }
   }, []);
+
+  const validateEmail = (email) => {
+    const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return re.test(email);
+  };
+
+  const handleEmailChange = (e) => {
+    const newEmail = e.target.value;
+    setEmail(newEmail);
+    setIsEmailValid(validateEmail(newEmail));
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    if (!isEmailValid) return;
+
+    setIsSubmitting(true);
+
+    try {
+      await axios.post(import.meta.env.VITE_FORMSPREE_ENDPOINT, { email });
+      setSubmitMessage(true);
+      setEmail("");
+      setIsEmailValid(false);
+
+      setTimeout(() => {
+        setSubmitMessage(false);
+      }, 10000);
+    } catch (error) {
+      console.error("Error submitting form:", error);
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
 
   return (
     <div className="flex flex-col max-w-6xl min-h-screen mx-auto px-5 md:px-10 pb-14 lg:pb-32">
@@ -125,30 +165,46 @@ function App() {
         id="subscribe-updates"
         className="lg:flex text-center scroll-mt-28 lg:scroll-mt-32 py-12 lg:py-20 px-7 lg:px-44 mb-24 text-balance rounded-3xl shadow-lg text-white bg-gradient-to-br from-[#8CCAB6] to-[#65B29A]"
       >
-        <div className="lg:flex lg:justify-between lg:items-center lg:w-full">
-          <div className="lg:w-1/2 lg:text-left">
-            <p className="text-5xl mb-2.5 font-days-one">
-              Coming this fall 2024
+        {submitMessage ? (
+          <div className="w-full flex items-center justify-center">
+            <p className="text-2xl lg:text-5xl font-days-one">
+              Thank you for joining our waitlist! We&apos;ll keep you updated on
+              our launch.
             </p>
-            <p className="">Subscribe for updates</p>
           </div>
-          <div className="mt-10 lg:mt-0 lg:w-1/2 lg:text-end">
-            <Input
-              type="email"
-              label="Your email"
-              classNames={{
-                label: "pl-5 text-black",
-                inputWrapper: "h-11 mb-2.5",
-              }}
-            />
-            <Button
-              radius="full"
-              className="font-bold text-base bg-black text-white w-36 h-11 hover:bg-white hover:text-black"
+        ) : (
+          <div className="lg:flex lg:justify-between lg:items-center lg:w-full">
+            <div className="lg:w-1/2 lg:text-left">
+              <p className="text-5xl mb-2.5 font-days-one">
+                Coming this fall 2024
+              </p>
+              <p className="">Subscribe for updates</p>
+            </div>
+            <form
+              onSubmit={handleSubmit}
+              className="mt-10 lg:mt-0 lg:w-1/2 lg:text-end"
             >
-              Join waitlist
-            </Button>
+              <Input
+                type="email"
+                label="Your email"
+                value={email}
+                onChange={handleEmailChange}
+                classNames={{
+                  label: "pl-5 text-black",
+                  inputWrapper: "h-11 mb-2.5",
+                }}
+              />
+              <Button
+                type="submit"
+                radius="full"
+                className="font-bold text-base bg-black text-white w-36 h-11 hover:bg-white hover:text-black"
+                isDisabled={isSubmitting || !isEmailValid}
+              >
+                {isSubmitting ? "Submitting..." : "Join waitlist"}
+              </Button>
+            </form>
           </div>
-        </div>
+        )}
       </div>
 
       <p className="text-2xl lg:text-4xl text-balance pb-2.5 font-days-one">
