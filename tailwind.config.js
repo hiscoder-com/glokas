@@ -16,6 +16,10 @@ export default {
       colors: {
         green: {
           350: "#8CCAB6",
+          550: "#65B29A",
+        },
+        gray: {
+          250: "#F2F2F2",
         },
       },
     },
