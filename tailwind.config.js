@@ -9,6 +9,10 @@ export default {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        "days-one": ["Days One", "sans-serif"],
+        "dm-sans": ["DM Sans", "sans-serif"],
+      },
       colors: {
         green: {
           350: "#8CCAB6",

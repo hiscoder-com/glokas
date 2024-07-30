@@ -23,10 +23,10 @@ function App() {
   }, []);
 
   return (
-    <div className="flex flex-col min-h-screen max-w-6xl mx-auto px-5 md:px-10 pb-14 lg:pb-32">
+    <div className="flex flex-col max-w-6xl min-h-screen mx-auto px-5 md:px-10 pb-14 lg:pb-32">
       <Header />
       <div className="text-center rounded-3xl py-12 lg:px-36 mt-5 lg:mt-10 bg-[#F2F2F2]">
-        <p className="text-2xl lg:text-5xl mb-2.5 mx-3.5 lg:mx-0 lg:text-balance">
+        <p className="text-2xl lg:text-5xl mb-2.5 mx-3.5 lg:mx-0 lg:text-balance font-days-one">
           One Gospel, Many Formats, Multiple Languages
         </p>
         <p className="text-sm mx-3.5 lg:mx-36 lg:text-balance">
@@ -35,22 +35,22 @@ function App() {
         </p>
         <div
           ref={scrollContainerRef}
-          className="overflow-x-auto py-12 scrollbar-hide"
+          className="overflow-x-auto py-12 scrollbar-hide px-14 lg:px-0 snap-x snap-mandatory"
         >
           <div className="flex gap-2.5 min-w-max">
-            <div className="text-start bg-white rounded-3xl px-7 py-10 lg:py-7 w-64">
+            <div className="text-start bg-white rounded-3xl px-7 py-10 lg:py-7 w-64 snap-center">
               <img src={filePath} alt="file" />
               <p className="mt-1 mb-2.5 text-xl font-medium">Translation</p>
               <p className="text-sm">Text translation and checking</p>
             </div>
 
-            <div className="text-start bg-white rounded-3xl px-7 py-10 lg:py-7 w-64">
+            <div className="text-start bg-white rounded-3xl px-7 py-10 lg:py-7 w-64 snap-center">
               <img src={localizationPath} alt="localization" />
               <p className="mt-1 mb-2.5 text-xl font-medium">Localization</p>
               <p className="text-sm">Mobile apps, software and websites</p>
             </div>
 
-            <div className="text-start bg-white rounded-3xl px-7 py-10 lg:py-7 w-64">
+            <div className="text-start bg-white rounded-3xl px-7 py-10 lg:py-7 w-64 snap-center">
               <img src={voiceoverPath} alt="voiceover" />
               <p className="mt-1 mb-2.5 text-xl font-medium">Voiceover</p>
               <p className="text-sm">
@@ -62,7 +62,12 @@ function App() {
 
         <Button
           radius="full"
-          className="text-base bg-green-350 text-white w-36 h-11 lg:hidden"
+          className="font-bold text-base bg-green-350 text-white w-36 h-11 hover:bg-black"
+          onClick={() =>
+            document
+              .getElementById("subscribe-updates")
+              .scrollIntoView({ behavior: "smooth" })
+          }
         >
           Join waitlist
         </Button>
@@ -75,7 +80,9 @@ function App() {
           </div>
           <div className="flex-1">
             <div className="lg:px-16 lg:inline-block lg:self-center">
-              <p className="text-2xl lg:text-4xl">AI + DI = Best Translation</p>
+              <p className="text-2xl lg:text-4xl font-days-one">
+                AI + DI = Best Translation
+              </p>
               <p className="mt-2.5 lg:mt-7 mb-7 text-balance">
                 We harness AI technology in the service of God and people. We
                 use AI for translation and text checking, but only believers in
@@ -101,7 +108,7 @@ function App() {
           </div>
           <div className="flex-1">
             <div className="lg:px-16 lg:inline-block lg:self-center">
-              <p className="text-2xl lg:text-4xl">Our approach</p>
+              <p className="text-2xl lg:text-4xl font-days-one">Our approach</p>
               <p className="mt-2.5 lg:mt-7 mb-7 text-balance">
                 Christian workers face many challenges and hardships in their
                 ministry. Translation shouldn&apos;t be one of them. Let us
@@ -114,10 +121,15 @@ function App() {
         </div>
       </div>
 
-      <div className="lg:flex text-center py-12 lg:py-20 px-7 lg:px-44 mb-24 text-balance rounded-3xl shadow-lg text-white bg-gradient-to-br from-[#8CCAB6] to-[#65B29A]">
+      <div
+        id="subscribe-updates"
+        className="lg:flex text-center scroll-mt-28 lg:scroll-mt-32 py-12 lg:py-20 px-7 lg:px-44 mb-24 text-balance rounded-3xl shadow-lg text-white bg-gradient-to-br from-[#8CCAB6] to-[#65B29A]"
+      >
         <div className="lg:flex lg:justify-between lg:items-center lg:w-full">
           <div className="lg:w-1/2 lg:text-left">
-            <p className="text-5xl mb-2.5">Coming this fall 2024</p>
+            <p className="text-5xl mb-2.5 font-days-one">
+              Coming this fall 2024
+            </p>
             <p className="">Subscribe for updates</p>
           </div>
           <div className="mt-10 lg:mt-0 lg:w-1/2 lg:text-end">
@@ -131,7 +143,7 @@ function App() {
             />
             <Button
               radius="full"
-              className="text-base bg-black text-white w-36 h-11"
+              className="font-bold text-base bg-black text-white w-36 h-11 hover:bg-white hover:text-black"
             >
               Join waitlist
             </Button>
@@ -139,13 +151,13 @@ function App() {
         </div>
       </div>
 
-      <p className="text-2xl lg:text-4xl text-balance pb-2.5">
+      <p className="text-2xl lg:text-4xl text-balance pb-2.5 font-days-one">
         Christian touch behind cutting-edge
         <span className="text-green-350 text-balance"> AI translation</span>
       </p>
       <p className="lg:text-2xl">Translation Management System</p>
 
-      <div className="mt-12 lg:mt-16">
+      <div className="mt-12 lg:mt-16 text-wrap">
         <div className="flex flex-col lg:flex-row lg:gap-10">
           <div className="lg:w-1/2 flex flex-col gap-10">
             {[
@@ -176,7 +188,9 @@ function App() {
                   alt="item"
                   className="w-[73px] h-[76px] lg:w-[113px] lg:h-[118px] object-cover mb-10"
                 />
-                <p className="text-xl lg:text-2xl mb-4 lg:mb-3">{item.title}</p>
+                <p className="text-xl lg:text-2xl mb-4 lg:mb-3 font-days-one">
+                  {item.title}
+                </p>
                 <p className="text-sm lg:text-base">{item.description}</p>
               </div>
             ))}
@@ -211,7 +225,9 @@ function App() {
                   alt="item"
                   className="w-[73px] h-[76px] lg:w-[113px] lg:h-[118px] object-cover mb-10"
                 />
-                <p className="text-xl lg:text-2xl mb-4 lg:mb-3">{item.title}</p>
+                <p className="text-xl lg:text-2xl mb-4 lg:mb-3 font-days-one">
+                  {item.title}
+                </p>
                 <p className="text-sm lg:text-base">{item.description}</p>
               </div>
             ))}
