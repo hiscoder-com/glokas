@@ -1,12 +1,13 @@
-
+import Header from "./components/Header";
+import MainContent from "./components/MainContent";
 
 function App() {
-
   return (
-    <>
-      Hello, Glokas!
-    </>
-  )
+    <div className="min-h-screen">
+      <Header />
+      <MainContent />
+    </div>
+  );
 }
 
-export default App
+export default App;
