@@ -27,12 +27,12 @@ function MainContent() {
   }, []);
 
   return (
-    <div className="flex flex-col max-w-6xl mx-auto px-5 md:px-10 pb-14 lg:pb-32">
-      <div className="text-center rounded-3xl py-12 lg:px-36 mt-5 lg:mt-10 bg-gray-250">
+    <div className="flex flex-col max-w-7xl mx-auto px-5 md:px-10 pb-14 lg:pb-32">
+      <div className="text-center rounded-3xl py-12 mt-5 lg:mt-10 bg-gray-250">
         <p className="text-2xl lg:text-5xl mb-2.5 mx-3.5 lg:mx-0 lg:text-balance font-days-one">
           One Gospel, Many Formats, Multiple Languages
         </p>
-        <p className="text-sm lg:text-base mx-3.5 lg:mx-36 lg:text-balance">
+        <p className="text-sm lg:text-base mx-3.5 lg:mx-44 lg:text-balance">
           Glokas is an AI-powered translation and localization platform
           specifically designed for Christian content and projects.
         </p>
