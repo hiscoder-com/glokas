@@ -139,7 +139,7 @@ function MainContent() {
               <p className="text-5xl mb-2.5 font-days-one">
                 Coming this fall 2024
               </p>
-              <p className="">Subscribe for updates</p>
+              <p>Subscribe for updates</p>
             </div>
             <EmailSubscriptionForm setSubmitMessage={setSubmitMessage} />
           </div>
