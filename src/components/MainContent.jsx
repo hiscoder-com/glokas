@@ -38,9 +38,9 @@ function MainContent() {
         </p>
         <div
           ref={scrollContainerRef}
-          className="overflow-x-auto py-12 px-14 lg:px-0 snap-x snap-mandatory scrollbar-hide"
+          className="overflow-x-auto py-12 snap-x snap-mandatory scrollbar-hide"
         >
-          <div className="flex gap-2.5 min-w-max">
+          <div className="flex justify-center gap-2.5 min-w-max sm:min-w-0 px-14 lg:px-0">
             <ContentCard
               imgSrc={filePath}
               title="Translation"
