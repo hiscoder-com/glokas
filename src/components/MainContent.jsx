@@ -115,7 +115,7 @@ function MainContent() {
                 ministry. Translation shouldn&apos;t be one of them. Let us
                 shoulder the burden of translation. Our commitment is to ensure
                 your message reaches every heart in their native language. Let
-                us serve you, so you can continue to serve the world.
+                us serve you, so you can continue to serve the Lord.
               </p>
             </div>
           </div>
