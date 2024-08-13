@@ -4,6 +4,7 @@ import PropTypes from "prop-types";
 import { Button } from "@nextui-org/react";
 
 import EmailSubscriptionForm from "./EmailSubscriptionForm";
+import FrequentlyAskedQuestions from "./FrequentlyAskedQuestions";
 
 const filePath = "/file.svg";
 const guaranteePath = "/guarantee.svg";
@@ -21,6 +22,7 @@ const uploadPath = "/upload.svg";
 const monitorPath = "/monitor.svg";
 const managePath = "/manage.svg";
 const payPath = "/pay.svg";
+const glokasTMSPath = "/glokasTMS.svg";
 
 function MainContent() {
   const [submitMessage, setSubmitMessage] = useState(false);
@@ -37,9 +39,9 @@ function MainContent() {
   }, []);
 
   return (
-    <div className="flex flex-col max-w-7xl mx-auto px-3 md:px-10 lg:px-0 pb-14 lg:pb-32">
+    <div className="flex flex-col max-w-7xl mx-auto px-3 md:px-10 lg:px-0 pb-16 lg:pb-24">
       <div className="text-center rounded-3xl py-12 mt-10 lg:mt-10 bg-gray-250">
-        <p className="text-2xl lg:text-5xl mb-2.5 mx-6 lg:mx-5 lg:text-balance font-days-one">
+        <p className="text-2xl lg:text-5xl mb-2.5 lg:mb-7 mx-6 lg:mx-5 lg:text-balance font-days-one">
           One Gospel, Many Formats, Multiple Languages
         </p>
         <p className="text-sm lg:text-base mx-9 lg:mx-52 lg:text-balance">
@@ -50,7 +52,7 @@ function MainContent() {
           ref={scrollContainerRef}
           className="overflow-x-auto py-12 snap-x snap-mandatory scrollbar-hide"
         >
-          <div className="flex justify-center gap-2.5 min-w-max sm:min-w-0 px-14 lg:px-0">
+          <div className="flex justify-center gap-5 min-w-max sm:min-w-0 px-14 lg:px-0">
             <ContentCard
               imgSrc={filePath}
               title="Translation"
@@ -74,16 +76,11 @@ function MainContent() {
         <Button
           radius="sm"
           className="font-bold text-base bg-green-350 text-white w-40 h-11 hover:bg-black"
-          onClick={() =>
-            document
-              .getElementById("subscribe-updates")
-              .scrollIntoView({ behavior: "smooth" })
-          }
+          onClick={() => console.log("isOpen")}
         >
           Book a Demo
         </Button>
       </div>
-
       <div className="flex flex-col gap-5 items-center text-center my-20 lg:my-24 mx-5">
         <div className="flex flex-col md:flex-row gap-5 md:gap-2.5 items-center">
           <img src={heartPath} alt="heart" className="w-7" />
@@ -92,20 +89,18 @@ function MainContent() {
           </p>
         </div>
 
-        <div className="flex gap-7 lg:pb-20">
+        <div className="flex gap-7 lg:pb-16">
           <img src={uWLogoPath} alt="unfoldingWord-logo" />
           <img src={aquiferLogoPath} alt="aquiferLogo" />
         </div>
       </div>
-
       <p className="text-2xl lg:text-4xl text-center pb-5 font-days-one">
         Why partner with Glokas?
       </p>
-      <p className="text-center text-lg lg:text-2xl lg:px-24 text-balance">
+      <p className="text-center text-lg lg:text-2xl text-balance">
         Delivering high-quality, cost-effective translations with seamless
         integration and a global network of christian translators.
       </p>
-
       <div className="mt-12 lg:mt-16 mb-20 lg:mb-24 text-wrap">
         <div className="flex flex-col md:grid md:grid-cols-2 lg:grid-cols-3 gap-2.5 md:gap-5">
           {[
@@ -163,16 +158,14 @@ function MainContent() {
           ))}
         </div>
       </div>
-
       <p className="text-2xl lg:text-4xl text-center pb-5 font-days-one">
         How does it actually work?
       </p>
-      <p className="text-center text-lg lg:text-2xl lg:px-24 text-balance">
+      <p className="text-center text-lg lg:text-2xl text-balance">
         Our system is designed to accelerate the worldwide spread of the Gospel
         by making the translation process faster, more cost-effective, and
         efficiently organized.
       </p>
-
       <div className="mt-12 lg:mt-16 mb-20 lg:mb-24 text-wrap">
         <div className="flex flex-col md:grid md:grid-cols-2 gap-5">
           {[
@@ -208,7 +201,7 @@ function MainContent() {
               <div className="hidden rounded-xl p-1.5 lg:flex justify-center items-center">
                 <img src={item.image} alt={item.title} className="max-w-max" />
               </div>
-              <div className="text-balance md:flex-grow">
+              <div className="text-balance md:flex-grow content-center">
                 <p className="text-xl mb-5 lg:mb-2.5 font-days-one text-[#8CCAB6]">
                   {item.title}
                 </p>
@@ -222,16 +215,39 @@ function MainContent() {
       <p className="text-2xl lg:text-4xl text-center pb-5 font-days-one text-[#8CCAB6]">
         Empowering Your Ministry Through Seamless Translation
       </p>
-      <p className="text-center text-lg lg:text-2xl lg:px-24 text-balance">
+      <p className="text-center text-lg lg:text-2xl text-balance">
         Our system is designed to accelerate the worldwide spread of the Gospel
         by making the translation process faster, more cost-effective, and
         efficiently organized.
       </p>
 
-      <div
-        id="subscribe-updates"
-        className="lg:flex text-center scroll-mt-28 lg:scroll-mt-32 py-12 lg:py-20 px-7 lg:px-44 mb-24 text-balance rounded-3xl shadow-lg text-white bg-gradient-to-br from-green-350 to-green-550"
-      >
+      <div className="flex gap-20 md:gap-36 bg-[url('/stand.svg')] md:bg-[url('/standDesk.svg')] bg-cover bg-center bg-no-repeat rounded-3xl flex-col md:flex-row py-12 px-5 mt-12 lg:mt-16 mb-20 lg:mb-24 text-wrap">
+        <div className="text-balance md:w-1/2 md:content-center lg:py-28">
+          <p className="text-3xl lg:text-4xl font-days-one">Glokas TMS</p>
+          <p className="text-2xl my-5 font-days-one leading-6">
+            Translation Management System
+          </p>
+          <p>
+            Our system is designed to accelerate the worldwide spread of the
+            Gospel by making the translation process faster, more
+            cost-effective, and efficiently organized.
+          </p>
+        </div>
+
+        <div className="flex justify-center md:w-1/2">
+          <img src={glokasTMSPath} alt="payPath" />
+        </div>
+      </div>
+
+      <p className="text-xl lg:text-2xl text-center font-days-one">Q&A</p>
+      <p className="text-2xl lg:text-4xl text-center pb-2.5 font-days-one text-[#8CCAB6]">
+        Frequently Asked Questions
+      </p>
+      <p className="text-center text-lg lg:text-2xl">Learn more about Glokas</p>
+
+      <FrequentlyAskedQuestions />
+
+      <div className="lg:flex text-center py-12 lg:py-20 px-7 lg:px-44 text-balance rounded-3xl shadow-lg text-white bg-gradient-to-br from-green-350 to-green-550">
         {submitMessage ? (
           <div className="w-full flex items-center justify-center">
             <p className="text-2xl lg:text-5xl font-days-one">
