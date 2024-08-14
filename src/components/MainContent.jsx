@@ -1,16 +1,29 @@
 import { useEffect, useRef, useState } from "react";
 
+import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
 import { Button } from "@nextui-org/react";
 
 import EmailSubscriptionForm from "./EmailSubscriptionForm";
+import FrequentlyAskedQuestions from "./FrequentlyAskedQuestions";
 
-const filePath = "/file.svg";
-const itemPath = "/item.svg";
-const aiDiPath = "/ai+di.svg";
-const voiceoverPath = "/voiceover.svg";
+const costEffectivePath = "/cost-effective.svg";
 const localizationPath = "/localization.svg";
-const ourApproachPath = "/our-approach.svg";
+const uWLogoPath = "/unfoldingWord-logo.svg";
+const integrationPath = "/integration.svg";
+const glokasTMSPath = "/glokasTMS.svg";
+const guaranteePath = "/guarantee.svg";
+const interfacePath = "/interface.svg";
+const solutionsPath = "/solutions.svg";
+const voiceoverPath = "/voiceover.svg";
+const aquiferLogoPath = "/aquifer.svg";
+const monitorPath = "/monitor.svg";
+const uploadPath = "/upload.svg";
+const managePath = "/manage.svg";
+const heartPath = "/heart.svg";
+const reachPath = "/reach.svg";
+const filePath = "/file.svg";
+const payPath = "/pay.svg";
 
 function MainContent() {
   const [submitMessage, setSubmitMessage] = useState(false);
@@ -27,12 +40,12 @@ function MainContent() {
   }, []);
 
   return (
-    <div className="flex flex-col max-w-7xl mx-auto px-5 md:px-10 lg:px-0 pb-14 lg:pb-32">
-      <div className="text-center rounded-3xl py-12 mt-5 lg:mt-10 bg-gray-250">
-        <p className="text-2xl lg:text-5xl mb-2.5 mx-3.5 lg:mx-5 lg:text-balance font-days-one">
+    <div className="flex flex-col max-w-7xl mx-auto px-3 md:px-10 lg:px-0 pb-16 lg:pb-24">
+      <div className="text-center rounded-3xl py-12 mt-10 lg:mt-10 bg-gray-250">
+        <p className="text-2xl lg:text-5xl mb-2.5 lg:mb-7 mx-6 lg:mx-5 lg:text-balance font-days-one">
           One Gospel, Many Formats, Multiple Languages
         </p>
-        <p className="text-sm lg:text-base mx-3.5 lg:mx-52 lg:text-balance">
+        <p className="text-sm lg:text-base mx-9 lg:mx-52 lg:text-balance">
           Glokas is an AI-powered translation and localization platform
           specifically designed for Christian content and projects.
         </p>
@@ -40,7 +53,7 @@ function MainContent() {
           ref={scrollContainerRef}
           className="overflow-x-auto py-12 snap-x snap-mandatory scrollbar-hide"
         >
-          <div className="flex justify-center gap-2.5 min-w-max sm:min-w-0 px-14 lg:px-0">
+          <div className="flex justify-center gap-5 min-w-max sm:min-w-0 px-14 lg:px-0">
             <ContentCard
               imgSrc={filePath}
               title="Translation"
@@ -61,71 +74,195 @@ function MainContent() {
           </div>
         </div>
 
-        <Button
-          radius="full"
-          className="font-bold text-base bg-green-350 text-white w-36 h-11 hover:bg-black"
-          onClick={() =>
-            document
-              .getElementById("subscribe-updates")
-              .scrollIntoView({ behavior: "smooth" })
-          }
-        >
-          Join waitlist
-        </Button>
+        <Link to="/book-demo">
+          <Button
+            radius="sm"
+            className="font-bold bg-green-350 text-white w-36 h-11 hover:bg-black"
+          >
+            Book a Demo
+          </Button>
+        </Link>
       </div>
 
-      <div className="flex flex-col my-24 gap-12">
-        <div className="flex flex-col gap-5 lg:flex-row lg:items-center">
-          <div className="flex-1">
-            <img src={aiDiPath} alt="aiDi" className="w-full h-auto" />
-          </div>
-          <div className="flex-1">
-            <div className="lg:px-16 lg:inline-block lg:self-center">
-              <p className="text-2xl lg:text-4xl font-days-one">
-                AI + DI = Best Translation
-              </p>
-              <p className="mt-2.5 lg:mt-7 mb-7 text-balance">
-                We harness AI technology in the service of God and people. We
-                use AI for translation and text checking, but only believers in
-                Christ, living by the Holy Spirit, review and approve the text.
-                We called it DI (Divine Intelligence). This ensures our
-                translations were made fast, they are high-quality and natural.
-              </p>
-              <p className="text-balance">
-                Glokas is your all-in-one solution for intelligent, centralized,
-                and comprehensive Translation Management System (TMS).
-              </p>
-            </div>
-          </div>
+      <div className="flex flex-col gap-5 items-center text-center my-20 lg:my-24 mx-5">
+        <div className="flex flex-col md:flex-row gap-5 md:gap-2.5 items-center">
+          <img src={heartPath} alt="heart" className="w-7" />
+          <p className="text-xl">
+            by organizations and ministries who love to go global
+          </p>
         </div>
 
-        <div className="flex flex-col gap-5 lg:flex-row-reverse lg:items-center">
-          <div className="flex-1">
-            <img
-              src={ourApproachPath}
-              alt="ourApproach"
-              className="w-full h-auto"
-            />
-          </div>
-          <div className="flex-1">
-            <div className="lg:px-16 lg:inline-block lg:self-center">
-              <p className="text-2xl lg:text-4xl font-days-one">Our approach</p>
-              <p className="mt-2.5 lg:mt-7 mb-7 text-balance">
-                Christian workers face many challenges and hardships in their
-                ministry. Translation shouldn&apos;t be one of them. Let us
-                shoulder the burden of translation. Our commitment is to ensure
-                your message reaches every heart in their native language. Let
-                us serve you, so you can continue to serve the Lord.
-              </p>
+        <div className="flex gap-7 lg:pb-16">
+          <a
+            href="https://www.unfoldingword.org/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img src={uWLogoPath} alt="unfoldingWord-logo" />
+          </a>
+          <a
+            href="https://aquifer.bible/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img src={aquiferLogoPath} alt="aquiferLogo" />
+          </a>
+        </div>
+      </div>
+      <p className="text-2xl lg:text-4xl text-center pb-5 font-days-one">
+        Why partner with Glokas?
+      </p>
+      <p className="text-center text-lg lg:text-2xl text-balance">
+        Delivering high-quality, cost-effective translations with seamless
+        integration and a global network of christian translators.
+      </p>
+      <div className="mt-12 lg:mt-16 mb-20 lg:mb-24 text-wrap">
+        <div className="flex flex-col md:grid md:grid-cols-2 lg:grid-cols-3 gap-2.5 md:gap-5">
+          {[
+            {
+              image: guaranteePath,
+              title: "High-Quality AI & Human Translation",
+              description:
+                "Provide state-of-the-art AI translation with high accuracy and natural results, supplemented by human translators and checkers to ensure integrity and spiritual quality.",
+            },
+            {
+              image: reachPath,
+              title: "Global Reach",
+              description:
+                "Access a network of qualified translators from around the world, including remote and challenging regions, to meet specific language needs.",
+            },
+            {
+              image: integrationPath,
+              title: "Seamless Integration",
+              description:
+                "Easily integrate our solution into your existing workflows, enhancing collaboration and project management for your team.",
+            },
+            {
+              image: interfacePath,
+              title: "User-Friendly Interface",
+              description:
+                "Navigate translation projects effortlessly with an intuitive and easy-to-use platform, designed for both novice and experienced users.",
+            },
+            {
+              image: solutionsPath,
+              title: "Customized Solutions",
+              description:
+                "Tailor the platform to fit your unique requirements, ensuring that your translation needs are met with precision and care.",
+            },
+            {
+              image: costEffectivePath,
+              title: "Cost-Effective",
+              description:
+                "Optimize your translation budget by leveraging a blend of AI technology and human expertise, ensuring high-quality results without overspending.",
+            },
+          ].map((item, index) => (
+            <div
+              key={index}
+              className="flex gap-7 bg-gray-150 rounded-3xl p-5 lg:h-96 md:flex-col"
+            >
+              <div className="bg-gray-350 rounded-xl p-2.5 w-16 h-16 flex justify-center items-center">
+                <img src={item.image} alt={item.title} className="max-w-max" />
+              </div>
+              <div className="text-balance md:flex-grow">
+                <p className="text-2xl mb-2.5 font-days-one text-blue-250">
+                  {item.title}
+                </p>
+                <p>{item.description}</p>
+              </div>
             </div>
-          </div>
+          ))}
+        </div>
+      </div>
+      <p className="text-2xl lg:text-4xl text-center pb-5 font-days-one">
+        How does it actually work?
+      </p>
+      <p className="text-center text-lg lg:text-2xl text-balance">
+        Our system is designed to accelerate the worldwide spread of the Gospel
+        by making the translation process faster, more cost-effective, and
+        efficiently organized.
+      </p>
+      <div className="mt-12 lg:mt-16 mb-20 lg:mb-24 text-wrap">
+        <div className="flex flex-col md:grid md:grid-cols-2 gap-5">
+          {[
+            {
+              image: uploadPath,
+              title: "Upload",
+              description:
+                "You upload your file and pick languages that you want your material to be translated into. You can work with your own in-house translators or add them from our base.",
+            },
+            {
+              image: monitorPath,
+              title: "Monitor",
+              description:
+                "While translation is in progress you can see where exactly your where translation is. Once its done you be notified. Verify and accept work.",
+            },
+            {
+              image: managePath,
+              title: "Manage",
+              description:
+                "Manage all your files and translation and translators in one place.",
+            },
+            {
+              image: payPath,
+              title: "Pay",
+              description:
+                "You don’t need to hustle yourself thinking how to pay all translations in all languages you use. We send you one invoice to cover all the projects. We take care of all the other logistics",
+            },
+          ].map((item, index) => (
+            <div
+              key={index}
+              className="flex gap-7 bg-zinc-150 rounded-3xl p-5 lg:py-14 lg:h-64"
+            >
+              <div className="hidden rounded-xl p-1.5 lg:flex justify-center items-center">
+                <img src={item.image} alt={item.title} className="max-w-max" />
+              </div>
+              <div className="text-balance md:flex-grow content-center">
+                <p className="text-xl mb-5 lg:mb-2.5 font-days-one text-green-350">
+                  {item.title}
+                </p>
+                <p>{item.description}</p>
+              </div>
+            </div>
+          ))}
         </div>
       </div>
 
-      <div
-        id="subscribe-updates"
-        className="lg:flex text-center scroll-mt-28 lg:scroll-mt-32 py-12 lg:py-20 px-7 lg:px-44 mb-24 text-balance rounded-3xl shadow-lg text-white bg-gradient-to-br from-green-350 to-green-550"
-      >
+      <p className="text-2xl lg:text-4xl text-center pb-5 font-days-one text-green-350">
+        Empowering Your Ministry Through Seamless Translation
+      </p>
+      <p className="text-center text-lg lg:text-2xl text-balance">
+        Our system is designed to accelerate the worldwide spread of the Gospel
+        by making the translation process faster, more cost-effective, and
+        efficiently organized.
+      </p>
+
+      <div className="flex gap-20 md:gap-36 bg-[url('/stand.svg')] md:bg-[url('/standDesk.svg')] bg-cover bg-center bg-no-repeat rounded-3xl flex-col md:flex-row py-12 px-5 mt-12 lg:mt-16 mb-20 lg:mb-24 text-wrap">
+        <div className="text-balance md:w-1/2 md:content-center lg:py-28">
+          <p className="text-3xl lg:text-4xl font-days-one">Glokas TMS</p>
+          <p className="text-2xl my-5 font-days-one leading-6">
+            Translation Management System
+          </p>
+          <p>
+            Our system is designed to accelerate the worldwide spread of the
+            Gospel by making the translation process faster, more
+            cost-effective, and efficiently organized.
+          </p>
+        </div>
+
+        <div className="flex justify-center md:w-1/2">
+          <img src={glokasTMSPath} alt="payPath" />
+        </div>
+      </div>
+
+      <p className="text-xl lg:text-2xl text-center font-days-one">Q&A</p>
+      <p className="text-2xl lg:text-4xl text-center pb-2.5 font-days-one text-green-350">
+        Frequently Asked Questions
+      </p>
+      <p className="text-center text-lg lg:text-2xl">Learn more about Glokas</p>
+
+      <FrequentlyAskedQuestions />
+
+      <div className="lg:flex text-center py-12 lg:py-20 px-7 lg:px-44 text-balance rounded-3xl shadow-lg text-white bg-gradient-to-br from-green-350 to-green-550">
         {submitMessage ? (
           <div className="w-full flex items-center justify-center">
             <p className="text-2xl lg:text-5xl font-days-one">
@@ -144,90 +281,6 @@ function MainContent() {
             <EmailSubscriptionForm setSubmitMessage={setSubmitMessage} />
           </div>
         )}
-      </div>
-
-      <p className="text-2xl lg:text-4xl text-balance pb-2.5 font-days-one">
-        Christian touch behind cutting-edge
-        <span className="text-green-350 text-balance"> AI translation</span>
-      </p>
-      <p className="lg:text-2xl">Translation Management System</p>
-
-      <div className="mt-12 lg:mt-16 text-wrap">
-        <div className="flex flex-col lg:flex-row lg:gap-10">
-          <div className="lg:w-1/2 flex flex-col gap-10">
-            {[
-              {
-                title: "Efficiency and Speed",
-                description:
-                  "Streamline your translation projects with a centralized platform, reducing time spent on managing multiple tools, people and resources.",
-              },
-              {
-                title: "Quality Assurance",
-                description:
-                  "Maintain the integrity and accuracy of your translations with our team of experienced translators, reviewers, and theologians, combined with advanced AI to minimize errors.",
-              },
-              {
-                title: "Seamless Integration",
-                description:
-                  "Easily integrate our solution into your existing workflows, enhancing collaboration and project management for your team.",
-              },
-              {
-                title: "Customized Solutions",
-                description:
-                  "Tailor the platform to fit your unique requirements, ensuring that your translation needs are met with precision and care.",
-              },
-            ].map((item, index) => (
-              <div key={index} className="lg:flex-1 flex flex-col">
-                <img
-                  src={itemPath}
-                  alt="item"
-                  className="w-20 lg:w-28 object-cover mb-10"
-                />
-                <p className="text-xl lg:text-2xl mb-4 lg:mb-3 font-days-one">
-                  {item.title}
-                </p>
-                <p className="text-sm lg:text-base">{item.description}</p>
-              </div>
-            ))}
-          </div>
-
-          <div className="lg:w-1/2 flex flex-col gap-10 mt-10 lg:mt-0">
-            {[
-              {
-                title: "Cost-Effective",
-                description:
-                  "Optimize your translation budget by leveraging a blend of AI technology and human expertise, ensuring high-quality results without overspending.",
-              },
-              {
-                title: "Global Reach",
-                description:
-                  "Access a network of qualified translators from around the world, including remote and challenging regions, to meet your specific language needs.",
-              },
-              {
-                title: "User-Friendly Interface",
-                description:
-                  "Navigate your translation projects effortlessly with our intuitive and easy-to-use platform, designed for both novice and experienced users.",
-              },
-              {
-                title: "Reliability and Security",
-                description:
-                  "Trust in our robust infrastructure and secure processes to protect your sensitive information and deliver consistent, reliable results.",
-              },
-            ].map((item, index) => (
-              <div key={index} className="lg:flex-1 flex flex-col">
-                <img
-                  src={itemPath}
-                  alt="item"
-                  className="w-20 lg:w-28 object-cover mb-10"
-                />
-                <p className="text-xl lg:text-2xl mb-4 lg:mb-3 font-days-one">
-                  {item.title}
-                </p>
-                <p className="text-sm lg:text-base">{item.description}</p>
-              </div>
-            ))}
-          </div>
-        </div>
       </div>
     </div>
   );

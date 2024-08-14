@@ -47,7 +47,7 @@ function EmailSubscriptionForm({ setSubmitMessage }) {
       />
       <Button
         type="submit"
-        radius="full"
+        radius="sm"
         className="font-bold text-base bg-black text-white w-36 h-11 hover:bg-white hover:text-black"
         isDisabled={isSubmitting || !isEmailValid}
       >
