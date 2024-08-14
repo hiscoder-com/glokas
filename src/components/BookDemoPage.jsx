@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { Button, Input, Textarea } from "@nextui-org/react";
 import useBookDemoForm from "@/hooks/useBookDemoForm";
 import { useState } from "react";
@@ -40,10 +41,12 @@ function BookDemoPage() {
 
   return (
     <div className="flex flex-col max-w-3xl items-center text-center mx-auto px-3 md:px-10 lg:px-0 pb-16 lg:pb-24 pt-7 text-balance">
-      <div className="inline-flex mb-14">
-        <img src={logoPath} alt="Logo" className="w-10" />
-        <p className="font-days-one ml-1 text-4xl">Glokas</p>
-      </div>
+      <Link to="/">
+        <div className="inline-flex mb-14">
+          <img src={logoPath} alt="Logo" className="w-10" />
+          <p className="font-days-one ml-1 text-4xl">Glokas</p>
+        </div>
+      </Link>
 
       <p className="text-3xl font-days-one">Get started with Glokas</p>
 
@@ -53,7 +56,7 @@ function BookDemoPage() {
 
       {submitMessage ? (
         <div className="text-center text-balance py-60">
-          <p className="text-2xl pb-5 font-days-one text-[#8CCAB6]">
+          <p className="text-2xl pb-5 font-days-one text-green-350">
             Thank You!
           </p>
           <p>
@@ -196,7 +199,7 @@ function BookDemoPage() {
           <Button
             type="submit"
             radius="sm"
-            className="text-base bg-[#8CCAB6] text-white w-full h-10"
+            className="text-base bg-green-350 text-white w-full h-10 hover:bg-black"
             isDisabled={isSubmitting || !isFormValid}
           >
             {isSubmitting ? "Submitting..." : "Book a Demo"}
@@ -207,14 +210,26 @@ function BookDemoPage() {
       <div className="flex flex-col gap-5 items-center text-center my-12">
         <div className="flex flex-col md:flex-row gap-5 md:gap-2.5 items-center">
           <img src={heartPath} alt="heart" className="w-7" />
-          <p className="font-days-one text-[#757575]">
+          <p className="font-days-one text-gray-450">
             Join other international organizations
           </p>
         </div>
 
         <div className="flex gap-7">
-          <img src={uWLogoPath} alt="unfoldingWord-logo" />
-          <img src={aquiferLogoPath} alt="aquiferLogo" />
+          <a
+            href="https://www.unfoldingword.org/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img src={uWLogoPath} alt="unfoldingWord-logo" />
+          </a>
+          <a
+            href="https://aquifer.bible/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img src={aquiferLogoPath} alt="aquiferLogo" />
+          </a>
         </div>
       </div>
     </div>

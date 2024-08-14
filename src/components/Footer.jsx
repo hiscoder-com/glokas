@@ -24,7 +24,7 @@ function Footer() {
           One Gospel. Different formats. Multiple languages
         </p>
 
-        <p className="text-[#8CCAB6]">
+        <p className="text-green-350">
           Translation, localization, and dubbing of Christian content
         </p>
 

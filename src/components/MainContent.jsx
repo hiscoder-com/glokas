@@ -2,29 +2,28 @@ import { useEffect, useRef, useState } from "react";
 
 import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
-
 import { Button } from "@nextui-org/react";
 
 import EmailSubscriptionForm from "./EmailSubscriptionForm";
 import FrequentlyAskedQuestions from "./FrequentlyAskedQuestions";
 
-const filePath = "/file.svg";
-const guaranteePath = "/guarantee.svg";
-const reachPath = "/reach.svg";
-const integrationPath = "/integration.svg";
-const interfacePath = "/interface.svg";
-const solutionsPath = "/solutions.svg";
 const costEffectivePath = "/cost-effective.svg";
-const heartPath = "/heart.svg";
-const voiceoverPath = "/voiceover.svg";
 const localizationPath = "/localization.svg";
 const uWLogoPath = "/unfoldingWord-logo.svg";
-const aquiferLogoPath = "/aquifer.svg";
-const uploadPath = "/upload.svg";
-const monitorPath = "/monitor.svg";
-const managePath = "/manage.svg";
-const payPath = "/pay.svg";
+const integrationPath = "/integration.svg";
 const glokasTMSPath = "/glokasTMS.svg";
+const guaranteePath = "/guarantee.svg";
+const interfacePath = "/interface.svg";
+const solutionsPath = "/solutions.svg";
+const voiceoverPath = "/voiceover.svg";
+const aquiferLogoPath = "/aquifer.svg";
+const monitorPath = "/monitor.svg";
+const uploadPath = "/upload.svg";
+const managePath = "/manage.svg";
+const heartPath = "/heart.svg";
+const reachPath = "/reach.svg";
+const filePath = "/file.svg";
+const payPath = "/pay.svg";
 
 function MainContent() {
   const [submitMessage, setSubmitMessage] = useState(false);
@@ -94,8 +93,20 @@ function MainContent() {
         </div>
 
         <div className="flex gap-7 lg:pb-16">
-          <img src={uWLogoPath} alt="unfoldingWord-logo" />
-          <img src={aquiferLogoPath} alt="aquiferLogo" />
+          <a
+            href="https://www.unfoldingword.org/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img src={uWLogoPath} alt="unfoldingWord-logo" />
+          </a>
+          <a
+            href="https://aquifer.bible/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img src={aquiferLogoPath} alt="aquiferLogo" />
+          </a>
         </div>
       </div>
       <p className="text-2xl lg:text-4xl text-center pb-5 font-days-one">
@@ -147,13 +158,13 @@ function MainContent() {
           ].map((item, index) => (
             <div
               key={index}
-              className="flex gap-7 bg-[#F4F9FA] rounded-3xl p-5 lg:h-96 md:flex-col"
+              className="flex gap-7 bg-gray-150 rounded-3xl p-5 lg:h-96 md:flex-col"
             >
-              <div className="bg-[#DFECF0] rounded-xl p-2.5 w-16 h-16 flex justify-center items-center">
+              <div className="bg-gray-350 rounded-xl p-2.5 w-16 h-16 flex justify-center items-center">
                 <img src={item.image} alt={item.title} className="max-w-max" />
               </div>
               <div className="text-balance md:flex-grow">
-                <p className="text-2xl mb-2.5 font-days-one text-[#8CBBCA]">
+                <p className="text-2xl mb-2.5 font-days-one text-blue-250">
                   {item.title}
                 </p>
                 <p>{item.description}</p>
@@ -200,13 +211,13 @@ function MainContent() {
           ].map((item, index) => (
             <div
               key={index}
-              className="flex gap-7 bg-[#F6FBF9] rounded-3xl p-5 lg:py-14 lg:h-64"
+              className="flex gap-7 bg-zinc-150 rounded-3xl p-5 lg:py-14 lg:h-64"
             >
               <div className="hidden rounded-xl p-1.5 lg:flex justify-center items-center">
                 <img src={item.image} alt={item.title} className="max-w-max" />
               </div>
               <div className="text-balance md:flex-grow content-center">
-                <p className="text-xl mb-5 lg:mb-2.5 font-days-one text-[#8CCAB6]">
+                <p className="text-xl mb-5 lg:mb-2.5 font-days-one text-green-350">
                   {item.title}
                 </p>
                 <p>{item.description}</p>
@@ -216,7 +227,7 @@ function MainContent() {
         </div>
       </div>
 
-      <p className="text-2xl lg:text-4xl text-center pb-5 font-days-one text-[#8CCAB6]">
+      <p className="text-2xl lg:text-4xl text-center pb-5 font-days-one text-green-350">
         Empowering Your Ministry Through Seamless Translation
       </p>
       <p className="text-center text-lg lg:text-2xl text-balance">
@@ -244,7 +255,7 @@ function MainContent() {
       </div>
 
       <p className="text-xl lg:text-2xl text-center font-days-one">Q&A</p>
-      <p className="text-2xl lg:text-4xl text-center pb-2.5 font-days-one text-[#8CCAB6]">
+      <p className="text-2xl lg:text-4xl text-center pb-2.5 font-days-one text-green-350">
         Frequently Asked Questions
       </p>
       <p className="text-center text-lg lg:text-2xl">Learn more about Glokas</p>
