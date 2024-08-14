@@ -79,7 +79,8 @@ function BookDemoPage() {
               value={formData.firstName}
               onValueChange={handleInputChange("firstName")}
               classNames={{
-                inputWrapper: "h-10 mb-2.5 border",
+                label: "text-xs sm:text-sm md:text-base",
+                inputWrapper: "h-10 mb-4 border",
               }}
             />
 
@@ -93,7 +94,8 @@ function BookDemoPage() {
               value={formData.lastName}
               onValueChange={handleInputChange("lastName")}
               classNames={{
-                inputWrapper: "h-10 mb-2.5 border",
+                label: "text-xs sm:text-sm md:text-base",
+                inputWrapper: "h-10 mb-4 border",
               }}
             />
           </div>
@@ -109,7 +111,8 @@ function BookDemoPage() {
               value={formData.email}
               onValueChange={handleInputChange("email")}
               classNames={{
-                inputWrapper: "h-10 mb-2.5 border",
+                label: "text-xs sm:text-sm md:text-base",
+                inputWrapper: "h-10 mb-4 border",
               }}
             />
 
@@ -122,7 +125,8 @@ function BookDemoPage() {
               value={formData.phoneNumber}
               onValueChange={handleInputChange("phoneNumber")}
               classNames={{
-                inputWrapper: "h-10 mb-2.5 border",
+                label: "text-xs sm:text-sm md:text-base",
+                inputWrapper: "h-10 mb-4 border",
               }}
             />
           </div>
@@ -137,7 +141,8 @@ function BookDemoPage() {
               value={formData.country}
               onValueChange={handleInputChange("country")}
               classNames={{
-                inputWrapper: "h-10 mb-2.5 border",
+                label: "text-xs sm:text-sm md:text-base",
+                inputWrapper: "h-10 mb-4 border",
               }}
             />
 
@@ -150,7 +155,8 @@ function BookDemoPage() {
               value={formData.organization}
               onValueChange={handleInputChange("organization")}
               classNames={{
-                inputWrapper: "h-10 mb-2.5 border",
+                label: "text-xs sm:text-sm md:text-base",
+                inputWrapper: "h-10 mb-4 border",
               }}
             />
           </div>
@@ -165,7 +171,8 @@ function BookDemoPage() {
               value={formData.hearAboutUs}
               onValueChange={handleInputChange("hearAboutUs")}
               classNames={{
-                inputWrapper: "h-10 mb-2.5 border",
+                label: "text-xs sm:text-sm md:text-base",
+                inputWrapper: "h-10 mb-4 border",
               }}
             />
             <Input
@@ -177,7 +184,8 @@ function BookDemoPage() {
               value={formData.demoExpectations}
               onValueChange={handleInputChange("demoExpectations")}
               classNames={{
-                inputWrapper: "h-10 mb-2.5 border",
+                label: "text-xs sm:text-sm md:text-base",
+                inputWrapper: "h-10 mb-4 border",
               }}
             />
           </div>
@@ -191,8 +199,8 @@ function BookDemoPage() {
             onValueChange={handleInputChange("message")}
             minRows={5}
             classNames={{
-              label: "text-start",
-              inputWrapper: "h-10 mb-2.5 border",
+              label: "text-start text-xs sm:text-sm md:text-base",
+              inputWrapper: "h-10 mb-4 border",
             }}
           />
 
