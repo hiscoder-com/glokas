@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { Button } from "@nextui-org/react";
 
 const logoPath = "/favicon.svg";
@@ -20,13 +21,14 @@ function Header() {
           </div>
         </a>
 
-        <Button
-          radius="sm"
-          className="font-bold bg-green-350 text-white w-36 h-11 hover:bg-black"
-          onClick={() => console.log("isOpen")}
-        >
-          Book a Demo
-        </Button>
+        <Link to="/book-demo">
+          <Button
+            radius="sm"
+            className="font-bold bg-green-350 text-white w-36 h-11 hover:bg-black"
+          >
+            Book a Demo
+          </Button>
+        </Link>
       </div>
     </div>
   );

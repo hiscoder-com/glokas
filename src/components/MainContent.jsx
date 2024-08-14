@@ -1,6 +1,8 @@
 import { useEffect, useRef, useState } from "react";
 
+import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
+
 import { Button } from "@nextui-org/react";
 
 import EmailSubscriptionForm from "./EmailSubscriptionForm";
@@ -73,14 +75,16 @@ function MainContent() {
           </div>
         </div>
 
-        <Button
-          radius="sm"
-          className="font-bold text-base bg-green-350 text-white w-40 h-11 hover:bg-black"
-          onClick={() => console.log("isOpen")}
-        >
-          Book a Demo
-        </Button>
+        <Link to="/book-demo">
+          <Button
+            radius="sm"
+            className="font-bold bg-green-350 text-white w-36 h-11 hover:bg-black"
+          >
+            Book a Demo
+          </Button>
+        </Link>
       </div>
+
       <div className="flex flex-col gap-5 items-center text-center my-20 lg:my-24 mx-5">
         <div className="flex flex-col md:flex-row gap-5 md:gap-2.5 items-center">
           <img src={heartPath} alt="heart" className="w-7" />
