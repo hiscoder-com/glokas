@@ -25,7 +25,7 @@ function Footer() {
             One Gospel. Different formats. Multiple languages
           </p>
 
-          <p className="text-green-350">
+          <p className="text-blue-650">
             Translation, localization, and dubbing of Christian content
           </p>
 
@@ -42,7 +42,7 @@ function Footer() {
             <Link to="/book-demo">
               <Button
                 radius="sm"
-                className="font-bold bg-green-350 text-white w-36 h-11 hover:bg-black"
+                className="font-bold bg-green-650 text-white w-36 h-11 hover:bg-blue-650"
               >
                 Book a Demo
               </Button>

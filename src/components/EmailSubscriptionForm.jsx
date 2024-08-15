@@ -48,7 +48,7 @@ function EmailSubscriptionForm({ setSubmitMessage }) {
       <Button
         type="submit"
         radius="sm"
-        className="font-bold text-base bg-black text-white w-36 h-11 hover:bg-white hover:text-black"
+        className="font-bold text-base bg-blue-650 text-white w-36 h-11 hover:bg-white hover:text-blue-650"
         isDisabled={isSubmitting || !isEmailValid}
       >
         {isSubmitting ? "Submitting..." : "Join waitlist"}
