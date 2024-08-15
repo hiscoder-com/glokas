@@ -215,18 +215,30 @@ function BookDemoPage() {
         </form>
       )}
 
-      <div className="flex flex-col gap-5 items-center text-2xl text-center my-20 lg:pt-2.5 lg:pb-7 mx-5">
-        <p>by organizations and ministries who love to go global</p>
+      <div className="flex flex-col gap-5 items-center text-center my-12">
+        <div className="flex flex-col md:flex-row gap-5 md:gap-2.5 items-center">
+          <img src={heartPath} alt="heart" className="w-7" />
+          <p className="font-days-one text-gray-450">
+            by organizations and ministries who love to go global
+          </p>
+        </div>
 
-        <img src={heartPath} alt="heart" className="w-7" />
-
-        <a
-          href="https://www.unfoldingword.org/"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <img src={uWLogoPath} alt="unfoldingWord-logo" />
-        </a>
+        <div className="flex gap-7">
+          <a
+            href="https://www.unfoldingword.org/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img src={uWLogoPath} alt="unfoldingWord-logo" />
+          </a>
+          <a
+            href="https://aquifer.bible/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img src={aquiferLogoPath} alt="aquiferLogo" />
+          </a>
+        </div>
       </div>
     </div>
   );
