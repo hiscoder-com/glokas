@@ -207,7 +207,7 @@ function BookDemoPage() {
           <Button
             type="submit"
             radius="sm"
-            className="text-base bg-green-350 text-white w-full h-10 hover:bg-black"
+            className="text-base bg-green-650 text-white w-full h-10 hover:bg-blue-650"
             isDisabled={isSubmitting || !isFormValid}
           >
             {isSubmitting ? "Submitting..." : "Book a Demo"}
@@ -219,7 +219,7 @@ function BookDemoPage() {
         <div className="flex flex-col md:flex-row gap-5 md:gap-2.5 items-center">
           <img src={heartPath} alt="heart" className="w-7" />
           <p className="font-days-one text-gray-450">
-            Join other international organizations
+            by organizations and ministries who love to go global
           </p>
         </div>
 

@@ -42,11 +42,11 @@ function MainContent() {
   return (
     <div className="px-3 md:px-10 pb-16 lg:pb-24">
       <div className="flex flex-col max-w-7xl mx-auto">
-        <div className="text-center rounded-3xl py-12 mt-10 lg:mt-10 bg-gray-250">
+        <div className="text-center rounded-3xl py-12 mt-1 bg-gray-250">
           <p className="text-2xl lg:text-5xl mb-2.5 lg:mb-7 mx-6 lg:mx-5 lg:text-balance font-days-one">
             One Gospel, Many Formats, Multiple Languages
           </p>
-          <p className="text-sm lg:text-base mx-9 lg:mx-52 lg:text-balance">
+          <p className="lg:text-lg mx-9 lg:mx-48 lg:text-balance">
             Glokas is an AI-powered translation and localization platform
             specifically designed for Christian content and projects.
           </p>
@@ -78,14 +78,14 @@ function MainContent() {
           <Link to="/book-demo">
             <Button
               radius="sm"
-              className="font-bold bg-green-350 text-white w-36 h-11 hover:bg-black"
+              className="font-bold bg-green-650 text-white w-36 h-11 hover:bg-blue-650"
             >
               Book a Demo
             </Button>
           </Link>
         </div>
 
-        <div className="flex flex-col gap-5 items-center text-center my-20 lg:my-24 mx-5">
+        <div className="flex flex-col gap-5 items-center text-center my-20 mx-5">
           <div className="flex flex-col md:flex-row gap-5 md:gap-2.5 items-center">
             <img src={heartPath} alt="heart" className="w-7" />
             <p className="text-xl">
@@ -110,6 +110,7 @@ function MainContent() {
             </a>
           </div>
         </div>
+
         <p className="text-2xl lg:text-4xl text-center pb-5 font-days-one">
           Why partner with Glokas?
         </p>
@@ -117,7 +118,7 @@ function MainContent() {
           Delivering high-quality, cost-effective translations with seamless
           integration and a global network of christian translators.
         </p>
-        <div className="mt-12 lg:mt-16 mb-20 lg:mb-24 text-wrap">
+        <div className="mt-12 lg:mt-16 mb-12 text-wrap">
           <div className="flex flex-col md:grid md:grid-cols-2 lg:grid-cols-3 gap-2.5 md:gap-5">
             {[
               {
@@ -169,7 +170,7 @@ function MainContent() {
                   />
                 </div>
                 <div className="text-balance md:flex-grow">
-                  <p className="text-2xl mb-2.5 font-days-one text-blue-250">
+                  <p className="text-2xl mb-2.5 font-days-one text-blue-650">
                     {item.title}
                   </p>
                   <p>{item.description}</p>
@@ -178,6 +179,7 @@ function MainContent() {
             ))}
           </div>
         </div>
+
         <p className="text-2xl lg:text-4xl text-center pb-5 font-days-one">
           How does it actually work?
         </p>
@@ -186,7 +188,8 @@ function MainContent() {
           Gospel by making the translation process faster, more cost-effective,
           and efficiently organized.
         </p>
-        <div className="mt-12 lg:mt-16 mb-20 lg:mb-24 text-wrap">
+
+        <div className="mt-12 lg:mt-16 mb-20 text-wrap">
           <div className="flex flex-col md:grid md:grid-cols-2 gap-5">
             {[
               {
@@ -211,12 +214,12 @@ function MainContent() {
                 image: payPath,
                 title: "Pay",
                 description:
-                  "You don’t need to hustle yourself thinking how to pay all translations in all languages you use. We send you one invoice to cover all the projects. We take care of all the other logistics",
+                  "Stop worrying about how to manage payments for translations across multiple languages. With us, you receive a single invoice that covers all your projects. We handle all the logistics so you can focus on what matters most.",
               },
             ].map((item, index) => (
               <div
                 key={index}
-                className="flex gap-7 bg-zinc-150 rounded-3xl p-5 lg:py-14 lg:h-64"
+                className="flex gap-7 bg-zinc-150 rounded-3xl p-5 lg:py-14 lg:h-80"
               >
                 <div className="hidden rounded-xl p-1.5 lg:flex justify-center items-center">
                   <img
@@ -226,7 +229,7 @@ function MainContent() {
                   />
                 </div>
                 <div className="text-balance md:flex-grow content-center">
-                  <p className="text-xl mb-5 lg:mb-2.5 font-days-one text-green-350">
+                  <p className="text-xl mb-5 lg:mb-2.5 font-days-one">
                     {item.title}
                   </p>
                   <p>{item.description}</p>
@@ -236,7 +239,7 @@ function MainContent() {
           </div>
         </div>
 
-        <p className="text-2xl lg:text-4xl text-center pb-5 font-days-one text-green-350">
+        <p className="text-2xl lg:text-4xl text-center pb-5 font-days-one text-yellow-550">
           Empowering Your Ministry Through Seamless Translation
         </p>
         <p className="text-center text-lg lg:text-2xl text-balance">
@@ -245,7 +248,7 @@ function MainContent() {
           and efficiently organized.
         </p>
 
-        <div className="flex gap-20 md:gap-36 bg-[url('/stand.svg')] md:bg-[url('/standDesk.svg')] bg-cover bg-center bg-no-repeat rounded-3xl flex-col md:flex-row py-12 px-5 mt-12 lg:mt-16 mb-20 lg:mb-24 text-wrap">
+        <div className="flex gap-20 md:gap-36 bg-[url('/stand.svg')] md:bg-[url('/standDesk.svg')] bg-cover bg-center bg-no-repeat rounded-3xl flex-col md:flex-row py-12 px-5 lg:px-11 lg:pt-10 lg:pb-14 mt-12 lg:mt-16 mb-20 text-wrap">
           <div className="text-balance md:w-1/2 md:content-center lg:py-28">
             <p className="text-3xl lg:text-4xl font-days-one">Glokas TMS</p>
             <p className="text-2xl my-5 font-days-one leading-6">
@@ -264,7 +267,7 @@ function MainContent() {
         </div>
 
         <p className="text-xl lg:text-2xl text-center font-days-one">Q&A</p>
-        <p className="text-2xl lg:text-4xl text-center pb-2.5 font-days-one text-green-350">
+        <p className="text-2xl lg:text-4xl text-center pb-2.5 font-days-one text-blue-650">
           Frequently Asked Questions
         </p>
         <p className="text-center text-lg lg:text-2xl">
@@ -273,7 +276,7 @@ function MainContent() {
 
         <FrequentlyAskedQuestions />
 
-        <div className="lg:flex text-center py-12 lg:py-20 px-7 lg:px-44 text-balance rounded-3xl shadow-lg text-white bg-gradient-to-br from-green-350 to-green-550">
+        <div className="lg:flex text-center py-12 lg:py-20 px-7 lg:px-44 text-balance rounded-3xl shadow-lg text-white bg-gradient-to-br from-green-550 to-green-650">
           {submitMessage ? (
             <div className="w-full flex items-center justify-center">
               <p className="text-2xl lg:text-5xl font-days-one">

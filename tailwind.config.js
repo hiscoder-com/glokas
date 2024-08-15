@@ -17,6 +17,7 @@ export default {
         green: {
           350: "#8CCAB6",
           550: "#65B29A",
+          650: "#0EAD69",
         },
         gray: {
           150: "#F4F9FA",
@@ -27,8 +28,12 @@ export default {
         zinc: {
           150: "#F6FBF9",
         },
+        yellow: {
+          550: "#F1C40F",
+        },
         blue: {
           250: "#8CBBCA",
+          650: "#1A3E59",
         },
       },
     },

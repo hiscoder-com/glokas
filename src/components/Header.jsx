@@ -10,7 +10,7 @@ function Header() {
   };
 
   return (
-    <div className="sticky top-0 py-7 z-50 px-3 md:px-10 lg:py-10 bg-gradient-to-b from-white via-white to-white/90">
+    <div className="sticky top-0 py-5 z-50 px-3 md:px-10 lg:py-7 bg-gradient-to-b from-white via-white to-white/90">
       <div className="flex justify-between max-w-7xl mx-auto">
         <a href="#top" onClick={scrollToTop}>
           <div className="inline-flex items-center">
@@ -24,7 +24,7 @@ function Header() {
         <Link to="/book-demo">
           <Button
             radius="sm"
-            className="font-bold bg-green-350 text-white w-36 h-11 hover:bg-black"
+            className="font-bold bg-green-650 text-white w-36 h-11 hover:bg-blue-650"
           >
             Book a Demo
           </Button>
