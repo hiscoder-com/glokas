@@ -45,7 +45,7 @@ function MainContent() {
           <p className="text-2xl lg:text-5xl mb-2.5 lg:mb-7 mx-6 lg:mx-5 lg:text-balance font-days-one">
             One Gospel, Many Formats, Multiple Languages
           </p>
-          <p className="lg:text-lg mx-9 lg:mx-48 lg:text-balance">
+          <p className="text-lg lg:text-xl mx-9 lg:mx-48 text-balance">
             Glokas is an AI-powered translation and localization platform
             specifically designed for Christian content and projects.
           </p>
@@ -171,28 +171,25 @@ function MainContent() {
         </div>
 
         <p className="text-2xl lg:text-4xl text-center pb-5 font-days-one">
-          How does it actually work?
+          How does it work?
         </p>
-        <p className="text-center text-lg lg:text-2xl text-balance">
-          Our system is designed to accelerate the worldwide spread of the
-          Gospel by making the translation process faster, more cost-effective,
-          and efficiently organized.
+        <p className="text-center text-lg lg:text-2xl text-balance lg:mx-48">
+          Reduce costs, save time, and get high-quality translations. Translate
+          more and explore a wider range of languages.
         </p>
 
         <div className="mt-12 lg:mt-16 mb-20 text-wrap">
           <div className="flex flex-col md:grid md:grid-cols-2 gap-5">
             <div className="flex gap-7 bg-zinc-150 rounded-3xl p-5 lg:py-14 lg:h-80 md:order-1">
               <div className="hidden rounded-xl p-1.5 lg:flex justify-center items-center">
-                <img src={uploadPath} alt="1. Upload" className="max-w-max" />
+                <img src={uploadPath} alt="1. Start" className="max-w-max" />
               </div>
               <div className="text-balance md:flex-grow content-center">
-                <p className="text-xl mb-5 lg:mb-2.5 font-days-one">
-                  1. Upload
-                </p>
+                <p className="text-xl mb-5 lg:mb-2.5 font-days-one">1. Start</p>
                 <p>
-                  You upload your file and pick languages that you want your
-                  material to be translated into. You can work with your own
-                  in-house translators or add them from our base.
+                  Upload file and select the languages you want material
+                  translated into. You can work with your own in-house
+                  translators or choose from our database of translators.
                 </p>
               </div>
             </div>
@@ -261,9 +258,11 @@ function MainContent() {
               Translation Management System
             </p>
             <p>
-              Our system is designed to accelerate the worldwide spread of the
-              Gospel by making the translation process faster, more
-              cost-effective, and efficiently organized.
+              Glokas TMS centralizes all translations, translators, and
+              languages in one place, making the entire process more efficient
+              and organized. It simplifies collaboration, ensures consistency,
+              and streamlines payments to translators, making it an essential
+              tool for ministries aiming to reach a global audience effectively.
             </p>
           </div>
 

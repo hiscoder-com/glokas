@@ -99,36 +99,42 @@ function FrequentlyAskedQuestions() {
     },
     {
       key: "8",
+      title: "Can I translate a small project on Glokas?",
+      content:
+        "Yes, we designed Glokas with the belief that every project, no matter the size, is valuable in making the Gospel available. That's why even the smallest project holds great importance. Whether you have just 3 words to translate, you can handle it with your in-house translators, use AI, or find someone who can quickly do the job.",
+    },
+    {
+      key: "9",
       title: "How do I track the progress of my translation project?",
       content:
         "Glokas offers real-time monitoring tools that allow you to see exactly where your translation project stands. You will receive notifications once the translation is complete, ensuring you are always informed.",
     },
     {
-      key: "9",
+      key: "10",
       title: "What happens after the translation is complete?",
       content:
         "Once the translation is complete, you can review and accept the work or request further revisions. After final approval, you can download the translated material in multiple formats suitable for your needs.",
     },
     {
-      key: "10",
+      key: "11",
       title: "How is payment handled for translation services?",
       content:
         "Glokas simplifies the payment process by providing a single invoice that covers all your translation projects. We handle all the logistics, so you don't have to worry about managing payments for multiple translations.",
     },
     {
-      key: "11",
+      key: "12",
       title: "What additional services does Glokas offer?",
       content:
         "In addition to translation and localization, Glokas will soon offer voice-over services. This will further enhance our ability to support the spreading of the Gospel through various media formats.",
     },
     {
-      key: "12",
+      key: "13",
       title: "Is Glokas suitable for large-scale projects?",
       content:
         "Yes, Glokas is designed to handle both small and large-scale translation projects. Our scalable platform and extensive network of translators ensure that we can meet the needs of projects of any size. Even if you need to translate just a few sentences to help spread the Gospel faster, we are happy to assist.",
     },
     {
-      key: "13",
+      key: "14",
       title: "How can I get started with Glokas?",
       content: (
         <>
