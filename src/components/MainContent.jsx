@@ -242,7 +242,7 @@ function MainContent() {
           </div>
         </div>
 
-        <p className="text-2xl lg:text-4xl text-center pb-5 font-days-one text-yellow-550">
+        <p className="text-2xl lg:text-4xl text-center pb-5 font-days-one text-blue-650">
           Empowering Your Ministry Through Seamless Translation
         </p>
         <p className="text-center text-lg lg:text-2xl text-balance">

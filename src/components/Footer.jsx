@@ -21,7 +21,7 @@ function Footer() {
             </div>
           </a>
 
-          <p className="text-lg lg:text-xl font-bold">
+          <p className="text-lg lg:text-xl font-bold text-balance">
             One Gospel. Different formats. Multiple languages
           </p>
 
