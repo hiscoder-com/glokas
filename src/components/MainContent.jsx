@@ -9,14 +9,13 @@ import FrequentlyAskedQuestions from "./FrequentlyAskedQuestions";
 
 const costEffectivePath = "/cost-effective.svg";
 const localizationPath = "/localization.svg";
-const uWLogoPath = "/unfoldingWord-logo.svg";
 const integrationPath = "/integration.svg";
+const vCanaLogoPath = "/v-cana-logo.svg";
 const glokasTMSPath = "/glokasTMS.svg";
 const guaranteePath = "/guarantee.svg";
 const interfacePath = "/interface.svg";
 const solutionsPath = "/solutions.svg";
 const voiceoverPath = "/voiceover.svg";
-const aquiferLogoPath = "/aquifer.svg";
 const monitorPath = "/monitor.svg";
 const uploadPath = "/upload.svg";
 const managePath = "/manage.svg";
@@ -85,7 +84,7 @@ function MainContent() {
           </Link>
         </div>
 
-        <div className="flex flex-col gap-5 items-center text-center my-20 mx-5">
+        <div className="flex flex-col gap-5 items-center text-center my-20 mx-5 lg:pb-16">
           <div className="flex flex-col md:flex-row gap-5 md:gap-2.5 items-center">
             <img src={heartPath} alt="heart" className="w-7" />
             <p className="text-xl">
@@ -93,22 +92,13 @@ function MainContent() {
             </p>
           </div>
 
-          <div className="flex gap-7 lg:pb-16">
-            <a
-              href="https://www.unfoldingword.org/"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <img src={uWLogoPath} alt="unfoldingWord-logo" />
-            </a>
-            <a
-              href="https://aquifer.bible/"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <img src={aquiferLogoPath} alt="aquiferLogo" />
-            </a>
-          </div>
+          <a
+            href="https://v-cana.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img src={vCanaLogoPath} alt="v-cana-logo" />
+          </a>
         </div>
 
         <p className="text-2xl lg:text-4xl text-center pb-5 font-days-one">
@@ -191,51 +181,67 @@ function MainContent() {
 
         <div className="mt-12 lg:mt-16 mb-20 text-wrap">
           <div className="flex flex-col md:grid md:grid-cols-2 gap-5">
-            {[
-              {
-                image: uploadPath,
-                title: "Upload",
-                description:
-                  "You upload your file and pick languages that you want your material to be translated into. You can work with your own in-house translators or add them from our base.",
-              },
-              {
-                image: monitorPath,
-                title: "Monitor",
-                description:
-                  "While translation is in progress you can see where exactly your where translation is. Once its done you be notified. Verify and accept work.",
-              },
-              {
-                image: managePath,
-                title: "Manage",
-                description:
-                  "Manage all your files and translation and translators in one place.",
-              },
-              {
-                image: payPath,
-                title: "Pay",
-                description:
-                  "Stop worrying about how to manage payments for translations across multiple languages. With us, you receive a single invoice that covers all your projects. We handle all the logistics so you can focus on what matters most.",
-              },
-            ].map((item, index) => (
-              <div
-                key={index}
-                className="flex gap-7 bg-zinc-150 rounded-3xl p-5 lg:py-14 lg:h-80"
-              >
-                <div className="hidden rounded-xl p-1.5 lg:flex justify-center items-center">
-                  <img
-                    src={item.image}
-                    alt={item.title}
-                    className="max-w-max"
-                  />
-                </div>
-                <div className="text-balance md:flex-grow content-center">
-                  <p className="text-xl mb-5 lg:mb-2.5 font-days-one">
-                    {item.title}
-                  </p>
-                  <p>{item.description}</p>
-                </div>
+            <div className="flex gap-7 bg-zinc-150 rounded-3xl p-5 lg:py-14 lg:h-80 md:order-1">
+              <div className="hidden rounded-xl p-1.5 lg:flex justify-center items-center">
+                <img src={uploadPath} alt="1. Upload" className="max-w-max" />
               </div>
-            ))}
+              <div className="text-balance md:flex-grow content-center">
+                <p className="text-xl mb-5 lg:mb-2.5 font-days-one">
+                  1. Upload
+                </p>
+                <p>
+                  You upload your file and pick languages that you want your
+                  material to be translated into. You can work with your own
+                  in-house translators or add them from our base.
+                </p>
+              </div>
+            </div>
+
+            <div className="flex gap-7 bg-zinc-150 rounded-3xl p-5 lg:py-14 lg:h-80 md:order-3">
+              <div className="hidden rounded-xl p-1.5 lg:flex justify-center items-center">
+                <img src={managePath} alt="2. Manage" className="max-w-max" />
+              </div>
+              <div className="text-balance md:flex-grow content-center">
+                <p className="text-xl mb-5 lg:mb-2.5 font-days-one">
+                  2. Manage
+                </p>
+                <p>
+                  Manage all your files and translation and translators in one
+                  place.
+                </p>
+              </div>
+            </div>
+
+            <div className="flex gap-7 bg-zinc-150 rounded-3xl p-5 lg:py-14 lg:h-80 md:order-2">
+              <div className="hidden rounded-xl p-1.5 lg:flex justify-center items-center">
+                <img src={monitorPath} alt="3. Monitor" className="max-w-max" />
+              </div>
+              <div className="text-balance md:flex-grow content-center">
+                <p className="text-xl mb-5 lg:mb-2.5 font-days-one">
+                  3. Monitor
+                </p>
+                <p>
+                  While translation is in progress you can see where exactly
+                  your where translation is. Once its done you be notified.
+                  Verify and accept work.
+                </p>
+              </div>
+            </div>
+
+            <div className="flex gap-7 bg-zinc-150 rounded-3xl p-5 lg:py-14 lg:h-80 md:order-4">
+              <div className="hidden rounded-xl p-1.5 lg:flex justify-center items-center">
+                <img src={payPath} alt="4. Pay" className="max-w-max" />
+              </div>
+              <div className="text-balance md:flex-grow content-center">
+                <p className="text-xl mb-5 lg:mb-2.5 font-days-one">4. Pay</p>
+                <p>
+                  Stop worrying about how to manage payments for translations
+                  across multiple languages. With us, you receive a single
+                  invoice that covers all your projects. We handle all the
+                  logistics so you can focus on what matters most.
+                </p>
+              </div>
+            </div>
           </div>
         </div>
 

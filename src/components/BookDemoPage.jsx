@@ -6,8 +6,7 @@ import axios from "axios";
 
 const logoPath = "/favicon.svg";
 const heartPath = "/heart-gray.svg";
-const uWLogoPath = "/unfoldingWord-logo.svg";
-const aquiferLogoPath = "/aquifer.svg";
+const vCanaLogoPath = "/v-cana-logo.svg";
 
 function BookDemoPage() {
   const { formData, isFormValid, handleInputChange, resetForm } =
@@ -223,22 +222,9 @@ function BookDemoPage() {
           </p>
         </div>
 
-        <div className="flex gap-7">
-          <a
-            href="https://www.unfoldingword.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <img src={uWLogoPath} alt="unfoldingWord-logo" />
-          </a>
-          <a
-            href="https://aquifer.bible/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <img src={aquiferLogoPath} alt="aquiferLogo" />
-          </a>
-        </div>
+        <a href="https://v-cana.com/" target="_blank" rel="noopener noreferrer">
+          <img src={vCanaLogoPath} alt="v-cana-logo" />
+        </a>
       </div>
     </div>
   );
