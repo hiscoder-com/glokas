@@ -251,7 +251,7 @@ function MainContent() {
           and efficiently organized.
         </p>
 
-        <div className="flex gap-20 md:gap-36 bg-[url('/stand.svg')] md:bg-[url('/standDesk.svg')] bg-cover bg-center bg-no-repeat rounded-3xl flex-col md:flex-row py-12 px-5 lg:px-11 lg:pt-10 lg:pb-14 mt-12 lg:mt-16 mb-20 text-wrap">
+        <div className="flex gap-36 bg-[url('/stand.svg')] md:bg-[url('/standDesk.svg')] bg-cover bg-center bg-no-repeat rounded-3xl flex-col md:flex-row py-12 px-5 lg:px-11 lg:pt-10 lg:pb-14 mt-12 lg:mt-16 mb-20 text-wrap">
           <div className="text-balance md:w-1/2 md:content-center lg:py-28">
             <p className="text-3xl lg:text-4xl font-days-one">Glokas TMS</p>
             <p className="text-2xl my-5 font-days-one leading-6">
