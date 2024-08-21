@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { Button } from "@nextui-org/react";
 
-const logoPath = "/favicon.svg";
+const logoPath = "/glokas-logo.svg";
 const vector = "/vector.svg";
 
 function Footer() {
@@ -15,10 +15,7 @@ function Footer() {
       <div className="flex gap-10 flex-col lg:flex-row max-w-7xl mx-auto">
         <div className="flex flex-col gap-7 items-center text-center lg:text-start lg:items-start lg:w-1/2">
           <a href="#top" onClick={scrollToTop}>
-            <div className="inline-flex">
-              <img src={logoPath} alt="Logo" className="w-10" />
-              <p className="font-days-one ml-1 text-4xl">Glokas</p>
-            </div>
+            <img src={logoPath} alt="Logo" className="h-11" />
           </a>
 
           <p className="text-lg lg:text-xl font-bold text-balance">

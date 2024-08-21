@@ -4,7 +4,7 @@ import useBookDemoForm from "@/hooks/useBookDemoForm";
 import { useState } from "react";
 import axios from "axios";
 
-const logoPath = "/favicon.svg";
+const logoPath = "/glokas-logo.svg";
 const heartPath = "/heart-gray.svg";
 const vCanaLogoPath = "/v-cana-logo.svg";
 
@@ -41,10 +41,7 @@ function BookDemoPage() {
   return (
     <div className="flex flex-col max-w-3xl items-center text-center mx-auto px-3 md:px-10 lg:px-0 pb-16 lg:pb-24 pt-7 text-balance">
       <Link to="/">
-        <div className="inline-flex mb-14">
-          <img src={logoPath} alt="Logo" className="w-10" />
-          <p className="font-days-one ml-1 text-4xl">Glokas</p>
-        </div>
+        <img src={logoPath} alt="Logo" className="h-11 mb-14" />
       </Link>
 
       <p className="text-3xl font-days-one">Get started with Glokas</p>
