@@ -41,7 +41,7 @@ function BookDemoPage() {
   return (
     <div className="flex flex-col max-w-3xl items-center text-center mx-auto px-3 md:px-10 lg:px-0 pb-16 lg:pb-24 pt-7 text-balance">
       <Link to="/">
-        <img src={logoPath} alt="Logo" className="h-11 mb-14" />
+        <img src={logoPath} alt="Logo" className="h-10 mb-10" />
       </Link>
 
       <p className="text-3xl font-helvetica font-bold">

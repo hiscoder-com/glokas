@@ -15,7 +15,7 @@ function Footer() {
       <div className="flex gap-10 flex-col lg:flex-row max-w-7xl mx-auto">
         <div className="flex flex-col gap-7 items-center text-center lg:text-start lg:items-start lg:w-1/2">
           <a href="#top" onClick={scrollToTop}>
-            <img src={logoPath} alt="Logo" className="h-11" />
+            <img src={logoPath} alt="Logo" className="h-7" />
           </a>
 
           <p className="text-lg lg:text-xl font-bold text-balance">
