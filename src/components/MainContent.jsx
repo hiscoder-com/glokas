@@ -180,62 +180,90 @@ function MainContent() {
 
         <div className="mt-12 lg:mt-16 mb-20 text-wrap">
           <div className="flex flex-col md:grid md:grid-cols-2 gap-5">
-            <div className="flex gap-7 bg-zinc-150 rounded-3xl p-5 lg:py-14 lg:h-80 md:order-1">
+            <div className="flex gap-7 bg-zinc-150 rounded-3xl p-5 lg:py-12 lg:h-96 md:order-1">
               <div className="hidden rounded-xl p-1.5 lg:flex justify-center items-center">
-                <img src={uploadPath} alt="1. Start" className="max-w-max" />
+                <img
+                  src={uploadPath}
+                  alt="Define Your Translation Workflow"
+                  className="max-w-max"
+                />
               </div>
               <div className="text-balance md:flex-grow content-center">
-                <p className="text-xl mb-5 lg:mb-2.5 font-days-one">1. Start</p>
+                <p className="text-xl mb-5 lg:mb-2.5 w-4/5 font-days-one">
+                  1. Define Your Translation Workflow
+                </p>
                 <p>
-                  Upload file and select the languages you want material
-                  translated into. You can work with your own in-house
-                  translators or choose from our database of translators.
+                  Define the necessary steps for your translation project,
+                  starting with the translation phase, followed by a review or
+                  checking stage. Select the languages you need, and create
+                  consistent guidelines using our customizable templates to
+                  ensure your message remains consistent across all
+                  translations.
                 </p>
               </div>
             </div>
 
-            <div className="flex gap-7 bg-zinc-150 rounded-3xl p-5 lg:py-14 lg:h-80 md:order-3">
+            <div className="flex gap-7 bg-zinc-150 rounded-3xl p-5 lg:py-12 lg:h-96 md:order-3">
               <div className="hidden rounded-xl p-1.5 lg:flex justify-center items-center">
-                <img src={managePath} alt="2. Manage" className="max-w-max" />
+                <img
+                  src={managePath}
+                  alt="Build Your Translation Team"
+                  className="max-w-max"
+                />
               </div>
               <div className="text-balance md:flex-grow content-center">
-                <p className="text-xl mb-5 lg:mb-2.5 font-days-one">
-                  2. Manage
+                <p className="text-xl mb-5 lg:mb-2.5 w-4/5 font-days-one">
+                  2. Build Your Translation Team
                 </p>
                 <p>
-                  Manage all your files and translation and translators in one
-                  place.
+                  We assist you in assembling a team of translators and
+                  reviewers. You can use your in-house translators or expand
+                  your team by selecting professionals from our extensive
+                  network. Once your team is set, you&apos;re ready to begin.
                 </p>
               </div>
             </div>
 
-            <div className="flex gap-7 bg-zinc-150 rounded-3xl p-5 lg:py-14 lg:h-80 md:order-2">
+            <div className="flex gap-7 bg-zinc-150 rounded-3xl p-5 lg:py-12 lg:h-96 md:order-2">
               <div className="hidden rounded-xl p-1.5 lg:flex justify-center items-center">
-                <img src={monitorPath} alt="3. Monitor" className="max-w-max" />
+                <img
+                  src={monitorPath}
+                  alt="Manage Your Translation Projects"
+                  className="max-w-max"
+                />
               </div>
               <div className="text-balance md:flex-grow content-center">
-                <p className="text-xl mb-5 lg:mb-2.5 font-days-one">
-                  3. Monitor
+                <p className="text-xl mb-5 lg:mb-2.5 w-4/5 font-days-one">
+                  3. Manage Your Translation Projects
                 </p>
                 <p>
-                  While translation is in progress you can see where exactly
-                  your where translation is. Once its done you be notified.
-                  Verify and accept work.
+                  Upload your files for translation and track progress in
+                  real-time. Easily communicate with your translators throughout
+                  the process. When the translation is complete, you&apos;ll
+                  receive a notification. Review the final work and either
+                  approve it or request revisions. Utilize our AI-driven tools
+                  for enhanced quality assurance.
                 </p>
               </div>
             </div>
 
-            <div className="flex gap-7 bg-zinc-150 rounded-3xl p-5 lg:py-14 lg:h-80 md:order-4">
+            <div className="flex gap-7 bg-zinc-150 rounded-3xl p-5 lg:py-12 lg:h-96 md:order-4">
               <div className="hidden rounded-xl p-1.5 lg:flex justify-center items-center">
-                <img src={payPath} alt="4. Pay" className="max-w-max" />
+                <img
+                  src={payPath}
+                  alt="Manage payments"
+                  className="max-w-max"
+                />
               </div>
               <div className="text-balance md:flex-grow content-center">
-                <p className="text-xl mb-5 lg:mb-2.5 font-days-one">4. Pay</p>
+                <p className="text-xl mb-5 lg:mb-2.5 w-4/5 font-days-one">
+                  4. Manage payments
+                </p>
                 <p>
-                  Stop worrying about how to manage payments for translations
-                  across multiple languages. With us, you receive a single
-                  invoice that covers all your projects. We handle all the
-                  logistics so you can focus on what matters most.
+                  You don&apos;t need to hustle yourself thinking how to pay all
+                  translations in all languages you use. We send you one invoice
+                  to cover all the projects. We take care of all the other
+                  logistics
                 </p>
               </div>
             </div>
