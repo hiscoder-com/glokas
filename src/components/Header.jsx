@@ -13,7 +13,7 @@ function Header() {
     <div className="sticky top-0 py-5 z-50 px-3 md:px-10 lg:py-7 bg-gradient-to-b from-white via-white to-white/90">
       <div className="flex justify-between max-w-7xl mx-auto">
         <a href="#top" onClick={scrollToTop} className="content-center">
-          <img src={logoPath} alt="Logo" className="h-7 lg:h-11" />
+          <img src={logoPath} alt="Logo" className="h-5 lg:h-7" />
         </a>
 
         <Link to="/book-demo">

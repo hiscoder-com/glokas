@@ -44,7 +44,9 @@ function BookDemoPage() {
         <img src={logoPath} alt="Logo" className="h-11 mb-14" />
       </Link>
 
-      <p className="text-3xl font-days-one">Get started with Glokas</p>
+      <p className="text-3xl font-helvetica font-bold">
+        Get started with Glokas
+      </p>
 
       <p className="text-center mt-5 mb-8">
         Book a call with one of our representatives to get started.
@@ -52,7 +54,7 @@ function BookDemoPage() {
 
       {submitMessage ? (
         <div className="text-center text-balance py-60">
-          <p className="text-2xl pb-5 font-days-one text-green-350">
+          <p className="text-2xl pb-5 font-helvetica font-bold text-green-350">
             Thank You!
           </p>
           <p>
@@ -214,7 +216,7 @@ function BookDemoPage() {
       <div className="flex flex-col gap-5 items-center text-center my-12">
         <div className="flex flex-col md:flex-row gap-5 md:gap-2.5 items-center">
           <img src={heartPath} alt="heart" className="w-7" />
-          <p className="font-days-one text-gray-450">
+          <p className="font-helvetica font-bold text-gray-450">
             by organizations and ministries who love to go global
           </p>
         </div>

@@ -42,7 +42,7 @@ function MainContent() {
     <div className="px-3 md:px-10 pb-16 lg:pb-24">
       <div className="flex flex-col max-w-7xl mx-auto">
         <div className="text-center rounded-3xl py-12 mt-1 bg-gray-250">
-          <p className="text-2xl lg:text-5xl mb-2.5 lg:mb-7 mx-6 lg:mx-5 lg:text-balance font-days-one">
+          <p className="text-2xl lg:text-5xl mb-2.5 lg:mb-7 mx-6 lg:mx-5 lg:text-balance font-helvetica font-bold">
             One Gospel, Many Formats, Multiple Languages
           </p>
           <p className="text-lg lg:text-xl mx-9 lg:mx-48 text-balance">
@@ -101,7 +101,7 @@ function MainContent() {
           </a>
         </div>
 
-        <p className="text-2xl lg:text-4xl text-center pb-5 font-days-one">
+        <p className="text-2xl lg:text-4xl text-center pb-5 font-helvetica font-bold">
           Why partner with Glokas?
         </p>
         <p className="text-center text-lg lg:text-2xl text-balance">
@@ -160,7 +160,7 @@ function MainContent() {
                   />
                 </div>
                 <div className="text-balance md:flex-grow">
-                  <p className="text-2xl mb-2.5 font-days-one text-blue-650">
+                  <p className="text-2xl mb-2.5 font-helvetica font-bold text-blue-650">
                     {item.title}
                   </p>
                   <p>{item.description}</p>
@@ -170,7 +170,7 @@ function MainContent() {
           </div>
         </div>
 
-        <p className="text-2xl lg:text-4xl text-center pb-5 font-days-one">
+        <p className="text-2xl lg:text-4xl text-center pb-5 font-helvetica font-bold">
           How does it work?
         </p>
         <p className="text-center text-lg lg:text-2xl text-balance lg:mx-48">
@@ -189,7 +189,7 @@ function MainContent() {
                 />
               </div>
               <div className="text-balance md:flex-grow content-center">
-                <p className="text-xl mb-5 lg:mb-2.5 w-4/5 font-days-one">
+                <p className="text-xl mb-5 lg:mb-2.5 w-4/5 font-helvetica font-bold">
                   1. Define Your Translation Workflow
                 </p>
                 <p>
@@ -212,7 +212,7 @@ function MainContent() {
                 />
               </div>
               <div className="text-balance md:flex-grow content-center">
-                <p className="text-xl mb-5 lg:mb-2.5 w-4/5 font-days-one">
+                <p className="text-xl mb-5 lg:mb-2.5 w-4/5 font-helvetica font-bold">
                   2. Build Your Translation Team
                 </p>
                 <p>
@@ -233,7 +233,7 @@ function MainContent() {
                 />
               </div>
               <div className="text-balance md:flex-grow content-center">
-                <p className="text-xl mb-5 lg:mb-2.5 w-4/5 font-days-one">
+                <p className="text-xl mb-5 lg:mb-2.5 w-4/5 font-helvetica font-bold">
                   3. Manage Your Translation Projects
                 </p>
                 <p>
@@ -256,7 +256,7 @@ function MainContent() {
                 />
               </div>
               <div className="text-balance md:flex-grow content-center">
-                <p className="text-xl mb-5 lg:mb-2.5 w-4/5 font-days-one">
+                <p className="text-xl mb-5 lg:mb-2.5 w-4/5 font-helvetica font-bold">
                   4. Manage payments
                 </p>
                 <p>
@@ -270,7 +270,7 @@ function MainContent() {
           </div>
         </div>
 
-        <p className="text-2xl lg:text-4xl text-center pb-5 font-days-one text-blue-650">
+        <p className="text-2xl lg:text-4xl text-center pb-5 font-helvetica text-blue-650 font-bold">
           Empowering Your Ministry Through Seamless Translation
         </p>
         <p className="text-center text-lg lg:text-2xl text-balance">
@@ -281,8 +281,10 @@ function MainContent() {
 
         <div className="flex gap-36 bg-[url('/stand.svg')] md:bg-[url('/standDesk.svg')] bg-cover bg-center bg-no-repeat rounded-3xl flex-col md:flex-row py-12 px-5 lg:px-11 lg:pt-10 lg:pb-14 mt-12 lg:mt-16 mb-20 text-wrap">
           <div className="text-balance md:w-1/2 md:content-center lg:py-28">
-            <p className="text-3xl lg:text-4xl font-days-one">Glokas TMS</p>
-            <p className="text-2xl my-5 font-days-one leading-6">
+            <p className="text-3xl lg:text-4xl font-helvetica font-bold">
+              Glokas TMS
+            </p>
+            <p className="text-2xl my-5 font-helvetica leading-6 font-bold">
               Translation Management System
             </p>
             <p>
@@ -299,8 +301,10 @@ function MainContent() {
           </div>
         </div>
 
-        <p className="text-xl lg:text-2xl text-center font-days-one">Q&A</p>
-        <p className="text-2xl lg:text-4xl text-center pb-2.5 font-days-one text-blue-650">
+        <p className="text-xl lg:text-2xl text-center font-helvetica font-bold">
+          Q&A
+        </p>
+        <p className="text-2xl lg:text-4xl text-center pb-2.5 font-helvetica font-bold text-blue-650">
           Frequently Asked Questions
         </p>
         <p className="text-center text-lg lg:text-2xl">
@@ -312,7 +316,7 @@ function MainContent() {
         <div className="lg:flex text-center py-12 lg:py-20 px-7 lg:px-44 text-balance rounded-3xl shadow-lg text-white bg-gradient-to-br from-green-550 to-green-650">
           {submitMessage ? (
             <div className="w-full flex items-center justify-center">
-              <p className="text-2xl lg:text-5xl font-days-one">
+              <p className="text-2xl lg:text-5xl font-helvetica font-bold">
                 Thank you for joining our waitlist! We&apos;ll keep you updated
                 on our launch.
               </p>
@@ -320,7 +324,7 @@ function MainContent() {
           ) : (
             <div className="lg:flex lg:justify-between lg:items-center lg:w-full">
               <div className="lg:w-1/2 lg:text-left">
-                <p className="text-5xl mb-2.5 font-days-one">
+                <p className="text-5xl mb-2.5 font-helvetica font-bold">
                   Coming this fall 2024
                 </p>
                 <p>Subscribe for updates</p>

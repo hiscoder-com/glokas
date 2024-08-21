@@ -10,6 +10,7 @@ export default {
   theme: {
     extend: {
       fontFamily: {
+        helvetica: ["Helvetica", "sans-serif"],
         "days-one": ["Days One", "sans-serif"],
         "dm-sans": ["DM Sans", "sans-serif"],
       },
