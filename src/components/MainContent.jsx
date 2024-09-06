@@ -89,7 +89,7 @@ function MainContent() {
           <div className="flex flex-col md:flex-row gap-5 md:gap-2.5 items-center">
             <img src={heartPath} alt="heart" className="w-7" />
             <p className="text-xl">
-              by organizations and ministries who love to go global!
+              by organizations and ministries who love to go global
             </p>
           </div>
 
