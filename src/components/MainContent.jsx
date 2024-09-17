@@ -7,6 +7,8 @@ import { Button } from "@nextui-org/react";
 import EmailSubscriptionForm from "./EmailSubscriptionForm";
 import FrequentlyAskedQuestions from "./FrequentlyAskedQuestions";
 
+const logoPath = "/glokas-logo.svg";
+
 const costEffectivePath = "/cost-effective.svg";
 const localizationPath = "/localization.svg";
 const integrationPath = "/integration.svg";
@@ -42,14 +44,15 @@ function MainContent() {
     <div className="px-3 md:px-10 pb-16 lg:pb-24">
       <div className="flex flex-col max-w-7xl mx-auto">
         <div className="text-center rounded-3xl py-12 mt-1 bg-gray-250">
-          <p className="text-2xl lg:text-5xl mb-2.5 lg:mb-7 mx-6 lg:mx-40 lg:text-balance font-helvetica font-bold">
+          <img src={logoPath} alt="Logo" className="h-5 lg:h-7 mb-12 w-full" />
+          <p className="text-2xl lg:text-5xl mb-2.5 mx-6 lg:mx-40 lg:text-balance font-helvetica font-bold">
             Get God&apos;s Message to Every Language, Faster
           </p>
-          <p className="text-lg lg:text-xl mx-9 lg:mx-48 text-balance">
+          {/* <p className="text-lg lg:text-xl mx-9 lg:mx-48 text-balance">
             Glokas is an AI-powered translation and localization platform
             specifically designed for Christian content and projects. Rapid,
             low-cost, efficient, and innovative.
-          </p>
+          </p> */}
           <div
             ref={scrollContainerRef}
             className="overflow-x-auto py-12 snap-x snap-mandatory scrollbar-hide"
