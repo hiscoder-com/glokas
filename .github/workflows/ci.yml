@@ -12,7 +12,7 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: '18'  
+          node-version: '18'
       - name: Install required dependencies
         run: |
           npm install -g commitlint@latest @commitlint/config-conventional
@@ -31,5 +31,5 @@ jobs:
       - name: Validate PR commits with commitlint
         if: github.event_name == 'pull_request'
         run: |
-          BASE_SHA=$(git merge-base origin/main HEAD)
+          BASE_SHA=$(git merge-base origin/master HEAD)
           npx commitlint --from $BASE_SHA --to HEAD --verbose
