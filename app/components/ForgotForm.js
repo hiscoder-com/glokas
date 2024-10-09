@@ -5,7 +5,7 @@ import { useState } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 
-import { forgotPassword } from '@/app/actions/actionsSupabase'
+import { forgotPassword } from '@/app/actions/authActions'
 import { CustomButton } from '@/app/components/CustomButton'
 import { CustomInput } from '@/app/components/CustomInput'
 

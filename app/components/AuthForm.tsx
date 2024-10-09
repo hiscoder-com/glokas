@@ -11,7 +11,7 @@ import { Tab, Tabs } from '@nextui-org/tabs'
 
 import { ApiResponse, errorField } from '@/app/types/api'
 
-import { login, signup } from '../actions/actionsSupabase'
+import { login, signup } from '../actions/authActions'
 import { CustomButton } from './CustomButton'
 import { CustomInput } from './CustomInput'
 import { CustomLink } from './CustomLink'
