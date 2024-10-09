@@ -1,0 +1,137 @@
+'use client'
+
+import { useState } from 'react'
+
+import Image from 'next/image'
+import Link from 'next/link'
+
+import { forgotPassword } from '@/app/actions/authActions'
+import { CustomButton } from '@/app/components/CustomButton'
+import { CustomInput } from '@/app/components/CustomInput'
+
+import { CustomLink } from './CustomLink'
+
+export default function ForgotForm() {
+  const [email, setEmail] = useState('')
+  const [data, setData] = useState(null)
+  const [errors, setErrors] = useState(null)
+  const [loading, setLoading] = useState(false)
+
+  const handle = async (event) => {
+    setLoading(true)
+    setErrors(null)
+    event.preventDefault()
+    const errors = []
+    if (!email) {
+      errors.push({ field: 'email', message: 'Email is required' })
+      setErrors({
+        message: '',
+        fields: errors,
+      })
+      setLoading(false)
+      return
+    }
+
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+      errors.push({ field: 'email', message: 'Unsupported email format' })
+      setErrors({
+        message: '',
+        fields: errors,
+      })
+      setLoading(false)
+      return
+    }
+
+    const response = await forgotPassword({ email })
+    if (response.status === 'error') {
+      setErrors({
+        message: response.message,
+        fields: response?.errors || [],
+      })
+    } else {
+      setData(response.data)
+    }
+    setLoading(false)
+  }
+
+  return (
+    <>
+      <div className="h-screen">
+        <div className="flex h-full w-full shrink-0 flex-col items-center bg-background px-14 pb-0 pt-5 md:w-[400px] lg:w-[480px]">
+          <Link href="/" className="mb-10">
+            <Image
+              src="/images/glokas-logo.svg"
+              alt="glokas logo"
+              width={181}
+              height={45}
+            />
+          </Link>
+          {data ? (
+            <div className="flex h-full w-full flex-col items-center justify-center gap-4 overflow-auto">
+              <Image
+                src="/mail.svg"
+                alt="Confirmation Mail Icon"
+                width={72}
+                height={72}
+              />
+              <p className="max-w-80 text-center text-large font-medium">
+                An email with instructions on how to reset your password has been sent to
+                your email address.
+              </p>
+            </div>
+          ) : (
+            <div className="flex w-full flex-col gap-7">
+              <div className="w-full rounded-medium border border-primary p-2.5 text-small font-medium text-primary">
+                If your account was created with an email address, enter your email below
+                and we will send a message to reset your password
+              </div>
+              <div>
+                <label
+                  htmlFor="email"
+                  className={`mb-2 text-medium font-medium ${errors?.fields.some((error) => error.field === 'email') ? 'text-danger' : ''}`}
+                >
+                  *Email
+                </label>
+                <CustomInput
+                  type="email"
+                  variant="bordered"
+                  size="sm"
+                  isRequired
+                  autoComplete="email"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  isInvalid={errors?.fields.some((error) => error.field === 'email')}
+                  errorMessage={errors?.fields
+                    .filter((error) => error.field === 'email')
+                    .map((error) => <p key={error.message}>{error.message}</p>)}
+                />
+              </div>
+              <div>
+                {errors?.message && (
+                  <p className="mb-2 text-small text-danger">{errors.message}</p>
+                )}
+                <CustomButton
+                  fullWidth
+                  onClick={handle}
+                  isDisabled={email === '' || loading}
+                  color="primary"
+                >
+                  Reset my password
+                </CustomButton>
+              </div>
+              <CustomLink
+                as={Link}
+                color="primary"
+                size="md"
+                className="flex justify-center font-[500]"
+                href="/"
+              >
+                Cancel
+              </CustomLink>
+            </div>
+          )}
+        </div>
+      </div>
+    </>
+  )
+}

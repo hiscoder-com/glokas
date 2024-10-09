@@ -1,0 +1,9 @@
+.*
+*.ico
+public
+styles
+*.lock
+*.json
+*.md
+*.sql
+*.toml
