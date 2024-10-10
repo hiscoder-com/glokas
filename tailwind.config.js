@@ -7,7 +7,14 @@ module.exports = {
     './node_modules/@nextui-org/theme/dist/**/*.{js,ts,jsx,tsx}',
   ],
   theme: {
-    extend: {},
+    extend: {
+      borderRadius: {
+        xlarge: '0.625rem',
+      },
+      fontSize: {
+        xlarge: '1.5rem',
+      },
+    },
   },
   darkMode: 'class',
   plugins: [
@@ -16,10 +23,10 @@ module.exports = {
         dividerWeight: '1px', // h-divider the default height applied to the divider component
         disabledOpacity: 1, // this value is applied as opacity-[value] when the component is disabled
         fontSize: {
-          tiny: '0.75rem', // text-tiny
-          small: '0.875rem', // text-small
-          medium: '1rem', // text-medium
-          large: '1.125rem', // text-large
+          tiny: '0.75rem',
+          small: '0.875rem',
+          medium: '1rem',
+          large: '1.125rem',
         },
         lineHeight: {
           tiny: '1rem', // text-tiny
@@ -31,6 +38,7 @@ module.exports = {
           small: '4px', // rounded-small
           medium: '6px', // rounded-medium
           large: '8px', // rounded-large
+          xlarge: '10px', // rounded-xlarge
         },
         borderWidth: {
           small: '1px', // border-small
