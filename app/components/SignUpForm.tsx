@@ -7,7 +7,7 @@ import { ApiResponse, errorField } from '@/app/types/api'
 import { signup } from '../actions/authActions'
 import { CustomButton } from './CustomButton'
 import { CustomInput } from './CustomInput'
-import EyePassword from './EyePassword'
+import PasswordInput from './PasswordInput'
 import PasswordStrengthMeter from './PasswordStrengthMeter'
 
 interface SignUpFormProps {
@@ -15,9 +15,6 @@ interface SignUpFormProps {
 }
 
 const SignUpForm: React.FC<SignUpFormProps> = ({ setIsSignupSuccess }) => {
-  const [isSignupPasswordVisible, setIsSignupPasswordVisible] = useState(false)
-  const [isSignupRepeatPasswordVisible, setIsSignupRepeatPasswordVisible] =
-    useState(false)
   const [signupErrors, setSignupErrors] = useState<{
     message: string
     fields: errorField[]
@@ -30,11 +27,6 @@ const SignUpForm: React.FC<SignUpFormProps> = ({ setIsSignupSuccess }) => {
   const [usernameSignup, setUsernameSignup] = useState('')
   const [loading, setLoading] = useState(false)
   const [passwordRepeat, setPasswordRepeat] = useState('')
-  const [passwordsMatch, setPasswordsMatch] = useState(true)
-
-  const toggleSignupVisibility = () => setIsSignupPasswordVisible((prev) => !prev)
-  const toggleSignupRepeatPasswordVisibility = () =>
-    setIsSignupRepeatPasswordVisible((prev) => !prev)
 
   const handleSignup = async () => {
     setSignupErrors({ message: '', fields: [] })
@@ -47,9 +39,6 @@ const SignUpForm: React.FC<SignUpFormProps> = ({ setIsSignupSuccess }) => {
       errors.push({ field: 'username', message: 'Username is required' })
     if (passwordSignup !== passwordRepeat) {
       errors.push({ field: 'passwordRepeat', message: 'Passwords do not match' })
-      setPasswordsMatch(false)
-    } else {
-      setPasswordsMatch(true)
     }
 
     if (errors.length > 0) {
@@ -123,6 +112,9 @@ const SignUpForm: React.FC<SignUpFormProps> = ({ setIsSignupSuccess }) => {
     }
   }
 
+  const getFieldError = (field: string) =>
+    signupErrors.fields.find((error) => error.field === field)?.message
+
   return (
     <>
       <label
@@ -184,82 +176,18 @@ const SignUpForm: React.FC<SignUpFormProps> = ({ setIsSignupSuccess }) => {
         }
       />
 
-      <label
-        className={`mb-2 text-medium font-medium ${signupErrors?.fields.some((error) => error.field === 'password') ? 'text-danger' : ''}`}
-      >
-        Password
-      </label>
-      <CustomInput
-        variant="bordered"
-        size="sm"
+      <PasswordInput
+        label="Password"
         value={passwordSignup}
-        onChange={(e) => setPasswordSignup(e.target.value)}
-        endContent={
-          <>
-            <EyePassword
-              isVisible={isSignupPasswordVisible}
-              toggleVisibility={toggleSignupVisibility}
-            />
-            {signupErrors?.fields.some((error) => error.field === 'password') && (
-              <Image
-                src={'/icons/warning.svg'}
-                alt="warning"
-                width={18}
-                height={18}
-                className="mr-2 h-[38px] w-[38px] p-2 pl-0"
-              />
-            )}
-          </>
-        }
-        type={isSignupPasswordVisible ? 'text' : 'password'}
-        isRequired
-        isInvalid={signupErrors?.fields.some((error) => error.field === 'password')}
-        errorMessage={signupErrors?.fields
-          .filter((error) => error.field === 'password')
-          .map((error) => <p key={error.message}>{error.message}</p>)}
+        onChange={setPasswordSignup}
+        error={getFieldError('password')}
       />
 
-      <label
-        className={`mb-2 text-medium font-medium ${!passwordsMatch || signupErrors?.fields.some((error) => error.field === 'passwordRepeat') ? 'text-danger' : ''}`}
-      >
-        Repeat Password
-      </label>
-      <CustomInput
-        variant="bordered"
-        size="sm"
+      <PasswordInput
+        label="Repeat Password"
         value={passwordRepeat}
-        onChange={(e) => setPasswordRepeat(e.target.value)}
-        endContent={
-          <>
-            <EyePassword
-              isVisible={isSignupRepeatPasswordVisible}
-              toggleVisibility={toggleSignupRepeatPasswordVisibility}
-            />
-            {(!passwordsMatch ||
-              signupErrors?.fields.some((error) => error.field === 'passwordRepeat')) && (
-              <Image
-                src={'/icons/warning.svg'}
-                alt="warning"
-                width={18}
-                height={18}
-                className="mr-2 h-[38px] w-[38px] p-2 pl-0"
-              />
-            )}
-          </>
-        }
-        type={isSignupRepeatPasswordVisible ? 'text' : 'password'}
-        isRequired
-        isInvalid={
-          !passwordsMatch ||
-          signupErrors?.fields.some((error) => error.field === 'passwordRepeat')
-        }
-        errorMessage={
-          !passwordsMatch
-            ? 'Passwords do not match'
-            : signupErrors?.fields
-                .filter((error) => error.field === 'passwordRepeat')
-                .map((error) => <p key={error.message}>{error.message}</p>)
-        }
+        onChange={setPasswordRepeat}
+        error={getFieldError('passwordRepeat')}
       />
 
       {passwordSignup.length > 0 && (

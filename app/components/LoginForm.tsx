@@ -162,7 +162,7 @@ const LoginForm: React.FC<LoginFormProps> = ({ redirectedFrom }) => {
         as={Link}
         color="primary"
         size="md"
-        className="mt-8 flex justify-center font-[500]"
+        className="mt-8 flex justify-center font-medium"
         href="/forgot-password"
       >
         Forgot password?
