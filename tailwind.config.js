@@ -61,6 +61,7 @@ module.exports = {
               '600': '#04975b',
               '700': '#03794c',
               '800': '#064e34',
+              '900': '#21A5AC',
               foreground: '#FFFFFF',
               DEFAULT: '#0ead69',
             },

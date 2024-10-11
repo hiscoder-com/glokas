@@ -28,7 +28,7 @@ export const CustomInput = extendVariants(Input, {
           'data-[active=true]:bg-secondary-50 data-[active=true]:border-secondary',
           'group-data-[focus=true]:border-secondary shadow-none',
         ],
-        input: ['font-[600]'],
+        input: ['font-semibold'],
       },
       bordered: {
         base: 'mt-2 mb-1',
@@ -38,7 +38,7 @@ export const CustomInput = extendVariants(Input, {
           'data-[active=true]:bg-white data-[active=true]:border-secondary',
           'group-data-[focus=true]:border-secondary shadow-none',
         ],
-        input: ['font-[500]'],
+        input: ['font-medium'],
       },
     },
     color: {
