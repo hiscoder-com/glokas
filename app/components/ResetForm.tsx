@@ -123,7 +123,7 @@ export default function ResetForm(): JSX.Element {
 
   return (
     <div className="flex min-h-screen w-full bg-[#21A5AC]">
-      <div className="ml-auto flex w-full flex-col justify-center bg-background md:w-[44%]">
+      <div className="ml-auto flex w-full flex-col justify-center bg-background xl:w-[44%]">
         <div className="mx-auto mt-20 flex h-full w-full flex-col items-center overflow-hidden px-5 md:mt-48 md:w-[54%] md:px-0">
           <Link href="/" className="mb-20">
             <Image
