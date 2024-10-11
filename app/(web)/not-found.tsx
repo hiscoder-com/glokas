@@ -3,10 +3,10 @@ import Link from 'next/link'
 export default function NotFound() {
   return (
     <div className="mb-6 flex flex-col items-center justify-center bg-white px-4 py-24 text-center">
-      <h1 className="text-5xl font-bold text-secondary-800">404</h1>
-      <p className="mt-4 text-xl text-secondary-600">Sorry, this page isnt available.</p>
+      <h1 className="text-5xl font-bold text-secondary-500">404</h1>
+      <p className="mt-4 text-xl text-secondary-400">Sorry, this page isnt available.</p>
 
-      <p className="mt-6 text-secondary-600">
+      <p className="mt-6 text-secondary-400">
         The link you followed may be broken, or the page may have been removed.
       </p>
 

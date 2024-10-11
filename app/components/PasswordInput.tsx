@@ -50,6 +50,7 @@ const PasswordInput: React.FC<PasswordInputProps> = ({
         isRequired
         isInvalid={!!error}
         errorMessage={error && <p>{error}</p>}
+        className="mb-3"
       />
     </>
   )

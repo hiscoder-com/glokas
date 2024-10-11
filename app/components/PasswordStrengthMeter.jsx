@@ -68,7 +68,7 @@ export default function PasswordStrengthMeter({ password }) {
 
       {message && color !== 'gray' && (
         <div className="flex flex-col">
-          <span className="font-sans font-semibold text-secondary-600">
+          <span className="font-sans font-semibold text-secondary-400">
             Strength{' '}
             <span
               className={
@@ -82,7 +82,7 @@ export default function PasswordStrengthMeter({ password }) {
               {strength}
             </span>
           </span>
-          <span className="font-sans text-sm text-secondary-400">{message}</span>
+          <span className="font-sans text-sm text-secondary-300">{message}</span>
         </div>
       )}
     </div>

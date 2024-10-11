@@ -191,7 +191,7 @@ const SignUpForm: React.FC<SignUpFormProps> = ({ setIsSignupSuccess }) => {
       />
 
       {passwordSignup.length > 0 && (
-        <div className="mb-5">
+        <div className="py-1.5">
           <PasswordStrengthMeter password={passwordSignup} />
         </div>
       )}
@@ -200,7 +200,7 @@ const SignUpForm: React.FC<SignUpFormProps> = ({ setIsSignupSuccess }) => {
         <p className="my-4 text-small text-danger">{signupErrors.message}</p>
       )}
 
-      <CustomButton fullWidth onClick={handleSignup} isLoading={loading}>
+      <CustomButton fullWidth onClick={handleSignup} isLoading={loading} className="mt-3">
         Sign up
       </CustomButton>
     </>

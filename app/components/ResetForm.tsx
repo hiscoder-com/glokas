@@ -150,7 +150,7 @@ export default function ResetForm(): JSX.Element {
             />
 
             {password.length > 0 && (
-              <div className="mb-5">
+              <div className="py-1.5">
                 <PasswordStrengthMeter password={password} />
               </div>
             )}
@@ -164,6 +164,7 @@ export default function ResetForm(): JSX.Element {
               onClick={handleReset}
               isDisabled={password === '' || confirmPassword === '' || loading}
               color="primary"
+              className="mt-3"
             >
               Change Password
             </CustomButton>
@@ -172,7 +173,7 @@ export default function ResetForm(): JSX.Element {
               as={Link}
               color="primary"
               size="md"
-              className="mt-8 flex justify-center font-medium"
+              className="mt-7 flex justify-center font-medium"
               href="/"
             >
               Cancel

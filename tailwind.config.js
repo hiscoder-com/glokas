@@ -53,7 +53,6 @@ module.exports = {
             foreground: '#2D2D2E',
             // https://uicolors.app/create используем для генерации палитры цветов
             primary: {
-              '50': '#ecfdf3',
               '100': '#d1fae1',
               '200': '#a7f3c9',
               '300': '#6de8ab',
@@ -61,11 +60,24 @@ module.exports = {
               '500': '#0ead69',
               '600': '#04975b',
               '700': '#03794c',
-              '800': '#05603d',
-              '900': '#064e34',
-              '950': '#022c1e',
+              '800': '#064e34',
               foreground: '#FFFFFF',
               DEFAULT: '#0ead69',
+            },
+            secondary: {
+              '50': '#f5f5f6',
+              '100': '#e6e6e7',
+              '200': '#cacaca',
+              '300': '#878889',
+              '400': '#5c5d5e',
+              '500': '#444446',
+              foreground: '#FFFFFF',
+              DEFAULT: '#2d2d2e',
+            },
+            danger: {
+              '500': '#ea4f57',
+              foreground: '#FFFFFF',
+              DEFAULT: '#EA4F57',
             },
           },
           layout: {

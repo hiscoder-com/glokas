@@ -148,7 +148,7 @@ const LoginForm: React.FC<LoginFormProps> = ({ redirectedFrom }) => {
       <Checkbox
         size="sm"
         radius="lg"
-        className="mb-6 font-medium"
+        className="mb-4 font-medium"
         classNames={{ label: 'text-medium' }}
       >
         Remember me
@@ -162,7 +162,7 @@ const LoginForm: React.FC<LoginFormProps> = ({ redirectedFrom }) => {
         as={Link}
         color="primary"
         size="md"
-        className="mt-8 flex justify-center font-medium"
+        className="mt-7 flex justify-center font-medium"
         href="/forgot-password"
       >
         Forgot password?

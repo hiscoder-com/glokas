@@ -10,19 +10,20 @@ export const CustomButton = extendVariants(Button, {
     color: {
       primary: 'text-white',
       secondary:
-        'text-primary-900 bg-primary-100 hover:bg-primary-200 focus:bg-primary-300 disabled:bg-neutral-400 disabled:text-neutral-200',
+        'text-primary-800 bg-primary-100 hover:bg-primary-200 focus:bg-primary-300 disabled:bg-neutral-400 disabled:text-neutral-200',
     },
     isDisabled: {
       true: 'cursor-not-allowed',
     },
     size: {
-      md: 'h-auto px-8 py-4 text-medium font-[600] rounded-large',
+      md: 'h-auto px-8 py-4 text-medium font-semibold',
     },
   },
   defaultVariants: {
     color: 'primary',
     variant: 'solid',
     size: 'md',
+    radius: 'lg',
   },
   compoundVariants: [
     {

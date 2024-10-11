@@ -31,7 +31,7 @@ export const CustomInput = extendVariants(Input, {
         input: ['font-[600]'],
       },
       bordered: {
-        base: 'mt-2.5 mb-3',
+        base: 'mt-2 mb-1',
         inputWrapper: [
           'shadow-none border-1 bg-white border border-secondary-200 px-5 py-4 gap-3',
           'data-[hover=true]:bg-white',
@@ -111,7 +111,7 @@ export const CustomInput = extendVariants(Input, {
     variant: 'default',
     color: 'default',
     size: 'md',
-    radius: 'md',
+    radius: 'lg',
     fullWidth: true,
     labelPlacement: 'outside',
     isDisabled: false,

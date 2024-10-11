@@ -18,7 +18,7 @@ const CustomToast: React.FC<CustomToastProps> = ({ message, type, onClose }) => 
       break
     case 'neutral':
     default:
-      backgroundColor = 'bg-secondary-400/50'
+      backgroundColor = 'bg-secondary-300/50'
       backgroundIconColor = 'text-secondary'
       break
   }
