@@ -63,6 +63,13 @@ module.exports = {
               foreground: '#FFFFFF',
               DEFAULT: '#0ead69',
             },
+            gray: {
+              '100': '#E7E7E7',
+              '200': '#D1D1D1',
+              '300': '#B0B0B0',
+              foreground: '#E7E7E7',
+              DEFAULT: '#E7E7E7 ',
+            },
           },
           layout: {
             hoverOpacity: 1, //  this value is applied as opacity-[value] when the component is hovered
