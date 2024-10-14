@@ -68,7 +68,7 @@ module.exports = {
               '200': '#D1D1D1',
               '300': '#B0B0B0',
               foreground: '#E7E7E7',
-              DEFAULT: '#E7E7E7 ',
+              DEFAULT: '#E7E7E7',
             },
           },
           layout: {
