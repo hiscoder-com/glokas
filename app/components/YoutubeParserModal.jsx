@@ -23,7 +23,7 @@ const YoutubeParserModal = () => {
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50">
           <div className="relative h-[46vh] w-[40vw] rounded-2xl bg-white p-[52px]">
             <button
-              className="absolute right-4 top-4 text-gray-500 hover:text-gray-700"
+              className="text-gray-500 hover:text-gray-700 absolute right-4 top-4" // prettier-ignore
               onClick={closeModal}
             >
               <Image
@@ -54,7 +54,7 @@ const YoutubeParserModal = () => {
               />
               <button
                 onClick={handleParseClick}
-                className="h-[48px] w-[8vw] rounded-md bg-gray-300 px-4 text-gray-100 hover:bg-gray-400"
+                className="hover:bg-gray-400 h-[48px] w-[8vw] rounded-md bg-gray-300 px-4 text-gray-100" // prettier-ignore
               >
                 Parse
               </button>
