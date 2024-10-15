@@ -57,12 +57,7 @@ const YoutubeParserModal = () => {
                 value={youtubeUrl}
                 onChange={(e) => setYoutubeUrl(e.target.value)}
               />
-              <CustomButton
-                onClick={handleParseClick}
-                className=" h-[48px] w-[8vw] rounded-md bg-gray-300 px-4 text-gray-100" // prettier-ignore
-              >
-                Parse
-              </CustomButton>
+              <CustomButton onClick={handleParseClick}>Parse</CustomButton>
             </div>
             <p className="mb-8 mt-2 text-xs text-gray-300">
               Example https://www.youtube.com/watch?v=9eHseYggb-I
