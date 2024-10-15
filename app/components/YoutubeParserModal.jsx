@@ -2,6 +2,8 @@ import { useState } from 'react'
 
 import Image from 'next/image'
 
+import { CustomButton } from './CustomButton'
+
 const YoutubeParserModal = () => {
   const [isOpen, setIsOpen] = useState(false)
   const [youtubeUrl, setYoutubeUrl] = useState('')
@@ -42,8 +44,8 @@ const YoutubeParserModal = () => {
               <Image
                 src="/icons/youtube.svg"
                 alt="YouTube"
-                width={100}
-                height={100}
+                width={93}
+                height={67}
                 priority={true}
               />
               <h2 className="font-roboto text-4xl">YouTube</h2>
@@ -55,12 +57,12 @@ const YoutubeParserModal = () => {
                 value={youtubeUrl}
                 onChange={(e) => setYoutubeUrl(e.target.value)}
               />
-              <button
+              <CustomButton
                 onClick={handleParseClick}
-                className="hover:bg-gray-400 h-[48px] w-[8vw] rounded-md bg-gray-300 px-4 text-gray-100" // prettier-ignore
+                className=" h-[48px] w-[8vw] rounded-md bg-gray-300 px-4 text-gray-100" // prettier-ignore
               >
                 Parse
-              </button>
+              </CustomButton>
             </div>
             <p className="mb-8 mt-2 text-xs text-gray-300">
               Example https://www.youtube.com/watch?v=9eHseYggb-I
