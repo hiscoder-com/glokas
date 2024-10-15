@@ -11,6 +11,16 @@ module.exports = {
       fontFamily: {
         roboto: ['Roboto', 'sans-serif'],
       },
+      fontSize: {
+        xlarge: '1.25rem', // text-xlarge
+        xxlarge: '1.5rem', // text-xxlarge
+        xxxlarge: '1.75rem', // text-xxxlarge
+        xxxxlarge: '2rem', // text-xxxxlarge
+        mega: '2.625rem', // text-mega
+      },
+      borderRadius: {
+        mega: '2rem', // rounded-mega
+      },
     },
   },
   darkMode: 'class',
@@ -69,6 +79,21 @@ module.exports = {
               '300': '#B0B0B0',
               foreground: '#E7E7E7',
               DEFAULT: '#E7E7E7',
+            },
+            cornflowerBlue: {
+              '50': '#EFF5FE',
+              '100': '#E1EFFE',
+              '200': '#C9DFFC',
+              '300': '#a0c0f0',
+              '400': '#739fe7',
+              '500': '#527ddf',
+              '600': '#3d61d3',
+              '700': '#344fc1',
+              '800': '#30419d',
+              '900': '#2b3a7d',
+              '950': '#1d2449',
+              foreground: '#FFFFFF',
+              DEFAULT: '#527ddf',
             },
           },
           layout: {
