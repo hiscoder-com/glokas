@@ -15,13 +15,16 @@ const YoutubeParserModal = () => {
 
   return (
     <div>
-      <button className="rounded-md bg-primary px-4 py-2 text-white" onClick={openModal}>
+      <button
+        className="rounded-md bg-primary px-4 py-2 text-primary-foreground"
+        onClick={openModal}
+      >
         Open Modal
       </button>
 
       {isOpen && (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50">
-          <div className="relative h-[46vh] w-[40vw] rounded-2xl bg-white p-[52px]">
+          <div className="relative h-[46vh] w-[40vw] rounded-2xl bg-primary-foreground p-[52px]">
             <button
               className="text-gray-500 hover:text-gray-700 absolute right-4 top-4" // prettier-ignore
               onClick={closeModal}
