@@ -34,6 +34,11 @@ module.exports = {
           small: '0.875rem', // text-small
           medium: '1rem', // text-medium
           large: '1.125rem', // text-large
+          xlarge: '1.25rem',
+          xxlarge: '1.5rem',
+          xxxlarge: '1.75rem',
+          xxxxlarge: '2rem',
+          giant: '2.625rem',
         },
         lineHeight: {
           tiny: '1rem', // text-tiny
@@ -102,6 +107,21 @@ module.exports = {
               '950': '#1d2449',
               foreground: '#FFFFFF',
               DEFAULT: '#527ddf',
+            },
+            breakerBay: {
+              '50': '#effcfb',
+              '100': '#d6f7f7',
+              '200': '#b1eff0',
+              '300': '#7ce2e4',
+              '400': '#3fccd1',
+              '500': '#21a5ac',
+              '600': '#208e9a',
+              '700': '#20737e',
+              '800': '#235d67',
+              '900': '#214e58',
+              '950': '#10333c',
+              foreground: '#FFFFFF',
+              DEFAULT: '#21a5ac',
             },
           },
           layout: {
