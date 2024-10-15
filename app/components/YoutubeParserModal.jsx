@@ -65,7 +65,7 @@ const YoutubeParserModal = () => {
             <p className="mb-8 mt-2 text-xs text-gray-300">
               Example https://www.youtube.com/watch?v=9eHseYggb-I
             </p>
-            <div className="mt-6 rounded-md bg-[#D6F7F7] p-4 text-base text-[#20737E]">
+            <div className="mt-6 rounded-md bg-breakerBay-100 p-4 text-base text-breakerBay-700">
               Helper text: Lorem ipsum dolor sit amet consectetur. Id enim eu maecenas at.
               Tortor diam nisl eu suspendisse eros scelerisque. Elementum et neque viverra
               ipsum faucibus. Porttitor et nisi aenean id dui risus quis nunc ut.
