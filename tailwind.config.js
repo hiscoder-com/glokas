@@ -59,6 +59,21 @@ module.exports = {
               foreground: '#FFFFFF',
               DEFAULT: '#0ead69',
             },
+            breakerBay: {
+              '50': '#effcfb',
+              '100': '#d6f7f7',
+              '200': '#b1eff0',
+              '300': '#7ce2e4',
+              '400': '#3fccd1',
+              '500': '#21a5ac',
+              '600': '#208e9a',
+              '700': '#20737e',
+              '800': '#235d67',
+              '900': '#214e58',
+              '950': '#10333c',
+              foreground: '#FFFFFF',
+              DEFAULT: '#21a5ac',
+            },
           },
           layout: {
             hoverOpacity: 1, //  this value is applied as opacity-[value] when the component is hovered
