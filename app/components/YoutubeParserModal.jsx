@@ -3,16 +3,32 @@ import { useState } from 'react'
 import Image from 'next/image'
 
 import { CustomButton } from './CustomButton'
+import { CustomInput } from './CustomInput'
 
 const YoutubeParserModal = () => {
   const [isOpen, setIsOpen] = useState(false)
   const [youtubeUrl, setYoutubeUrl] = useState('')
+  const [error, setError] = useState('')
 
   const openModal = () => setIsOpen(true)
-  const closeModal = () => setIsOpen(false)
+  const closeModal = () => {
+    setIsOpen(false)
+    setYoutubeUrl('')
+    setError('')
+  }
+
+  const validateUrl = (url) => {
+    const regex = /^https?:\/\/(www\.)?(youtube\.com\/watch\?v=|youtu\.be\/)[\w-]{11}$/
+    return regex.test(url)
+  }
 
   const handleParseClick = () => {
-    console.log(`Parsed URL: ${youtubeUrl}`)
+    if (validateUrl(youtubeUrl)) {
+      console.log(`Parsed URL: ${youtubeUrl}`)
+      setError('')
+    } else {
+      setError('Incorrect link. Example https://www.youtube.com/watch?v=Dl56yoDQAJc') // Сообщение об ошибке
+    }
   }
 
   return (
@@ -50,21 +66,27 @@ const YoutubeParserModal = () => {
               />
               <h2 className="font-roboto text-[42px]">YouTube</h2>
             </div>
-            <div className="mb-1 flex items-center gap-3">
-              <input
-                type="text"
-                className="h-[57px] w-full rounded-md border border-gray-200 px-4 py-2 opacity-100"
-                value={youtubeUrl}
-                onChange={(e) => setYoutubeUrl(e.target.value)}
-              />
-              <CustomButton onClick={handleParseClick}>Parse</CustomButton>
+            <div className="mb-12">
+              <div className="flex items-center gap-3">
+                <CustomInput
+                  className="mt-9"
+                  variant="bordered"
+                  size="lg"
+                  value={youtubeUrl}
+                  onChange={(e) => {
+                    setYoutubeUrl(e.target.value)
+                    setError('')
+                  }}
+                  isInvalid={!!error}
+                  description=" Example: https://www.youtube.com/watch?v=Dl56yoDQAJc"
+                  errorMessage={error}
+                />
+                <CustomButton onClick={handleParseClick}>Parse</CustomButton>
+              </div>
             </div>
-            <p className="mb-12 text-xs text-black-300">
-              Example https://www.youtube.com/watch?v=9eHseYggb-I
-            </p>
 
             <div
-              className="max-h-32 overflow-y-auto rounded-xlarge bg-tertiary-100 p-4 text-medium text-tertiary-700 md:text-large" //prettier-ignore
+              className="max-h-32 overflow-y-auto rounded-xlarge bg-tertiary-100 p-4 text-medium text-tertiary-700 md:text-large" // prettier-ignore
             >
               Helper text: Lorem ipsum dolor sit amet consectetur. Id enim eu maecenas at.
               Tortor diam nisl eu suspendisse eros scelerisque. Elementum et neque viverra
