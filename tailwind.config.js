@@ -19,6 +19,7 @@ module.exports = {
         mega: '2.625rem', // text-mega
       },
       borderRadius: {
+        xlarge: '10px', // rounded-xlarge
         mega: '2rem', // rounded-mega
       },
     },
@@ -34,11 +35,11 @@ module.exports = {
           small: '0.875rem', // text-small
           medium: '1rem', // text-medium
           large: '1.125rem', // text-large
-          xlarge: '1.25rem',
-          xxlarge: '1.5rem',
-          xxxlarge: '1.75rem',
-          xxxxlarge: '2rem',
-          giant: '2.625rem',
+          xlarge: '1.25rem', //(20px)
+          xxlarge: '1.5rem', // (24px)
+          xxxlarge: '1.75rem', //(28px)
+          xxxxlarge: '2rem', //(32px)
+          giant: '2.625rem', //(42px)
         },
         lineHeight: {
           tiny: '1rem', // text-tiny
@@ -108,7 +109,7 @@ module.exports = {
               foreground: '#FFFFFF',
               DEFAULT: '#527ddf',
             },
-            breakerBay: {
+            tertiary: {
               '50': '#effcfb',
               '100': '#d6f7f7',
               '200': '#b1eff0',

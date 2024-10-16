@@ -26,9 +26,9 @@ const YoutubeParserModal = () => {
 
       {isOpen && (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50">
-          <div className="relative h-[46vh] w-[40vw] rounded-2xl bg-primary-foreground p-[52px]">
+          <div className="relative max-h-[90vh] w-full max-w-3xl overflow-y-auto rounded-2xl bg-primary-foreground px-16 pb-16 pt-[52px]">
             <button
-              className="text-gray-500 hover:text-gray-700 absolute right-4 top-4" // prettier-ignore
+              className="absolute right-4 top-4 text-gray-500 hover:text-gray-700"
               onClick={closeModal}
             >
               <Image
@@ -40,7 +40,7 @@ const YoutubeParserModal = () => {
               />
             </button>
 
-            <div className="mb-14 flex items-center justify-center gap-3 space-x-4">
+            <div className="mb-12 flex items-center justify-center gap-3">
               <Image
                 src="/icons/youtube.svg"
                 alt="YouTube"
@@ -48,21 +48,24 @@ const YoutubeParserModal = () => {
                 height={67}
                 priority={true}
               />
-              <h2 className="font-roboto text-4xl">YouTube</h2>
+              <h2 className="font-roboto text-[42px]">YouTube</h2>
             </div>
-            <div className="mb-2 mt-0 flex items-center gap-3">
+            <div className="mb-1 flex items-center gap-3">
               <input
                 type="text"
-                className="h-[48px] w-[40vw] rounded-md border border-gray-200 px-4 py-2 opacity-100"
+                className="h-[57px] w-full rounded-md border border-gray-200 px-4 py-2 opacity-100"
                 value={youtubeUrl}
                 onChange={(e) => setYoutubeUrl(e.target.value)}
               />
               <CustomButton onClick={handleParseClick}>Parse</CustomButton>
             </div>
-            <p className="mb-8 mt-2 text-xs text-gray-300">
+            <p className="mb-12 text-xs text-black-300">
               Example https://www.youtube.com/watch?v=9eHseYggb-I
             </p>
-            <div className="mt-6 rounded-md bg-breakerBay-100 p-4 text-base text-breakerBay-700">
+
+            <div
+              className="max-h-32 overflow-y-auto rounded-xlarge bg-tertiary-100 p-4 text-medium text-tertiary-700 md:text-large" //prettier-ignore
+            >
               Helper text: Lorem ipsum dolor sit amet consectetur. Id enim eu maecenas at.
               Tortor diam nisl eu suspendisse eros scelerisque. Elementum et neque viverra
               ipsum faucibus. Porttitor et nisi aenean id dui risus quis nunc ut.
