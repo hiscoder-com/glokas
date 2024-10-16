@@ -7,7 +7,23 @@ module.exports = {
     './node_modules/@nextui-org/theme/dist/**/*.{js,ts,jsx,tsx}',
   ],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        roboto: ['Roboto', 'sans-serif'],
+      },
+      fontSize: {
+        xlarge: '1.25rem', // text-xlarge (20px)
+        xxlarge: '1.5rem', // text-xxlarge (24px)
+        xxxlarge: '1.75rem', // text-xxxlarge (28px)
+        xxxxlarge: '2rem', // text-xxxxlarge (32px)
+        mega: '2.625rem', // text-mega (42px)
+      },
+      borderRadius: {
+        xlarge: '10px', // rounded-xlarge
+        xxxxlarge: '18px', // rounded-xxxxlarge
+        mega: '2rem', // rounded-mega
+      },
+    },
   },
   darkMode: 'class',
   plugins: [
@@ -59,7 +75,22 @@ module.exports = {
               foreground: '#FFFFFF',
               DEFAULT: '#0ead69',
             },
-            breakerBay: {
+            black: {
+              '50': '#f6f6f6',
+              '100': '#e7e7e7',
+              '200': '#d1d1d1',
+              '300': '#b0b0b0',
+              '400': '#888888',
+              '500': '#6d6d6d',
+              '600': '#5d5d5d',
+              '700': '#4f4f4f',
+              '800': '#454545',
+              '900': '#3d3d3d',
+              '950': '#000000',
+              foreground: '#FFFFFF',
+              DEFAULT: '#6d6d6d',
+            },
+            tertiary: {
               '50': '#effcfb',
               '100': '#d6f7f7',
               '200': '#b1eff0',
