@@ -1,6 +1,7 @@
 'use client'
 
 import { CustomButton } from '../components/CustomButton'
+import VideoCard from '../components/VideoCard'
 
 const Page: React.FC = () => {
   return (
@@ -42,6 +43,7 @@ const Page: React.FC = () => {
               </svg>
             </div>
           </CustomButton>
+          <VideoCard />
         </div>
       </main>
     </>
