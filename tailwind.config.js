@@ -93,7 +93,6 @@ module.exports = {
               DEFAULT: '#21a5ac',
             },
             black: {
-              '00': '#FFFFFF',
               '50': '#f6f6f6',
               '100': '#e7e7e7',
               '200': '#d1d1d1',

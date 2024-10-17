@@ -85,7 +85,7 @@ const CustomSelectSearch = ({ languages, placeholder }: CustomSelectSearchProps)
       </div>
 
       {isOpen && (
-        <div className="bg-black-00 absolute z-10 mt-1 w-full rounded-medium border border-black-100 shadow-lg">
+        <div className="absolute z-10 mt-1 w-full rounded-medium border border-black-100 bg-white shadow-lg">
           <div className="relative w-full">
             <div className="absolute left-3 top-1/2 -translate-y-1/2 transform">
               <Image src="/icons/search.svg" alt="Search" width={18} height={18} />
@@ -113,12 +113,12 @@ const CustomSelectSearch = ({ languages, placeholder }: CustomSelectSearchProps)
                     className={`relative mr-2 inline-block h-4 w-4 rounded border border-gray-300 ${
                       selectedLanguages.includes(language)
                         ? 'bg-secondary-600'
-                        : 'bg-black-00'
+                        : 'bg-white'
                     }`}
                   >
                     {selectedLanguages.includes(language) && (
                       <svg
-                        className="text-black-00 absolute left-0 top-0 h-full w-full"
+                        className="absolute left-0 top-0 h-full w-full text-white"
                         viewBox="0 0 24 24"
                         fill="none"
                         stroke="currentColor"
