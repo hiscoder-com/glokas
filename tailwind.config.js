@@ -11,13 +11,6 @@ module.exports = {
       fontFamily: {
         roboto: ['Roboto', 'sans-serif'],
       },
-      fontSize: {
-        xlarge: '1.25rem', // text-xlarge (20px)
-        xxlarge: '1.5rem', // text-xxlarge (24px)
-        xxxlarge: '1.75rem', // text-xxxlarge (28px)
-        xxxxlarge: '2rem', // text-xxxxlarge (32px)
-        mega: '2.625rem', // text-mega (42px)
-      },
       borderRadius: {
         xlarge: '0.625rem', // rounded-xlarge
         xxxxlarge: '1,125rem', // rounded-xxxxlarge
@@ -31,12 +24,6 @@ module.exports = {
       layout: {
         dividerWeight: '1px', // h-divider the default height applied to the divider component
         disabledOpacity: 1, // this value is applied as opacity-[value] when the component is disabled
-        fontSize: {
-          tiny: '0.75rem', // text-tiny
-          small: '0.875rem', // text-small
-          medium: '1rem', // text-medium
-          large: '1.125rem', // text-large
-        },
         lineHeight: {
           tiny: '1rem', // text-tiny
           small: '1.25rem', // text-small

@@ -54,14 +54,14 @@ const LanguageSelect = () => {
   return (
     <div className="relative w-[456px]" ref={dropdownRef}>
       <div
-        className={`relative flex h-auto cursor-pointer flex-wrap items-center gap-2 rounded-medium border border-gray-300 p-[8px_16px] transition-opacity`}
+        className={`relative flex h-auto cursor-pointer flex-wrap items-center gap-2 rounded-medium border border-black-100 p-[8px_16px] transition-opacity`}
         onClick={toggleDropdown}
       >
         {selectedLanguages.length > 0 ? (
           selectedLanguages.map((language) => (
             <div
               key={language}
-              className="flex items-center rounded-medium bg-tertiary-100 px-2 py-1 text-small text-black-950"
+              className="flex items-center rounded-medium bg-tertiary-100 px-2 py-1 text-sm text-black-950"
             >
               {language}
               <button
@@ -71,15 +71,15 @@ const LanguageSelect = () => {
                   handleRemoveLanguage(language)
                 }}
               >
-                <Image src="/icons/close.svg" alt="Remove" width={12} height={12} />
+                <Image src="/icons/close.svg" alt="Remove" width={16} height={16} />
               </button>
             </div>
           ))
         ) : (
-          <span>Select languages</span>
+          <span className="text-sm text-black-950">Select languages</span>
         )}
 
-        <div className="absolute right-2 top-1">
+        <div className="absolute right-2 top-3">
           <Image
             src={isOpen ? '/icons/up.svg' : '/icons/down.svg'}
             alt="Dropdown icon"
