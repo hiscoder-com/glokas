@@ -90,14 +90,14 @@ const LanguageSelect = () => {
       </div>
 
       {isOpen && (
-        <div className="absolute z-10 mt-1 w-full rounded-md border border-gray-300 bg-white shadow-lg">
+        <div className="bg-black-00 absolute z-10 mt-1 w-full rounded-medium border border-black-100 shadow-lg">
           <div className="relative w-full">
             <div className="absolute left-3 top-1/2 -translate-y-1/2 transform">
               <Image src="/icons/search.svg" alt="Search" width={18} height={18} />
             </div>
             <input
               type="text"
-              className="w-full border-b border-gray-300 p-2 pl-10"
+              className="w-full border-b border-black-100 p-2 pl-10"
               placeholder="Search language by name..."
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
@@ -107,10 +107,7 @@ const LanguageSelect = () => {
           <div className="max-h-48 overflow-y-auto">
             {filteredLanguages.length > 0 ? (
               filteredLanguages.map((language) => (
-                <label
-                  key={language}
-                  className="flex cursor-pointer items-center p-2 hover:bg-gray-100"
-                >
+                <label key={language} className="flex cursor-pointer items-center p-2">
                   <input
                     type="checkbox"
                     className="hidden"
@@ -121,24 +118,28 @@ const LanguageSelect = () => {
                     className={`relative mr-2 inline-block h-4 w-4 rounded border border-gray-300 ${
                       selectedLanguages.includes(language)
                         ? 'bg-secondary-600'
-                        : 'bg-white'
+                        : 'bg-black-00'
                     }`}
                   >
                     {selectedLanguages.includes(language) && (
-                      <Image
-                        className="absolute left-0 top-0 h-full w-full text-white"
-                        src="/icons/daw.svg"
-                        alt="Checked"
-                        width={9}
-                        height={7}
-                      />
+                      <svg
+                        className="text-black-00 absolute left-0 top-0 h-full w-full"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        strokeWidth="3"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      >
+                        <polyline points="20 6 9 17 4 12" />
+                      </svg>
                     )}
                   </span>
                   {language}
                 </label>
               ))
             ) : (
-              <div className="p-2 text-gray-500">No results found</div>
+              <div className="p-2 text-black-500">No results found</div>
             )}
           </div>
         </div>
