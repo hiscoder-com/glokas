@@ -61,7 +61,7 @@ export default function ForgotForm() {
           <Link href="/" className="mb-20">
             <Image
               src="/images/glokas-logo.svg"
-              alt="glokas logo"
+              alt="Glokas logo"
               width={341}
               height={59}
             />
