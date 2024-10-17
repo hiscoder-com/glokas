@@ -22,7 +22,7 @@ function AuthForm() {
   }
 
   return (
-    <div className="flex min-h-screen w-full bg-primary-900">
+    <div className="flex min-h-screen w-full bg-secondary-900">
       <div className="ml-auto flex w-full flex-col justify-center bg-background xl:w-[44%]">
         <div className="mx-auto mt-20 flex h-full w-full flex-col items-center overflow-hidden px-5 md:mt-48 md:w-[54%] md:px-0">
           <Link href="/" className="mb-20">
@@ -38,12 +38,12 @@ function AuthForm() {
               variant="underlined"
               classNames={{
                 tabList:
-                  'w-full flex-shrink-0 flex-grow-0 gap-0 basis-auto p-0 shadow-[inset_0px_-1px_0px_0px_hsl(var(--nextui-secondary-100))]',
-                cursor: 'bg-primary w-full h-px',
+                  'w-full flex-shrink-0 flex-grow-0 gap-0 basis-auto p-0 shadow-[inset_0px_-1px_0px_0px_hsl(var(--nextui-black-100))]',
+                cursor: 'bg-secondary-500 w-full h-px',
                 tab: 'pb-2 font-medium text-small h-auto data-[focus-visible=true]:outline-0',
-                tabContent: 'text-[#888888] group-data-[selected=true]:text-primary',
+                tabContent:
+                  'text-black-400 group-data-[selected=true]:text-secondary-500',
                 panel: 'shadow-none px-0 scroll-gutter flex-auto pt-10 pb-16',
-                base: '',
               }}
             >
               <Tab key="log-in" title="Log in">

@@ -9,19 +9,19 @@
 
 /* Стиль ползунка */
 ::-webkit-scrollbar-thumb {
-  background-color: hsl(var(--nextui-secondary-200)); /* Цвет ползунка */
+  background-color: hsl(var(--nextui-black-200)); /* Цвет ползунка */
   border-radius: 3px; /* Скругление углов */
 }
 
 /* Стиль фона скроллбара */
 ::-webkit-scrollbar-track {
-  background-color: hsl(var(--nextui-secondary-100)); /* Цвет фона */
+  background-color: hsl(var(--nextui-black-100)); /* Цвет фона */
   border-radius: 3px; /* Скругление углов */
 }
 
 /* Стиль при наведении мыши на ползунок */
 ::-webkit-scrollbar-thumb:hover {
-  background-color: hsl(var(--nextui-secondary-300)); /* Цвет ползунка при наведении */
+  background-color: hsl(var(--nextui-black-300)); /* Цвет ползунка при наведении */
 }
 
 .scroll-gutter {
@@ -32,5 +32,5 @@
 .divider::after {
   content: '';
   flex: 1;
-  border-bottom: 1px solid hsl(var(--nextui-secondary-200)); /* Цвет и стиль линии */
+  border-bottom: 1px solid hsl(var(--nextui-black-200)); /* Цвет и стиль линии */
 }

@@ -118,7 +118,7 @@ const SignUpForm: React.FC<SignUpFormProps> = ({ setIsSignupSuccess }) => {
   return (
     <>
       <label
-        className={`mb-2 text-medium font-medium ${signupErrors?.fields.some((error) => error.field === 'username') ? 'text-danger' : ''}`}
+        className={`mb-2 text-medium font-medium ${signupErrors?.fields.some((error) => error.field === 'username') ? 'text-red-500' : ''}`}
       >
         Username
       </label>
@@ -147,7 +147,7 @@ const SignUpForm: React.FC<SignUpFormProps> = ({ setIsSignupSuccess }) => {
       />
 
       <label
-        className={`mb-2 text-medium font-medium ${signupErrors?.fields.some((error) => error.field === 'email') ? 'text-danger' : ''}`}
+        className={`mb-2 text-medium font-medium ${signupErrors?.fields.some((error) => error.field === 'email') ? 'text-red-500' : ''}`}
       >
         Email
       </label>
@@ -197,7 +197,7 @@ const SignUpForm: React.FC<SignUpFormProps> = ({ setIsSignupSuccess }) => {
       )}
 
       {signupErrors?.message && (
-        <p className="my-4 text-small text-danger">{signupErrors.message}</p>
+        <p className="my-4 text-small text-red-500">{signupErrors.message}</p>
       )}
 
       <CustomButton fullWidth onClick={handleSignup} isLoading={loading} className="mt-3">

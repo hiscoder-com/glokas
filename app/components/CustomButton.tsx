@@ -10,7 +10,7 @@ export const CustomButton = extendVariants(Button, {
     color: {
       primary: 'text-white',
       secondary:
-        'text-primary-800 bg-primary-100 hover:bg-primary-200 focus:bg-primary-300 disabled:bg-neutral-400 disabled:text-neutral-200',
+        'text-secondary-800 bg-secondary-100 hover:bg-secondary-200 focus:bg-secondary-300 disabled:bg-neutral-400 disabled:text-neutral-200',
     },
     isDisabled: {
       true: 'cursor-not-allowed',
@@ -30,13 +30,13 @@ export const CustomButton = extendVariants(Button, {
       color: 'primary',
       variant: 'bordered',
       class:
-        'border-primary-500 text-primary-500 hover:border-primary-600 hover:text-primary-600 focus:border-primary-700 focus:text-primary-700 disabled:border-neutral-400 disabled:text-neutral-400',
+        'border-secondary-500 text-secondary-500 hover:border-secondary-600 hover:text-secondary-600 focus:border-secondary-700 focus:text-secondary-700 disabled:border-neutral-400 disabled:text-neutral-400',
     },
     {
       color: 'primary',
       variant: 'solid',
       class:
-        'bg-primary-500 hover:bg-primary-600 focus:bg-primary-700 disabled:bg-neutral-400 disabled:text-neutral-200',
+        'bg-secondary-500 hover:bg-secondary-600 focus:bg-secondary-700 disabled:bg-neutral-400 disabled:text-neutral-200',
     },
   ],
 })

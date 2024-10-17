@@ -4,7 +4,7 @@ import { extendVariants } from '@nextui-org/system'
 export const CustomLink = extendVariants(Link, {
   variants: {
     color: {
-      primary: 'text-primary-700',
+      primary: 'text-secondary-700',
     },
     size: {
       sm: 'text-small',

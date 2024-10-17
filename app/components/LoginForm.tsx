@@ -77,7 +77,7 @@ const LoginForm: React.FC<LoginFormProps> = ({ redirectedFrom }) => {
   return (
     <>
       <label
-        className={`mb-2 text-medium font-medium ${loginErrors?.fields.some((error) => error.field === 'email') ? 'text-danger' : ''}`}
+        className={`mb-2 text-medium font-medium ${loginErrors?.fields.some((error) => error.field === 'email') ? 'text-red-500' : ''}`}
       >
         Username or email
       </label>
@@ -107,7 +107,7 @@ const LoginForm: React.FC<LoginFormProps> = ({ redirectedFrom }) => {
       />
 
       <label
-        className={`mb-2 text-medium font-medium ${loginErrors?.fields.some((error) => error.field === 'password') ? 'text-danger' : ''}`}
+        className={`mb-2 text-medium font-medium ${loginErrors?.fields.some((error) => error.field === 'password') ? 'text-red-500' : ''}`}
       >
         Password
       </label>
@@ -142,12 +142,13 @@ const LoginForm: React.FC<LoginFormProps> = ({ redirectedFrom }) => {
       />
 
       {loginErrors?.message && (
-        <p className="my-4 text-small text-danger">{loginErrors.message}</p>
+        <p className="my-4 text-small text-red-500">{loginErrors.message}</p>
       )}
 
       <Checkbox
         size="sm"
         radius="lg"
+        color="secondary"
         className="mb-4 font-medium"
         classNames={{ label: 'text-medium' }}
       >

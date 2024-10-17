@@ -24,7 +24,7 @@ const PasswordInput: React.FC<PasswordInputProps> = ({
 
   return (
     <>
-      <label className={`mb-2 text-medium font-medium ${error ? 'text-danger' : ''}`}>
+      <label className={`mb-2 text-medium font-medium ${error ? 'text-red-500' : ''}`}>
         {label}
       </label>
       <CustomInput

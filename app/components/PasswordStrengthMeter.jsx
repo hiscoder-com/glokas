@@ -52,15 +52,15 @@ export default function PasswordStrengthMeter({ password }) {
   const { strength, message, color } = useMemo(getPasswordStrength, [password])
 
   const colorClasses = {
-    red: 'w-1/4 bg-danger',
+    red: 'w-1/4 bg-red-500',
     yellow: 'w-2/4 bg-[#EAB54F]',
-    green: 'w-full bg-primary',
+    green: 'w-full bg-secondary',
     gray: 'w-0',
   }
 
   return (
     <div className="flex flex-col space-y-2">
-      <div className="h-2 w-full rounded-full bg-secondary-50">
+      <div className="h-2 w-full rounded-full bg-black-50">
         <div
           className={`h-2 rounded-full transition-all duration-300 ease-in-out ${colorClasses[color]}`}
         ></div>
@@ -68,21 +68,21 @@ export default function PasswordStrengthMeter({ password }) {
 
       {message && color !== 'gray' && (
         <div className="flex flex-col">
-          <span className="font-sans font-semibold text-secondary-400">
+          <span className="font-sans font-semibold text-black-900">
             Strength{' '}
             <span
               className={
                 color === 'red'
-                  ? 'text-danger'
+                  ? 'text-red-500'
                   : color === 'yellow'
                     ? 'text-[#EAB54F]'
-                    : 'text-primary'
+                    : 'text-secondary'
               }
             >
               {strength}
             </span>
           </span>
-          <span className="font-sans text-sm text-secondary-300">{message}</span>
+          <span className="font-sans text-sm text-black-300">{message}</span>
         </div>
       )}
     </div>

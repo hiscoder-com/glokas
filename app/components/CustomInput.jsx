@@ -17,26 +17,26 @@ export const CustomInput = extendVariants(Input, {
     helperWrapper:
       'hidden group-data-[has-helper=true]:flex p-1 relative flex-col gap-1.5',
     description: 'text-tiny text-foreground-400',
-    errorMessage: 'text-tiny text-danger',
+    errorMessage: 'text-tiny text-red-500',
   },
   variants: {
     variant: {
       default: {
         inputWrapper: [
-          'bg-secondary-50 border border-secondary-50 px-5 py-4 gap-3',
-          'data-[hover=true]:bg-secondary-50',
-          'data-[active=true]:bg-secondary-50 data-[active=true]:border-secondary',
-          'group-data-[focus=true]:border-secondary shadow-none',
+          'bg-black-50 border border-black-50 px-5 py-4 gap-3',
+          'data-[hover=true]:bg-black-50',
+          'data-[active=true]:bg-black-50 data-[active=true]:border-black',
+          'group-data-[focus=true]:border-black shadow-none',
         ],
         input: ['font-semibold'],
       },
       bordered: {
         base: 'mt-2 mb-1',
         inputWrapper: [
-          'shadow-none border-1 bg-white border border-secondary-200 px-5 py-4 gap-3',
+          'shadow-none border-1 bg-white border border-black-200 px-5 py-4 gap-3',
           'data-[hover=true]:bg-white',
-          'data-[active=true]:bg-white data-[active=true]:border-secondary',
-          'group-data-[focus=true]:border-secondary shadow-none',
+          'data-[active=true]:bg-white data-[active=true]:border-black',
+          'group-data-[focus=true]:border-black shadow-none',
         ],
         input: ['font-medium'],
       },

@@ -55,7 +55,7 @@ export default function ForgotForm() {
   }
 
   return (
-    <div className="flex h-screen w-full bg-primary-900">
+    <div className="flex h-screen w-full bg-secondary-900">
       <div className="ml-auto flex w-full flex-col justify-center bg-background xl:w-[44%]">
         <div className="mx-auto mt-20 flex h-full w-full flex-col items-center px-5 md:mt-48 md:w-[54%] md:px-0">
           <Link href="/" className="mb-20">
@@ -74,7 +74,7 @@ export default function ForgotForm() {
                 width={106}
                 height={106}
               />
-              <p className="my-6 max-w-96 text-center text-xlarge font-medium">
+              <p className="my-6 max-w-96 text-center text-xxlarge font-medium">
                 We have sent an email to your email address, please check your email and
                 reset your password
               </p>
@@ -90,7 +90,7 @@ export default function ForgotForm() {
 
               <label
                 htmlFor="email"
-                className={`text-medium font-medium ${errors?.fields.some((error) => error.field === 'email') ? 'text-danger' : ''}`}
+                className={`text-medium font-medium ${errors?.fields.some((error) => error.field === 'email') ? 'text-red-500' : ''}`}
               >
                 Write your email
               </label>
@@ -109,7 +109,7 @@ export default function ForgotForm() {
               />
 
               {errors?.message && (
-                <p className="text-small text-danger">{errors.message}</p>
+                <p className="text-small text-red-500">{errors.message}</p>
               )}
               <CustomButton
                 fullWidth
