@@ -1,7 +1,7 @@
 'use client'
 
 import { CustomButton } from '../components/CustomButton'
-import LanguageSelect from '../components/LanguageSelect'
+import CustomSelectSearch from '../components/CustomSelectSearch'
 
 const Page: React.FC = () => {
   return (
@@ -44,7 +44,18 @@ const Page: React.FC = () => {
             </div>
           </CustomButton>
 
-          <LanguageSelect />
+          <CustomSelectSearch
+            languages={[
+              'English',
+              'Russian',
+              'Spanish',
+              'French',
+              'German',
+              'Chinese',
+              'Japanese',
+            ]}
+            placeholder="Search language by name..."
+          />
         </div>
       </main>
     </>

@@ -2,21 +2,16 @@ import { useEffect, useRef, useState } from 'react'
 
 import Image from 'next/image'
 
-const LanguageSelect = () => {
+interface CustomSelectSearchProps {
+  languages: string[]
+  placeholder: string
+}
+
+const CustomSelectSearch = ({ languages, placeholder }: CustomSelectSearchProps) => {
   const [searchTerm, setSearchTerm] = useState('')
   const [isOpen, setIsOpen] = useState(false)
   const [selectedLanguages, setSelectedLanguages] = useState<string[]>([])
   const dropdownRef = useRef<HTMLDivElement>(null)
-
-  const languages = [
-    'English',
-    'Russian',
-    'Spanish',
-    'French',
-    'German',
-    'Chinese',
-    'Japanese',
-  ]
 
   const toggleDropdown = () => {
     setIsOpen(!isOpen)
@@ -98,7 +93,7 @@ const LanguageSelect = () => {
             <input
               type="text"
               className="w-full border-b border-black-100 p-2 pl-10"
-              placeholder="Search language by name..."
+              placeholder={placeholder}
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
             />
@@ -148,4 +143,4 @@ const LanguageSelect = () => {
   )
 }
 
-export default LanguageSelect
+export default CustomSelectSearch
