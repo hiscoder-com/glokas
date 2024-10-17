@@ -26,6 +26,7 @@ module.exports = {
           small: '1.25rem', // text-small
           medium: '1.5rem', // text-medium
           large: '1.75rem', // text-large
+          xxlarge: '2rem',
         },
         radius: {
           small: '4px', // rounded-small
