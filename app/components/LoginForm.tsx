@@ -4,8 +4,6 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { useRouter } from 'next/navigation'
 
-import { Checkbox } from '@nextui-org/react'
-
 import { ApiResponse, errorField } from '@/app/types/api'
 
 import { login } from '../actions/authActions'
@@ -144,16 +142,6 @@ const LoginForm: React.FC<LoginFormProps> = ({ redirectedFrom }) => {
       {loginErrors?.message && (
         <p className="my-4 text-small text-red-500">{loginErrors.message}</p>
       )}
-
-      <Checkbox
-        size="sm"
-        radius="lg"
-        color="secondary"
-        className="mb-4 font-medium"
-        classNames={{ label: 'text-medium' }}
-      >
-        Remember me
-      </Checkbox>
 
       <CustomButton fullWidth onClick={handleLogin} isLoading={loading}>
         Log in

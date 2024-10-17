@@ -70,7 +70,7 @@ export const checkUsernameAvailability = async (username, supabaseService) => {
 }
 
 export const validateEmail = (email) => {
-  if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+  if (!/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(email)) {
     return 'Unsupported email format'
   }
   return null

@@ -8,7 +8,7 @@ export const metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <>
-      <div className="bg-black-50 flex min-h-screen w-full items-center justify-end">
+      <div className="flex min-h-screen w-full items-center justify-end bg-black-50">
         {children}
       </div>
       <CookiesBanner />
