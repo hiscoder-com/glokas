@@ -1,6 +1,7 @@
 'use client'
 
 import { CustomButton } from '../components/CustomButton'
+import LanguageSelect from '../components/LanguageSelect'
 
 const Page: React.FC = () => {
   return (
@@ -42,6 +43,8 @@ const Page: React.FC = () => {
               </svg>
             </div>
           </CustomButton>
+
+          <LanguageSelect />
         </div>
       </main>
     </>
