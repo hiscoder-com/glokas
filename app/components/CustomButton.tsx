@@ -37,5 +37,11 @@ export const CustomButton = extendVariants(Button, {
       class:
         'bg-primary-500 hover:bg-primary-600 focus:bg-primary-700 disabled:bg-neutral-400 disabled:text-neutral-200',
     },
+    {
+      color: 'secondary',
+      variant: 'solid',
+      class:
+        'bg-secondary-500 text-black-00 hover:bg-secondary-600 focus:bg-secondary-700 disabled:bg-neutral-400 disabled:text-neutral-200',
+    },
   ],
 })

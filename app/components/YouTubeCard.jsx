@@ -3,7 +3,7 @@ import Image from 'next/image'
 const YouTubeCard = () => {
   return (
     <div
-      className="flex h-64 w-64 flex-col items-center justify-center rounded-mega border border-cornflowerBlue-200 bg-cornflowerBlue-50" // prettier-ignore
+      className="flex h-64 w-64 flex-col items-center justify-center rounded-mega border border-primary-200 bg-primary-50" // prettier-ignore
     >
       <div className="flex flex-col items-center justify-center gap-6">
         <Image

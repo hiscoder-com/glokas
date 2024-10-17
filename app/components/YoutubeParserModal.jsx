@@ -34,7 +34,7 @@ const YoutubeParserModal = () => {
   return (
     <div>
       <button
-        className="rounded-md bg-primary px-4 py-2 text-primary-foreground"
+        className="rounded-md bg-secondary px-4 py-2 text-secondary-foreground"
         onClick={openModal}
       >
         Open Modal
@@ -42,7 +42,7 @@ const YoutubeParserModal = () => {
 
       {isOpen && (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50">
-          <div className="relative max-h-[90vh] w-full max-w-3xl overflow-y-auto rounded-2xl bg-primary-foreground px-16 pb-16 pt-[52px]">
+          <div className="relative max-h-[90vh] w-full max-w-3xl overflow-y-auto rounded-2xl bg-secondary-foreground px-16 pb-16 pt-[52px]">
             <button
               className="absolute right-4 top-4 text-gray-500 hover:text-gray-700"
               onClick={closeModal}
@@ -81,7 +81,9 @@ const YoutubeParserModal = () => {
                   description=" Example: https://www.youtube.com/watch?v=Dl56yoDQAJc"
                   errorMessage={error}
                 />
-                <CustomButton onClick={handleParseClick}>Parse</CustomButton>
+                <CustomButton color="secondary" onClick={handleParseClick}>
+                  Parse
+                </CustomButton>
               </div>
             </div>
 
