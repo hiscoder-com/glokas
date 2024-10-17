@@ -1,6 +1,8 @@
 'use client'
 
 import { CustomButton } from '../components/CustomButton'
+import YouTubeCard from '../components/YouTubeCard'
+import YoutubeParserModal from '../components/YoutubeParserModal'
 
 const Page: React.FC = () => {
   return (
@@ -42,6 +44,8 @@ const Page: React.FC = () => {
               </svg>
             </div>
           </CustomButton>
+          <YouTubeCard />
+          <YoutubeParserModal />
         </div>
       </main>
     </>
