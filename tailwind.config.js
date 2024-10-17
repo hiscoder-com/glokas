@@ -12,14 +12,15 @@ module.exports = {
         roboto: ['Roboto', 'sans-serif'],
       },
       fontSize: {
-        xlarge: '1.25rem', // text-xlarge
-        xxlarge: '1.5rem', // text-xxlarge
-        xxxlarge: '1.75rem', // text-xxxlarge
-        xxxxlarge: '2rem', // text-xxxxlarge
-        mega: '2.625rem', // text-mega
+        xlarge: '1.25rem', // text-xlarge (20px)
+        xxlarge: '1.5rem', // text-xxlarge (24px)
+        xxxlarge: '1.75rem', // text-xxxlarge (28px)
+        xxxxlarge: '2rem', // text-xxxxlarge (32px)
+        mega: '2.625rem', // text-mega (42px)
       },
       borderRadius: {
         xlarge: '10px', // rounded-xlarge
+        xxxxlarge: '18px', // rounded-xxxxlarge
         mega: '2rem', // rounded-mega
       },
     },
@@ -35,11 +36,6 @@ module.exports = {
           small: '0.875rem', // text-small
           medium: '1rem', // text-medium
           large: '1.125rem', // text-large
-          xlarge: '1.25rem', //(20px)
-          xxlarge: '1.5rem', // (24px)
-          xxxlarge: '1.75rem', //(28px)
-          xxxxlarge: '2rem', //(32px)
-          giant: '2.625rem', //(42px)
         },
         lineHeight: {
           tiny: '1rem', // text-tiny
@@ -65,36 +61,6 @@ module.exports = {
             foreground: '#2D2D2E',
             // https://uicolors.app/create используем для генерации палитры цветов
             primary: {
-              '50': '#ecfdf3',
-              '100': '#d1fae1',
-              '200': '#a7f3c9',
-              '300': '#6de8ab',
-              '400': '#33d489',
-              '500': '#0ead69',
-              '600': '#04975b',
-              '700': '#03794c',
-              '800': '#05603d',
-              '900': '#064e34',
-              '950': '#022c1e',
-              foreground: '#FFFFFF',
-              DEFAULT: '#0ead69',
-            },
-            black: {
-              '50': '#f6f6f6',
-              '100': '#e7e7e7',
-              '200': '#d1d1d1',
-              '300': '#b0b0b0',
-              '400': '#888888',
-              '500': '#6d6d6d',
-              '600': '#5d5d5d',
-              '700': '#4f4f4f',
-              '800': '#454545',
-              '900': '#3d3d3d',
-              '950': '#000000',
-              foreground: '#FFFFFF',
-              DEFAULT: '#6d6d6d',
-            },
-            cornflowerBlue: {
               '50': '#EFF5FE',
               '100': '#E1EFFE',
               '200': '#C9DFFC',
@@ -108,6 +74,21 @@ module.exports = {
               '950': '#1d2449',
               foreground: '#FFFFFF',
               DEFAULT: '#527ddf',
+            },
+            secondary: {
+              '50': '#ecfdf3',
+              '100': '#d1fae1',
+              '200': '#a7f3c9',
+              '300': '#6de8ab',
+              '400': '#33d489',
+              '500': '#0ead69',
+              '600': '#04975b',
+              '700': '#03794c',
+              '800': '#05603d',
+              '900': '#064e34',
+              '950': '#022c1e',
+              foreground: '#FFFFFF',
+              DEFAULT: '#0ead69',
             },
             tertiary: {
               '50': '#effcfb',
@@ -123,6 +104,22 @@ module.exports = {
               '950': '#10333c',
               foreground: '#FFFFFF',
               DEFAULT: '#21a5ac',
+            },
+            black: {
+              '00': '#FFFFFF',
+              '50': '#f6f6f6',
+              '100': '#e7e7e7',
+              '200': '#d1d1d1',
+              '300': '#b0b0b0',
+              '400': '#888888',
+              '500': '#6d6d6d',
+              '600': '#5d5d5d',
+              '700': '#4f4f4f',
+              '800': '#454545',
+              '900': '#3d3d3d',
+              '950': '#000000',
+              foreground: '#FFFFFF',
+              DEFAULT: '#6d6d6d',
             },
           },
           layout: {
