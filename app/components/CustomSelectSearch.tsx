@@ -2,35 +2,40 @@ import { useEffect, useRef, useState } from 'react'
 
 import Image from 'next/image'
 
-interface CustomSelectSearchProps {
-  languages: string[]
+interface CustomSelectSearchProps<T> {
+  items: T[]
   placeholder: string
+  displayKey: keyof T
 }
 
-const CustomSelectSearch = ({ languages, placeholder }: CustomSelectSearchProps) => {
+const CustomSelectSearch = <T extends Record<string, React.ReactNode>>({
+  items,
+  placeholder,
+  displayKey,
+}: CustomSelectSearchProps<T>) => {
   const [searchTerm, setSearchTerm] = useState('')
   const [isOpen, setIsOpen] = useState(false)
-  const [selectedLanguages, setSelectedLanguages] = useState<string[]>([])
+  const [selectedItems, setSelectedItems] = useState<T[]>([])
   const dropdownRef = useRef<HTMLDivElement>(null)
 
   const toggleDropdown = () => {
     setIsOpen(!isOpen)
   }
 
-  const handleSelectLanguage = (language: string) => {
-    if (selectedLanguages.includes(language)) {
-      setSelectedLanguages(selectedLanguages.filter((lang) => lang !== language))
+  const handleSelectItem = (item: T) => {
+    if (selectedItems.includes(item)) {
+      setSelectedItems(selectedItems.filter((i) => i !== item))
     } else {
-      setSelectedLanguages([...selectedLanguages, language])
+      setSelectedItems([...selectedItems, item])
     }
   }
 
-  const handleRemoveLanguage = (language: string) => {
-    setSelectedLanguages(selectedLanguages.filter((lang) => lang !== language))
+  const handleRemoveItem = (item: T) => {
+    setSelectedItems(selectedItems.filter((i) => i !== item))
   }
 
-  const filteredLanguages = languages.filter((lang) =>
-    lang.toLowerCase().includes(searchTerm.toLowerCase())
+  const filteredItems = items.filter((item) =>
+    String(item[displayKey]).toLowerCase().includes(searchTerm.toLowerCase())
   )
 
   useEffect(() => {
@@ -49,21 +54,21 @@ const CustomSelectSearch = ({ languages, placeholder }: CustomSelectSearchProps)
   return (
     <div className="relative w-[456px]" ref={dropdownRef}>
       <div
-        className={`relative flex h-auto cursor-pointer flex-wrap items-center gap-2 rounded-medium border border-black-100 p-[8px_16px] transition-opacity`}
+        className={`relative flex h-[48px] cursor-pointer flex-wrap items-center gap-2 rounded-medium border border-black-100 p-[8px_16px] transition-opacity`}
         onClick={toggleDropdown}
       >
-        {selectedLanguages.length > 0 ? (
-          selectedLanguages.map((language) => (
+        {selectedItems.length > 0 ? (
+          selectedItems.map((item) => (
             <div
-              key={language}
+              key={String(item[displayKey])}
               className="flex items-center rounded-medium bg-tertiary-100 px-2 py-1 text-sm text-black-950"
             >
-              {language}
+              {item[displayKey]}
               <button
                 className="ml-2"
                 onClick={(e) => {
                   e.stopPropagation()
-                  handleRemoveLanguage(language)
+                  handleRemoveItem(item)
                 }}
               >
                 <Image src="/icons/close.svg" alt="Remove" width={16} height={16} />
@@ -71,7 +76,7 @@ const CustomSelectSearch = ({ languages, placeholder }: CustomSelectSearchProps)
             </div>
           ))
         ) : (
-          <span className="text-sm text-black-950">Select languages</span>
+          <span className="text-sm text-black-950">{placeholder}</span>
         )}
 
         <div className="absolute right-2 top-3">
@@ -100,23 +105,24 @@ const CustomSelectSearch = ({ languages, placeholder }: CustomSelectSearchProps)
           </div>
 
           <div className="max-h-48 overflow-y-auto">
-            {filteredLanguages.length > 0 ? (
-              filteredLanguages.map((language) => (
-                <label key={language} className="flex cursor-pointer items-center p-2">
+            {filteredItems.length > 0 ? (
+              filteredItems.map((item) => (
+                <label
+                  key={String(item[displayKey])}
+                  className="flex cursor-pointer items-center p-2"
+                >
                   <input
                     type="checkbox"
                     className="hidden"
-                    checked={selectedLanguages.includes(language)}
-                    onChange={() => handleSelectLanguage(language)}
+                    checked={selectedItems.includes(item)}
+                    onChange={() => handleSelectItem(item)}
                   />
                   <span
                     className={`relative mr-2 inline-block h-4 w-4 rounded border border-gray-300 ${
-                      selectedLanguages.includes(language)
-                        ? 'bg-secondary-600'
-                        : 'bg-white'
+                      selectedItems.includes(item) ? 'bg-secondary-600' : 'bg-white'
                     }`}
                   >
-                    {selectedLanguages.includes(language) && (
+                    {selectedItems.includes(item) && (
                       <svg
                         className="absolute left-0 top-0 h-full w-full text-white"
                         viewBox="0 0 24 24"
@@ -130,7 +136,7 @@ const CustomSelectSearch = ({ languages, placeholder }: CustomSelectSearchProps)
                       </svg>
                     )}
                   </span>
-                  {language}
+                  {item[displayKey]}
                 </label>
               ))
             ) : (
