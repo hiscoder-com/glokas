@@ -12,9 +12,7 @@ module.exports = {
         roboto: ['Roboto', 'sans-serif'],
       },
       borderRadius: {
-        xlarge: '0.625rem', // rounded-xlarge
-        xxxxlarge: '1,125rem', // rounded-xxxxlarge
-        mega: '2rem', // rounded-mega
+        xlarge: '10px', // rounded-xlarge
       },
     },
   },
