@@ -71,17 +71,17 @@ const YoutubeParserModal = () => {
                 <CustomInput
                   className="mt-9"
                   variant="bordered"
-                  size="lg"
+                  size="sm"
                   value={youtubeUrl}
                   onChange={(e) => {
                     setYoutubeUrl(e.target.value)
                     setError('')
                   }}
                   isInvalid={!!error}
-                  description="Example: https://www.youtube.com/watch?v=Dl56yoDQAJc"
+                  description="Example:https://www.youtube.com/watch?v=Dl56yoDQAJc"
                   errorMessage={error}
                 />
-                <CustomButton color="secondary" onClick={handleParseClick}>
+                <CustomButton className="w-28" color="primary" onClick={handleParseClick}>
                   Parse
                 </CustomButton>
               </div>
