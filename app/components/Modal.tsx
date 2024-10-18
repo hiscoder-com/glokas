@@ -7,10 +7,10 @@ export function Modal({
 }) {
   return (
     <div className="fixed inset-0 z-40 flex items-center justify-center overflow-y-auto bg-black/20">
-      <div className={`relative my-6 max-h-[90vh] shadow-medium`}>
+      <div className="relative my-6 max-h-[90vh] shadow-medium">
         <button
           onClick={closeModal}
-          className={`absolute right-5 top-5 h-11 w-11 items-center justify-center p-3 text-black`}
+          className="absolute right-5 top-5 h-11 w-11 items-center justify-center p-3 text-black"
         >
           <svg
             width="16"

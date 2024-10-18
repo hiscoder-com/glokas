@@ -1,8 +1,16 @@
 'use client'
 
+import { useState } from 'react'
+
 import { CustomButton } from '../components/CustomButton'
+import { Modal } from '../components/Modal'
 
 const Page: React.FC = () => {
+  const [isModalOpen, setIsModalOpen] = useState(false)
+  const closeModal = () => {
+    setIsModalOpen(false)
+  }
+
   return (
     <>
       <main className="mx-auto w-full max-w-[1806px] flex-auto px-6 md:px-12">
@@ -42,6 +50,17 @@ const Page: React.FC = () => {
               </svg>
             </div>
           </CustomButton>
+
+          <CustomButton onClick={() => setIsModalOpen(true)}>Translate</CustomButton>
+
+          {isModalOpen && (
+            <Modal closeModal={closeModal}>
+              <div className="text-semixlarge rounded-xlarge bg-background p-10 font-medium">
+                <p>Are you sure you want to cancel?</p>
+                <div className="mt-12 flex justify-center gap-2"></div>
+              </div>
+            </Modal>
+          )}
         </div>
       </main>
     </>
