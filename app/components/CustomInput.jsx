@@ -23,20 +23,20 @@ export const CustomInput = extendVariants(Input, {
     variant: {
       default: {
         inputWrapper: [
-          'bg-secondary-50 border border-secondary-50 px-5 py-4 gap-3',
-          'data-[hover=true]:bg-secondary-50',
-          'data-[active=true]:bg-secondary-50 data-[active=true]:border-secondary',
-          'group-data-[focus=true]:border-secondary shadow-none',
+          'bg-black-50 border border-black-50 px-5 py-4 gap-3',
+          'data-[hover=true]:bg-black-50',
+          'data-[active=true]:bg-black-50 data-[active=true]:border-black',
+          'group-data-[focus=true]:border-black shadow-none',
         ],
         input: ['font-[600]'],
       },
       bordered: {
         base: 'mt-2.5 mb-3',
         inputWrapper: [
-          'shadow-none border-1 bg-white border border-secondary-200 px-5 py-4 gap-3',
+          'shadow-none border-1 bg-white border border-black-200 px-5 py-4 gap-3',
           'data-[hover=true]:bg-white',
-          'data-[active=true]:bg-white data-[active=true]:border-secondary',
-          'group-data-[focus=true]:border-secondary shadow-none',
+          'data-[active=true]:bg-white data-[active=true]:border-black',
+          'group-data-[focus=true]:border-black shadow-none',
         ],
         input: ['font-[500]'],
       },
@@ -44,7 +44,7 @@ export const CustomInput = extendVariants(Input, {
     color: {
       default: {},
       primary: {},
-      secondary: {},
+      black: {},
       danger: {},
     },
     size: {
