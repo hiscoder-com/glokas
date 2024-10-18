@@ -16,7 +16,7 @@ export const CustomButton = extendVariants(Button, {
       true: 'cursor-not-allowed',
     },
     size: {
-      md: 'h-auto px-8 py-4 text-medium font-semibold',
+      md: 'h-auto px-8 py-4 text-medium leading-4 font-semibold',
     },
   },
   defaultVariants: {
