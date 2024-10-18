@@ -10,38 +10,33 @@ export const CustomButton = extendVariants(Button, {
     color: {
       primary: 'text-white',
       secondary:
-        'text-primary-900 bg-primary-100 hover:bg-primary-200 focus:bg-primary-300 disabled:bg-neutral-400 disabled:text-neutral-200',
+        'text-secondary-900 bg-secondary-100 hover:bg-secondary-200 focus:bg-secondary-300 disabled:bg-black-300 disabled:text-black-100',
     },
     isDisabled: {
       true: 'cursor-not-allowed',
     },
     size: {
-      md: 'h-auto px-8 py-4 text-medium font-[600] rounded-large',
+      md: 'h-auto px-8 py-4 text-medium font-semibold',
     },
   },
   defaultVariants: {
     color: 'primary',
     variant: 'solid',
     size: 'md',
+    radius: 'lg',
   },
   compoundVariants: [
     {
       color: 'primary',
       variant: 'bordered',
       class:
-        'border-primary-500 text-primary-500 hover:border-primary-600 hover:text-primary-600 focus:border-primary-700 focus:text-primary-700 disabled:border-neutral-400 disabled:text-neutral-400',
+        'border-secondary-600 text-secondary-500 hover:border-secondary-700 hover:text-secondary-700 focus:border-secondary-800 focus:text-secondary-800 disabled:border-black-400 disabled:text-black-400',
     },
     {
       color: 'primary',
       variant: 'solid',
       class:
-        'bg-primary-500 hover:bg-primary-600 focus:bg-primary-700 disabled:bg-neutral-400 disabled:text-neutral-200',
-    },
-    {
-      color: 'secondary',
-      variant: 'solid',
-      class:
-        'bg-secondary-500 text-black-00 hover:bg-secondary-600 focus:bg-secondary-700 disabled:bg-neutral-400 disabled:text-neutral-200',
+        'bg-secondary-500 hover:bg-secondary-600 focus:bg-secondary-700 disabled:bg-black-300 disabled:text-black-100',
     },
   ],
 })
