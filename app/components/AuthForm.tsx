@@ -17,8 +17,8 @@ function AuthForm() {
 
   return (
     <div className="flex min-h-screen w-full bg-tertiary-500">
-      <div className="ml-auto flex w-full flex-col justify-center bg-background xl:w-[44%]">
-        <div className="mx-auto mt-20 flex h-full w-full flex-col items-center overflow-hidden px-5 md:mt-48 md:w-[54%] md:px-0">
+      <div className="ml-auto flex w-full flex-col items-center justify-center bg-background xl:w-[44%]">
+        <div className="mx-auto flex w-full flex-col items-center overflow-hidden px-5 md:w-[54%] md:px-0">
           <Link href="/" className="mb-20">
             <Image
               src="/images/glokas-logo.svg"
@@ -55,7 +55,7 @@ function AuthForm() {
                   tab: 'pb-2 font-medium text-small h-auto data-[focus-visible=true]:outline-0',
                   tabContent:
                     'text-black-400 group-data-[selected=true]:text-secondary-500',
-                  panel: 'shadow-none px-0 scroll-gutter flex-auto pt-10 pb-16',
+                  panel: 'shadow-none px-0 scroll-gutter flex-auto pt-10',
                 }}
               >
                 <Tab key="log-in" title="Log in">

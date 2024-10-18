@@ -17,6 +17,8 @@ export default function ForgotForm() {
   const [errors, setErrors] = useState(null)
   const [loading, setLoading] = useState(false)
 
+  const emailPattern = /^[\w\.-]+@[a-zA-Z\d\.-]+\.[a-zA-Z]{2,}$/
+
   const handle = async (event) => {
     setLoading(true)
     setErrors(null)
@@ -32,7 +34,7 @@ export default function ForgotForm() {
       return
     }
 
-    if (!/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(email)) {
+    if (!emailPattern.test(email)) {
       errors.push({ field: 'email', message: 'Unsupported email format' })
       setErrors({
         message: '',
@@ -56,8 +58,8 @@ export default function ForgotForm() {
 
   return (
     <div className="flex h-screen w-full bg-tertiary-500">
-      <div className="ml-auto flex w-full flex-col justify-center bg-background xl:w-[44%]">
-        <div className="mx-auto mt-20 flex h-full w-full flex-col items-center px-5 md:mt-48 md:w-[54%] md:px-0">
+      <div className="ml-auto flex w-full flex-col items-center justify-center bg-background xl:w-[44%]">
+        <div className="mx-auto flex w-full flex-col items-center px-5 md:w-[54%] md:px-0">
           <Link href="/" className="mb-20">
             <Image
               src="/images/glokas-logo.svg"
@@ -113,7 +115,8 @@ export default function ForgotForm() {
               <CustomButton
                 fullWidth
                 onClick={handle}
-                isDisabled={email === '' || loading}
+                isDisabled={!emailPattern.test(email)}
+                isLoading={loading}
                 color="primary"
                 className="mb-6 mt-4"
               >
@@ -123,7 +126,7 @@ export default function ForgotForm() {
                 as={Link}
                 color="primary"
                 size="md"
-                className="flex justify-center font-medium"
+                className="mb-3 flex justify-center font-medium"
                 href="/login"
               >
                 Cancel
