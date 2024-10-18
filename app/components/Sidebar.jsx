@@ -1,3 +1,5 @@
+import { Suspense } from 'react'
+
 import { LogOut } from './LogOut'
 import { MainLogo } from './MainLogo'
 import { NavigationMenu } from './NavigationMenu'
@@ -5,6 +7,9 @@ import { UsageSummary } from './UsageSummary'
 
 const user = {
   username: 'VeryVeryLongUsernameInGlokas',
+}
+function SearchBarFallback() {
+  return <></>
 }
 
 export const Sidebar = () => {
@@ -14,7 +19,9 @@ export const Sidebar = () => {
         <div className="mx-auto">
           <MainLogo />
         </div>
-        <NavigationMenu />
+        <Suspense fallback={<SearchBarFallback />}>
+          <NavigationMenu />
+        </Suspense>
       </div>
 
       <div className="flex flex-col gap-9">
