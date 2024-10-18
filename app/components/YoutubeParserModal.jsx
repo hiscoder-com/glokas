@@ -17,17 +17,20 @@ const YoutubeParserModal = () => {
     setError('')
   }
 
-  const validateUrl = (url) => {
-    const regex = /^https?:\/\/(www\.)?(youtube\.com\/watch\?v=|youtu\.be\/)[\w-]{11}$/
-    return regex.test(url)
+  const extractVideoId = (url) => {
+    const regex =
+      /^https?:\/\/(?:www\.)?(?:youtube\.com\/watch\?v=|youtu\.be\/)([\w-]{11})$/
+    const match = url.match(regex)
+    return match ? match[1] : null
   }
 
   const handleParseClick = () => {
-    if (validateUrl(youtubeUrl)) {
-      console.log(`Parsed URL: ${youtubeUrl}`)
+    const videoId = extractVideoId(youtubeUrl)
+    if (videoId) {
+      console.log(`Parsed Video ID: ${videoId}`)
       setError('')
     } else {
-      setError('Incorrect link. Example https://www.youtube.com/watch?v=Dl56yoDQAJc') // Сообщение об ошибке
+      setError('Incorrect link. Example: https://www.youtube.com/watch?v=Dl56yoDQAJc')
     }
   }
 
