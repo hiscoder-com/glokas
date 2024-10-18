@@ -10,11 +10,11 @@ import { CustomInput } from './CustomInput'
 import PasswordInput from './PasswordInput'
 import PasswordStrengthMeter from './PasswordStrengthMeter'
 
-interface SignUpFormProps {
+interface FormProps {
   setIsSignupSuccess: (value: boolean) => void
 }
 
-const SignUpForm: React.FC<SignUpFormProps> = ({ setIsSignupSuccess }) => {
+const SignUpForm: React.FC<FormProps> = ({ setIsSignupSuccess }) => {
   const [validationState, setValidationState] = useState<{
     message: string
     fields: errorField[]

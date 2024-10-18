@@ -124,7 +124,7 @@ export default function ForgotForm() {
                 color="primary"
                 size="md"
                 className="flex justify-center font-medium"
-                href="/"
+                href="/login"
               >
                 Cancel
               </CustomLink>

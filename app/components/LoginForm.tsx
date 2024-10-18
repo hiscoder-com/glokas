@@ -12,51 +12,51 @@ import { CustomInput } from './CustomInput'
 import { CustomLink } from './CustomLink'
 import EyePassword from './EyePassword'
 
-interface LoginFormProps {
+interface FormProps {
   redirectedFrom?: string | null
 }
 
-const LoginForm: React.FC<LoginFormProps> = ({ redirectedFrom }) => {
-  const [isLoginPasswordVisible, setIsLoginPasswordVisible] = useState(false)
-  const [loginErrors, setLoginErrors] = useState<{
+const LoginForm: React.FC<FormProps> = ({ redirectedFrom }) => {
+  const [isPasswordVisible, setIsPasswordVisible] = useState(false)
+  const [validationState, setValidationState] = useState<{
     message: string
     fields: errorField[]
   }>({
     message: '',
     fields: [],
   })
-  const [emailLogin, setEmailLogin] = useState('')
-  const [passwordLogin, setPasswordLogin] = useState('')
+  const [mail, setMail] = useState('')
+  const [password, setPassword] = useState('')
   const [loading, setLoading] = useState(false)
 
   const router = useRouter()
 
-  const toggleLoginPasswordVisibility = () => setIsLoginPasswordVisible((prev) => !prev)
+  const togglePasswordVisibility = () => setIsPasswordVisible((prev) => !prev)
 
   const handleLogin = async () => {
-    setLoginErrors({ message: '', fields: [] })
+    setValidationState({ message: '', fields: [] })
     const errors: errorField[] = []
 
-    if (!emailLogin) {
+    if (!mail) {
       errors.push({ field: 'email', message: 'Email is required' })
     }
 
-    if (!passwordLogin) {
+    if (!password) {
       errors.push({ field: 'password', message: 'Password is required' })
     }
 
     if (errors.length > 0) {
-      setLoginErrors({ message: 'Validation errors occurred', fields: errors })
+      setValidationState({ message: 'Validation errors occurred', fields: errors })
       return
     }
 
     setLoading(true)
 
     try {
-      const response: ApiResponse<unknown> = await login(emailLogin, passwordLogin)
+      const response: ApiResponse<unknown> = await login(mail, password)
 
       if (response.status === 'error') {
-        setLoginErrors({
+        setValidationState({
           message: response.message,
           fields: response?.errors || [],
         })
@@ -66,7 +66,10 @@ const LoginForm: React.FC<LoginFormProps> = ({ redirectedFrom }) => {
       }
     } catch (error) {
       console.error(error)
-      setLoginErrors({ message: 'Something went wrong. Please try again.', fields: [] })
+      setValidationState({
+        message: 'Something went wrong. Please try again.',
+        fields: [],
+      })
     } finally {
       setLoading(false)
     }
@@ -75,24 +78,24 @@ const LoginForm: React.FC<LoginFormProps> = ({ redirectedFrom }) => {
   return (
     <>
       <label
-        className={`mb-2 text-medium font-medium ${loginErrors?.fields.some((error) => error.field === 'email') ? 'text-red-500' : ''}`}
+        className={`mb-2 text-medium font-medium ${validationState?.fields.some((error) => error.field === 'email') ? 'text-red-500' : ''}`}
       >
-        Username or email
+        Email
       </label>
       <CustomInput
         type="email"
         variant="bordered"
         size="sm"
         autoComplete="email"
-        value={emailLogin}
-        onChange={(e) => setEmailLogin(e.target.value)}
+        value={mail}
+        onChange={(e) => setMail(e.target.value)}
         isRequired
-        isInvalid={loginErrors?.fields.some((error) => error.field === 'email')}
-        errorMessage={loginErrors?.fields
+        isInvalid={validationState?.fields.some((error) => error.field === 'email')}
+        errorMessage={validationState?.fields
           .filter((error) => error.field === 'email')
           .map((error) => <p key={error.message}>{error.message}</p>)}
         endContent={
-          loginErrors?.fields.some((error) => error.field === 'email') && (
+          validationState?.fields.some((error) => error.field === 'email') && (
             <Image
               src={'/icons/warning.svg'}
               alt="warning"
@@ -105,22 +108,22 @@ const LoginForm: React.FC<LoginFormProps> = ({ redirectedFrom }) => {
       />
 
       <label
-        className={`mb-2 text-medium font-medium ${loginErrors?.fields.some((error) => error.field === 'password') ? 'text-red-500' : ''}`}
+        className={`mb-2 text-medium font-medium ${validationState?.fields.some((error) => error.field === 'password') ? 'text-red-500' : ''}`}
       >
         Password
       </label>
       <CustomInput
         variant="bordered"
         size="sm"
-        value={passwordLogin}
-        onChange={(e) => setPasswordLogin(e.target.value)}
+        value={password}
+        onChange={(e) => setPassword(e.target.value)}
         endContent={
           <>
             <EyePassword
-              isVisible={isLoginPasswordVisible}
-              toggleVisibility={toggleLoginPasswordVisibility}
+              isVisible={isPasswordVisible}
+              toggleVisibility={togglePasswordVisibility}
             />
-            {loginErrors?.fields.some((error) => error.field === 'password') && (
+            {validationState?.fields.some((error) => error.field === 'password') && (
               <Image
                 src={'/icons/warning.svg'}
                 alt="warning"
@@ -131,19 +134,19 @@ const LoginForm: React.FC<LoginFormProps> = ({ redirectedFrom }) => {
             )}
           </>
         }
-        type={isLoginPasswordVisible ? 'text' : 'password'}
+        type={isPasswordVisible ? 'text' : 'password'}
         isRequired
-        isInvalid={loginErrors?.fields.some((error) => error.field === 'password')}
-        errorMessage={loginErrors?.fields
+        isInvalid={validationState?.fields.some((error) => error.field === 'password')}
+        errorMessage={validationState?.fields
           .filter((error) => error.field === 'password')
           .map((error) => <p key={error.message}>{error.message}</p>)}
       />
 
-      {loginErrors?.message && (
-        <p className="my-4 text-small text-red-500">{loginErrors.message}</p>
+      {validationState?.message && (
+        <p className="my-4 text-small text-red-500">{validationState.message}</p>
       )}
 
-      <CustomButton fullWidth onClick={handleLogin} isLoading={loading}>
+      <CustomButton fullWidth onClick={handleLogin} isLoading={loading} className="mt-3">
         Log in
       </CustomButton>
 
