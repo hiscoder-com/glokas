@@ -4,6 +4,7 @@ import { useState } from 'react'
 
 import { CustomButton } from '../components/CustomButton'
 import { Modal } from '../components/Modal'
+import { WarningIcon } from '../components/WarningIcon'
 
 const Page: React.FC = () => {
   const [isModalOpen, setIsModalOpen] = useState(false)
@@ -51,13 +52,50 @@ const Page: React.FC = () => {
             </div>
           </CustomButton>
 
-          <CustomButton onClick={() => setIsModalOpen(true)}>Translate</CustomButton>
+          <CustomButton color="secondary" onClick={() => setIsModalOpen(true)}>
+            Translate
+          </CustomButton>
 
           {isModalOpen && (
             <Modal closeModal={closeModal}>
-              <div className="text-semixlarge rounded-xlarge bg-background p-10 font-medium">
-                <p>Are you sure you want to cancel?</p>
-                <div className="mt-12 flex justify-center gap-2"></div>
+              <div className="flex flex-col gap-8 bg-background px-16 py-12">
+                <div className="mx-auto w-3/4 text-center">
+                  <h2 className="mb-3 text-4xl font-semibold">Translate</h2>
+                  <p>
+                    Please note that if you click translate, it will use the available
+                    translation words in your package
+                  </p>
+                </div>
+
+                <div>
+                  <p>6 languages:</p>
+                  <div>tagsArray</div>
+
+                  <p>Words in source language:</p>
+                  <p>88</p>
+
+                  <div className="">
+                    <p>Words for translation in total:</p>
+
+                    <WarningIcon />
+                  </div>
+                  <p>88 x 6 = 528</p>
+                </div>
+
+                <div className="bg-tertiary-100">
+                  <p> Total number of words to be translated</p>
+                  <p>528</p>
+
+                  <p> Remaining word available</p>
+                  <p>42 654</p>
+                </div>
+
+                <div>
+                  <CustomButton variant="bordered" color="danger" className="">
+                    Cancel
+                  </CustomButton>
+                  <CustomButton>Yes, translate</CustomButton>
+                </div>
               </div>
             </Modal>
           )}
