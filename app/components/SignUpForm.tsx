@@ -51,13 +51,13 @@ const SignUpForm: React.FC<FormProps> = ({ setIsSignupSuccess }) => {
       errors.push({
         field: 'username',
         message:
-          'Only letters A-Z, a-z, numbers or underscore please (no spaces or special characters).',
+          'Only letters A-Z, a-z, numbers or underscore please (no spaces or special characters)',
       })
     }
     if (username.length < 5 || username.length > 20) {
       errors.push({
         field: 'username',
-        message: 'Username must be between 5 and 20 characters long.',
+        message: 'Username must be between 5 and 20 characters long',
       })
     }
     if (password.length < 6) {
@@ -101,7 +101,7 @@ const SignUpForm: React.FC<FormProps> = ({ setIsSignupSuccess }) => {
     } catch (error) {
       console.error(error)
       setValidationState({
-        message: 'Something went wrong. Please try again.',
+        message: 'Something went wrong. Please try again',
         fields: [],
       })
     } finally {

@@ -84,7 +84,7 @@ export default function ForgotForm() {
           ) : (
             <div>
               {/* TODO: add Helper text here */}
-              <p className="mb-6 w-full rounded-xlarge bg-tertiary-100 p-4 text-small font-medium text-tertiary-700">
+              <p className="mb-6 w-full rounded-xl bg-tertiary-100 p-4 text-small font-medium text-tertiary-700">
                 Helper text: Lorem ipsum dolor sit amet consectetur. Id enim eu maecenas
                 at. Tortor diam nisl eu suspendisse eros scelerisque. Elementum et neque
                 viverra ipsum faucibus. Porttitor et nisi aenean id dui risus quis nunc
