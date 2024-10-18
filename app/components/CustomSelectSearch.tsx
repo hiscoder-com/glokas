@@ -6,12 +6,14 @@ interface CustomSelectSearchProps<T> {
   items: T[]
   placeholder: string
   displayKey: keyof T
+  onSelectionChange?: (selectedItems: T[]) => void
 }
 
 const CustomSelectSearch = <T extends Record<string, React.ReactNode>>({
   items,
   placeholder,
   displayKey,
+  onSelectionChange,
 }: CustomSelectSearchProps<T>) => {
   const [searchTerm, setSearchTerm] = useState('')
   const [isOpen, setIsOpen] = useState(false)
@@ -23,15 +25,20 @@ const CustomSelectSearch = <T extends Record<string, React.ReactNode>>({
   }
 
   const handleSelectItem = (item: T) => {
+    let newSelectedItems
     if (selectedItems.includes(item)) {
-      setSelectedItems(selectedItems.filter((i) => i !== item))
+      newSelectedItems = selectedItems.filter((i) => i !== item)
     } else {
-      setSelectedItems([...selectedItems, item])
+      newSelectedItems = [...selectedItems, item]
     }
+    setSelectedItems(newSelectedItems)
+    onSelectionChange?.(newSelectedItems)
   }
 
   const handleRemoveItem = (item: T) => {
-    setSelectedItems(selectedItems.filter((i) => i !== item))
+    const newSelectedItems = selectedItems.filter((i) => i !== item)
+    setSelectedItems(newSelectedItems)
+    onSelectionChange?.(newSelectedItems)
   }
 
   const filteredItems = items.filter((item) =>
