@@ -7,7 +7,16 @@ module.exports = {
     './node_modules/@nextui-org/theme/dist/**/*.{js,ts,jsx,tsx}',
   ],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        roboto: ['Roboto', 'sans-serif'],
+      },
+      borderRadius: {
+        xlarge: '0.625rem', // rounded-xlarge
+        xxxxlarge: '1,125rem', // rounded-xxxxlarge
+        mega: '2rem', // rounded-mega
+      },
+    },
   },
   darkMode: 'class',
   plugins: [
@@ -15,12 +24,6 @@ module.exports = {
       layout: {
         dividerWeight: '1px', // h-divider the default height applied to the divider component
         disabledOpacity: 1, // this value is applied as opacity-[value] when the component is disabled
-        fontSize: {
-          tiny: '0.75rem', // text-tiny
-          small: '0.875rem', // text-small
-          medium: '1rem', // text-medium
-          large: '1.125rem', // text-large
-        },
         lineHeight: {
           tiny: '1rem', // text-tiny
           small: '1.25rem', // text-small
@@ -45,6 +48,21 @@ module.exports = {
             foreground: '#2D2D2E',
             // https://uicolors.app/create используем для генерации палитры цветов
             primary: {
+              '50': '#EFF5FE',
+              '100': '#E1EFFE',
+              '200': '#C9DFFC',
+              '300': '#a0c0f0',
+              '400': '#739fe7',
+              '500': '#527ddf',
+              '600': '#3d61d3',
+              '700': '#344fc1',
+              '800': '#30419d',
+              '900': '#2b3a7d',
+              '950': '#1d2449',
+              foreground: '#FFFFFF',
+              DEFAULT: '#527ddf',
+            },
+            secondary: {
               '50': '#ecfdf3',
               '100': '#d1fae1',
               '200': '#a7f3c9',
@@ -58,6 +76,36 @@ module.exports = {
               '950': '#022c1e',
               foreground: '#FFFFFF',
               DEFAULT: '#0ead69',
+            },
+            tertiary: {
+              '50': '#effcfb',
+              '100': '#d6f7f7',
+              '200': '#b1eff0',
+              '300': '#7ce2e4',
+              '400': '#3fccd1',
+              '500': '#21a5ac',
+              '600': '#208e9a',
+              '700': '#20737e',
+              '800': '#235d67',
+              '900': '#214e58',
+              '950': '#10333c',
+              foreground: '#FFFFFF',
+              DEFAULT: '#21a5ac',
+            },
+            black: {
+              '50': '#f6f6f6',
+              '100': '#e7e7e7',
+              '200': '#d1d1d1',
+              '300': '#b0b0b0',
+              '400': '#888888',
+              '500': '#6d6d6d',
+              '600': '#5d5d5d',
+              '700': '#4f4f4f',
+              '800': '#454545',
+              '900': '#3d3d3d',
+              '950': '#000000',
+              foreground: '#FFFFFF',
+              DEFAULT: '#6d6d6d',
             },
           },
           layout: {

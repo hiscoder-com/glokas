@@ -1,8 +1,21 @@
 'use client'
 
 import { CustomButton } from '../components/CustomButton'
+import LanguageSelector from '../components/LanguageSelector'
 
 const Page: React.FC = () => {
+  const languages = [
+    { id: 1, name: 'English' },
+    { id: 2, name: 'Spanish' },
+    { id: 3, name: 'French' },
+    { id: 4, name: 'German' },
+    { id: 5, name: 'Italian' },
+    { id: 6, name: 'Portuguese' },
+    { id: 7, name: 'Russian' },
+    { id: 8, name: 'Chinese' },
+    { id: 9, name: 'Japanese' },
+    { id: 10, name: 'Korean' },
+  ]
   return (
     <>
       <main className="mx-auto w-full max-w-[1806px] flex-auto px-6 md:px-12">
@@ -42,6 +55,8 @@ const Page: React.FC = () => {
               </svg>
             </div>
           </CustomButton>
+
+          <LanguageSelector languages={languages} />
         </div>
       </main>
     </>
