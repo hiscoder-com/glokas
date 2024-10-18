@@ -29,7 +29,7 @@ export const validateLength = (username) => {
 export const validateCharacters = (username) => {
   const validUsernameRegex = /^[a-zA-Z][a-zA-Z0-9_-]*$/
   if (!validUsernameRegex.test(username)) {
-    return 'Only letters A-Z, a-z, numbers, underscores, or hyphens are allowed. Username must start with a letter and cannot contain spaces or consecutive special characters'
+    return 'Only letters A-Z, a-z, numbers, underscores, or hyphens are allowed. Username must start with a letter and cannot contain spaces or consecutive special characters.'
   }
 
   if (/__|--|_-|-_/.test(username)) {
@@ -48,7 +48,7 @@ export const validateContent = (username) => {
     filter.isProfane(username) ||
     prohibitedBiblicalNames.some((name) => new RegExp(name, 'i').test(username))
   ) {
-    return 'This username contains inappropriate or prohibited language (e.g., biblical names). Please choose a different one'
+    return 'This username contains inappropriate or prohibited language (e.g., biblical names). Please choose a different one.'
   }
   return null
 }

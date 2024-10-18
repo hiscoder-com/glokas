@@ -101,7 +101,7 @@ const SignUpForm: React.FC<FormProps> = ({ setIsSignupSuccess }) => {
     } catch (error) {
       console.error(error)
       setValidationState({
-        message: 'Something went wrong. Please try again',
+        message: 'Something went wrong. Please try again.',
         fields: [],
       })
     } finally {
