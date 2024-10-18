@@ -10,14 +10,13 @@ import { login } from '../actions/authActions'
 import { CustomButton } from './CustomButton'
 import { CustomInput } from './CustomInput'
 import { CustomLink } from './CustomLink'
-import EyePassword from './EyePassword'
+import PasswordInput from './PasswordInput'
 
 interface FormProps {
   redirectedFrom?: string | null
 }
 
 const LoginForm: React.FC<FormProps> = ({ redirectedFrom }) => {
-  const [isPasswordVisible, setIsPasswordVisible] = useState(false)
   const [validationState, setValidationState] = useState<{
     message: string
     fields: errorField[]
@@ -30,8 +29,6 @@ const LoginForm: React.FC<FormProps> = ({ redirectedFrom }) => {
   const [loading, setLoading] = useState(false)
 
   const router = useRouter()
-
-  const togglePasswordVisibility = () => setIsPasswordVisible((prev) => !prev)
 
   const handleLogin = async () => {
     setValidationState({ message: '', fields: [] })
@@ -107,39 +104,13 @@ const LoginForm: React.FC<FormProps> = ({ redirectedFrom }) => {
         }
       />
 
-      <label
-        className={`mb-2 text-medium font-medium ${validationState?.fields.some((error) => error.field === 'password') ? 'text-red-500' : ''}`}
-      >
-        Password
-      </label>
-      <CustomInput
-        variant="bordered"
-        size="sm"
+      <PasswordInput
+        label="Password"
         value={password}
-        onChange={(e) => setPassword(e.target.value)}
-        endContent={
-          <>
-            <EyePassword
-              isVisible={isPasswordVisible}
-              toggleVisibility={togglePasswordVisibility}
-            />
-            {validationState?.fields.some((error) => error.field === 'password') && (
-              <Image
-                src={'/icons/warning.svg'}
-                alt="warning"
-                width={18}
-                height={18}
-                className="mr-2 h-[38px] w-[38px] p-2 pl-0"
-              />
-            )}
-          </>
+        onChange={setPassword}
+        error={
+          validationState?.fields.find((error) => error.field === 'password')?.message
         }
-        type={isPasswordVisible ? 'text' : 'password'}
-        isRequired
-        isInvalid={validationState?.fields.some((error) => error.field === 'password')}
-        errorMessage={validationState?.fields
-          .filter((error) => error.field === 'password')
-          .map((error) => <p key={error.message}>{error.message}</p>)}
       />
 
       {validationState?.message && (
