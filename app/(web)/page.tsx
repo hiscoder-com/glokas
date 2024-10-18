@@ -1,10 +1,16 @@
 'use client'
 
+import { useState } from 'react'
+
 import { CustomButton } from '../components/CustomButton'
 import YouTubeCard from '../components/YouTubeCard'
 import YoutubeParserModal from '../components/YoutubeParserModal'
 
 const Page: React.FC = () => {
+  const [isModalOpen, setIsModalOpen] = useState(false)
+
+  const openModal = () => setIsModalOpen(true)
+  const closeModal = () => setIsModalOpen(false)
   return (
     <>
       <main className="mx-auto w-full max-w-[1806px] flex-auto px-6 md:px-12">
@@ -45,7 +51,8 @@ const Page: React.FC = () => {
             </div>
           </CustomButton>
           <YouTubeCard />
-          <YoutubeParserModal />
+          <CustomButton onClick={openModal}>Open Modal</CustomButton>
+          <YoutubeParserModal isOpen={isModalOpen} closeModal={closeModal} />
         </div>
       </main>
     </>
