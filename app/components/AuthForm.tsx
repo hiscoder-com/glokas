@@ -36,7 +36,7 @@ function AuthForm() {
                   width={106}
                   height={106}
                 />
-                <p className="my-6 max-w-96 text-center text-xxlarge font-medium">
+                <p className="my-6 max-w-96 text-center text-2xl font-medium">
                   Thank you for signing up! We have sent a confirmation email to the
                   address you provided. To complete your registration, please check your
                   inbox and click on the verification link in the email. This step is

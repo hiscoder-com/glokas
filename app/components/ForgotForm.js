@@ -76,7 +76,7 @@ export default function ForgotForm() {
                 width={106}
                 height={106}
               />
-              <p className="my-6 max-w-96 text-center text-xxlarge font-medium">
+              <p className="my-6 max-w-96 text-center text-2xl font-medium">
                 We have sent an email to your address. Please check your inbox and follow
                 the instructions to reset your password.
               </p>
