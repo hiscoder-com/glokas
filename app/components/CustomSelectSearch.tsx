@@ -147,7 +147,9 @@ const CustomSelectSearch = <T extends Record<string, React.ReactNode>>({
                 </label>
               ))
             ) : (
-              <div className="p-2 text-black-500">No results found</div>
+              <div className="flex items-center justify-center px-6 py-[18px] text-sm text-black-500">
+                There is no such language
+              </div>
             )}
           </div>
         </div>
