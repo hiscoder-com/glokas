@@ -78,7 +78,7 @@ const YoutubeParserModal = () => {
                     setError('')
                   }}
                   isInvalid={!!error}
-                  description=" Example: https://www.youtube.com/watch?v=Dl56yoDQAJc"
+                  description="Example: https://www.youtube.com/watch?v=Dl56yoDQAJc"
                   errorMessage={error}
                 />
                 <CustomButton color="secondary" onClick={handleParseClick}>
@@ -88,7 +88,8 @@ const YoutubeParserModal = () => {
             </div>
 
             <div
-              className="max-h-32 overflow-y-auto rounded-xlarge bg-tertiary-100 p-4 text-medium text-tertiary-700 md:text-large" // prettier-ignore
+              className="max-h-32 overflow-y-auto rounded-xlarge bg-tertiary-100 p-4 text-medium text-tertiary-700 md:text-large"
+              // TODO: Add correct helper text
             >
               Helper text: Lorem ipsum dolor sit amet consectetur. Id enim eu maecenas at.
               Tortor diam nisl eu suspendisse eros scelerisque. Elementum et neque viverra
