@@ -1,3 +1,4 @@
 export default function Privacy() {
-  return <div className="text-danger-500">Privacy Policy page</div>
+  //  TODO: Add page content here
+  return <div className="text-red-500">Privacy Policy page</div>
 }
