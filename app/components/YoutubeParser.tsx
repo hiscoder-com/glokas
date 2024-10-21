@@ -12,10 +12,10 @@ interface YoutubeParser {
 }
 
 const YoutubeParserModal = ({ isOpen, closeModal }: YoutubeParser) => {
-  const [youtubeUrl, setYoutubeUrl] = useState('')
-  const [error, setError] = useState('')
+  const [youtubeUrl, setYoutubeUrl] = useState<string>('')
+  const [errorMessage, setErrorMessage] = useState<string>('')
 
-  const extractVideoId = (url: string) => {
+  const extractVideoId = (url: string): string | null => {
     const regex =
       /^https?:\/\/(?:www\.)?(?:youtube\.com\/watch\?v=|youtu\.be\/)([\w-]{11})$/
     const match = url.match(regex)
@@ -23,12 +23,14 @@ const YoutubeParserModal = ({ isOpen, closeModal }: YoutubeParser) => {
   }
 
   const handleParseClick = () => {
+    setErrorMessage('')
     const videoId = extractVideoId(youtubeUrl)
     if (videoId) {
       console.log(`Parsed Video ID: ${videoId}`)
-      setError('')
     } else {
-      setError('Incorrect link. Example: https://www.youtube.com/watch?v=Dl56yoDQAJc')
+      setErrorMessage(
+        'Incorrect link. Example: https://www.youtube.com/watch?v=Dl56yoDQAJc'
+      )
     }
   }
 
@@ -56,11 +58,21 @@ const YoutubeParserModal = ({ isOpen, closeModal }: YoutubeParser) => {
                   value={youtubeUrl}
                   onChange={(e) => {
                     setYoutubeUrl(e.target.value)
-                    setError('')
                   }}
-                  isInvalid={!!error}
-                  description="Example:https://www.youtube.com/watch?v=Dl56yoDQAJc"
-                  errorMessage={error}
+                  isInvalid={!!errorMessage}
+                  description="Example: https://www.youtube.com/watch?v=Dl56yoDQAJc"
+                  errorMessage={errorMessage && <p>{errorMessage}</p>}
+                  endContent={
+                    errorMessage && (
+                      <Image
+                        src="/icons/warning.svg"
+                        alt="warning"
+                        width={18}
+                        height={18}
+                        className="mr-2 h-[38px] w-[38px] p-2"
+                      />
+                    )
+                  }
                 />
                 <CustomButton className="w-28" color="primary" onClick={handleParseClick}>
                   Parse
