@@ -56,10 +56,10 @@ export default function VideoCard() {
         <div className="flex flex-col justify-between pl-2">
           <div className="flex flex-col gap-8 md:flex-row">
             <div className="w-[30%]">
-              <h2 className="mb-1 text-xxxxlarge font-bold text-black-950">
+              <h2 className="mb-1 text-3xl font-bold text-black-950">
                 Introducing JESUS: A new, animated family film
               </h2>
-              <p className="mb-1 text-large text-black-900">Language: English</p>
+              <p className="mb-1 text-lg text-black-900">Language: English</p>
               <div className="mt-5 flex items-center gap-1">
                 <Image
                   src="icons/youtube.svg"
@@ -68,11 +68,11 @@ export default function VideoCard() {
                   height={23}
                   className="text-red-600"
                 />
-                <span className="text-xxlarge font-medium text-black-950">YouTube</span>
+                <span className="text-2xl font-medium text-black-950">YouTube</span>
               </div>
             </div>
             <div className="w-[45%]">
-              <p className="gap-1 text-medium text-black-950">
+              <p className="gap-1 text-base text-black-950">
                 {fullText.slice(0, maxChars) + '...'}
               </p>
               <button
@@ -84,7 +84,7 @@ export default function VideoCard() {
             </div>
 
             <div className="w-[20%] flex-1">
-              <div className="gap-3 text-large text-black-950">
+              <div className="gap-3 text-lg text-black-950">
                 <p>Words: 88</p>
                 <p>Languages: 0</p>
                 <p>Last update: 12.12.2024</p>
@@ -108,7 +108,7 @@ export default function VideoCard() {
                 className="text-black-700"
               />
             </button>
-            <h3 className="mb-[38px] text-center text-mega font-bold">
+            <h3 className="mb-[38px] text-center text-[42px] font-bold">
               Video Description in English
             </h3>
             <p className="mb-4 text-medium text-black-950">{fullText}</p>
