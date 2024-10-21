@@ -50,7 +50,7 @@ const YoutubeParserModal = ({ isOpen, closeModal }: YoutubeParser) => {
             <div className="mb-12">
               <div className="flex items-center gap-3">
                 <CustomInput
-                  className="mt-9"
+                  className="mb-3 mt-9"
                   variant="bordered"
                   size="sm"
                   value={youtubeUrl}

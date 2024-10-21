@@ -114,6 +114,10 @@ module.exports = {
               foreground: '#FFFFFF',
               DEFAULT: '#6d6d6d',
             },
+            error: {
+              colour: '#FB3939',
+              text: '#961818',
+            },
           },
           layout: {
             hoverOpacity: 1, //  this value is applied as opacity-[value] when the component is hovered

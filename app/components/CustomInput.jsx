@@ -39,13 +39,14 @@ export const CustomInput = extendVariants(Input, {
           'group-data-[focus=true]:border-black shadow-none',
         ],
         input: ['font-medium'],
+        errorMessage: 'text-tiny text-error-text',
       },
-    },
-    color: {
-      default: {},
-      primary: {},
-      black: {},
-      danger: {},
+      color: {
+        default: {},
+        primary: {},
+        black: {},
+        danger: {},
+      },
     },
     size: {
       sm: {
