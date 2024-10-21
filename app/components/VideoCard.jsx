@@ -40,11 +40,14 @@ export default function VideoCard() {
     setIsModalOpen(!isModalOpen)
   }
 
+  const isTextShort = (text) => {
+    const lineCount = text.split('\n').length
+    return lineCount < 6
+  }
+
   return (
     <div>
-      <div
-        className="flex flex-col rounded-xxxxlarge border bg-tertiary-50 border-tertiary-300 px-[26px] py-6 shadow-md md:flex-row" // prettier-ignore
-      >
+      <div className="flex flex-col rounded-xxxxlarge border border-tertiary-300 bg-tertiary-50 px-[26px] py-6 shadow-md md:flex-row">
         <div className="md:w-[50%]">
           <Image
             src="/preview.png"
@@ -83,14 +86,15 @@ export default function VideoCard() {
               >
                 {fullText}
               </p>
-              <button
-                onClick={toggleModal}
-                className="mt-2 text-tertiary-700 underline focus:outline-none"
-              >
-                View All
-              </button>
+              {!isTextShort(fullText) && (
+                <button
+                  onClick={toggleModal}
+                  className="mt-2 text-tertiary-700 underline focus:outline-none"
+                >
+                  View All
+                </button>
+              )}
             </div>
-
             <div className="w-[20%] flex-1">
               <div className="gap-3 text-lg text-black-950">
                 <p>Words: 88</p>
@@ -103,7 +107,9 @@ export default function VideoCard() {
       </div>
       {isModalOpen && (
         <Modal closeModal={toggleModal}>
-          <VideoDescription fullText={fullText} closeModal={toggleModal} />
+          <div className="relative flex h-full items-center justify-center">
+            <VideoDescription fullText={fullText} closeModal={toggleModal} />
+          </div>
         </Modal>
       )}
     </div>
