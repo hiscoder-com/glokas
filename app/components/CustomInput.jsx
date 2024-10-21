@@ -39,7 +39,7 @@ export const CustomInput = extendVariants(Input, {
           'group-data-[focus=true]:border-black shadow-none',
         ],
         input: ['font-medium'],
-        errorMessage: 'text-tiny text-error-text',
+        errorMessage: 'text-tiny text-[#961818]',
       },
       color: {
         default: {},
@@ -109,7 +109,7 @@ export const CustomInput = extendVariants(Input, {
     },
     isInvalid: {
       true: {
-        errorMessage: 'text-tiny text-error-text',
+        errorMessage: 'text-tiny text-[#961818]',
       },
     },
   },
@@ -129,6 +129,15 @@ export const CustomInput = extendVariants(Input, {
       size: 'sm',
       class: {
         input: ['px-4 py-3.5'],
+      },
+    },
+    {
+      isInvalid: true,
+      variant: 'bordered',
+      size: 'sm',
+      class: {
+        inputWrapper: ['!border-[#FB3939]'],
+        input: ['!text-[#961818]'],
       },
     },
   ],
