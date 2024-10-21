@@ -107,6 +107,11 @@ export const CustomInput = extendVariants(Input, {
         input: 'resize-none data-[hide-scroll=true]:scrollbar-hide',
       },
     },
+    isInvalid: {
+      true: {
+        errorMessage: 'text-tiny text-error-text',
+      },
+    },
   },
   defaultVariants: {
     variant: 'default',
