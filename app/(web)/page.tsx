@@ -4,7 +4,7 @@ import { useState } from 'react'
 
 import { CustomButton } from '../components/CustomButton'
 import YouTubeCard from '../components/YouTubeCard'
-import YoutubeParserModal from '../components/YoutubeParserModal'
+import YoutubeParser from '../components/YoutubeParser'
 
 const Page: React.FC = () => {
   const [isModalOpen, setIsModalOpen] = useState(false)
@@ -52,7 +52,7 @@ const Page: React.FC = () => {
           </CustomButton>
           <YouTubeCard />
           <CustomButton onClick={openModal}>Open Modal</CustomButton>
-          <YoutubeParserModal isOpen={isModalOpen} closeModal={closeModal} />
+          <YoutubeParser isOpen={isModalOpen} closeModal={closeModal} />
         </div>
       </main>
     </>
