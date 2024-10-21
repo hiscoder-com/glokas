@@ -21,7 +21,7 @@ const prohibitedBiblicalNames = [
 
 export const validateLength = (username) => {
   if (username.length < 5 || username.length > 20) {
-    return 'Username must be between 5 and 20 characters long.'
+    return 'Username must be between 5 and 20 characters long'
   }
   return null
 }
@@ -33,11 +33,11 @@ export const validateCharacters = (username) => {
   }
 
   if (/__|--|_-|-_/.test(username)) {
-    return 'Username cannot contain consecutive underscores or hyphens, or combinations of them.'
+    return 'Username cannot contain consecutive underscores or hyphens, or combinations of them'
   }
 
   if (username.endsWith('_') || username.endsWith('-')) {
-    return 'Username cannot end with an underscore or hyphen.'
+    return 'Username cannot end with an underscore or hyphen'
   }
 
   return null
@@ -70,7 +70,7 @@ export const checkUsernameAvailability = async (username, supabaseService) => {
 }
 
 export const validateEmail = (email) => {
-  if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+  if (!/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(email)) {
     return 'Unsupported email format'
   }
   return null
