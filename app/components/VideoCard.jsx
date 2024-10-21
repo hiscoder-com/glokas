@@ -103,7 +103,7 @@ export default function VideoCard() {
       </div>
       {isModalOpen && (
         <Modal closeModal={toggleModal}>
-          <VideoDescription fullText={fullText} />
+          <VideoDescription fullText={fullText} closeModal={toggleModal} />
         </Modal>
       )}
     </div>

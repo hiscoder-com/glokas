@@ -1,8 +1,8 @@
 import Image from 'next/image'
 
-const VideoDescription = ({ fullText }) => {
+const VideoDescription = ({ fullText, closeModal }) => {
   return (
-    <div className="relative h-[780px] max-h-[780px] min-h-[500px] w-[800px] overflow-y-auto rounded-large bg-white px-16 py-[52px] shadow-lg md:w-1/2">
+    <div className="relative max-h-[90vh] w-full max-w-3xl overflow-y-auto rounded-2xl bg-secondary-foreground px-16 pb-16 pt-[52px]">
       <button onClick={closeModal} className="absolute right-4 top-4 focus:outline-none">
         <Image
           src="icons/close.svg"
