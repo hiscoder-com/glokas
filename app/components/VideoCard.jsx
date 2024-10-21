@@ -2,6 +2,9 @@ import { useState } from 'react'
 
 import Image from 'next/image'
 
+import { Modal } from './Modal'
+import VideoDescription from './VideoDescription'
+
 export default function VideoCard() {
   const [isModalOpen, setIsModalOpen] = useState(false)
 
@@ -32,8 +35,6 @@ export default function VideoCard() {
   The film will be anchored in the Christian Gospels. It will re-imagine the original "JESUS" film, 
   using much of its dialogue but in a refreshed script. This means that this new animated film will 
   eventually be available in 2,000+ heart languages! 2,000+ heart languages! 2,000+ heart languages!`
-
-  const maxChars = 400
 
   const toggleModal = () => {
     setIsModalOpen(!isModalOpen)
@@ -72,8 +73,15 @@ export default function VideoCard() {
               </div>
             </div>
             <div className="w-[45%]">
-              <p className="gap-1 text-base text-black-950">
-                {fullText.slice(0, maxChars) + '...'}
+              <p
+                className="overflow-hidden text-ellipsis text-base text-black-950"
+                style={{
+                  display: '-webkit-box',
+                  WebkitLineClamp: 6,
+                  WebkitBoxOrient: 'vertical',
+                }}
+              >
+                {fullText}
               </p>
               <button
                 onClick={toggleModal}
@@ -94,26 +102,9 @@ export default function VideoCard() {
         </div>
       </div>
       {isModalOpen && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50">
-          <div className="relative h-[780px] max-h-[780px] min-h-[500px] w-[800px] overflow-y-auto rounded-large bg-white px-16 py-[52px] shadow-lg md:w-1/2">
-            <button
-              onClick={toggleModal}
-              className="absolute right-4 top-4 focus:outline-none"
-            >
-              <Image
-                src="icons/close.svg"
-                alt="Close"
-                width={24}
-                height={24}
-                className="text-black-700"
-              />
-            </button>
-            <h3 className="mb-[38px] text-center text-[42px] font-bold">
-              Video Description in English
-            </h3>
-            <p className="mb-4 text-medium text-black-950">{fullText}</p>
-          </div>
-        </div>
+        <Modal closeModal={toggleModal}>
+          <VideoDescription fullText={fullText} />
+        </Modal>
       )}
     </div>
   )
