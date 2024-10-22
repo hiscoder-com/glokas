@@ -8,11 +8,11 @@ import { CustomButton } from './CustomButton'
 import { CustomInput } from './CustomInput'
 import { Modal } from './Modal'
 
-interface ParserProps {
+interface YouTubeParserProps {
   onClose: () => void
 }
 
-const Parser = ({ onClose }: ParserProps) => {
+const YouTubeParser = ({ onClose }: YouTubeParserProps) => {
   const [youtubeUrl, setYoutubeUrl] = useState<string>('')
   const [isInvalid, setIsInvalid] = useState<boolean>(false)
 
@@ -100,4 +100,4 @@ const Parser = ({ onClose }: ParserProps) => {
   )
 }
 
-export default Parser
+export default YouTubeParser
