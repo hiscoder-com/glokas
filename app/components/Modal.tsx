@@ -1,20 +1,33 @@
 import Image from 'next/image'
 
-export function Modal({
-  closeModal,
-  children,
-  width = '800px',
-  showCloseButton = true,
-}: {
+type ModalType = 'info' | 'dialog'
+
+interface ModalProps {
   closeModal?: () => void
   children: React.ReactNode
-  width?: string
-  showCloseButton?: boolean
-}) {
+  modalType?: ModalType
+}
+
+const modalStyles = {
+  info: {
+    width: 'w-[800px]',
+    shadow: 'shadow-small',
+    showCloseButton: true,
+  },
+  dialog: {
+    width: 'w-auto',
+    shadow: 'shadow-medium',
+    showCloseButton: false,
+  },
+}
+
+export function Modal({ closeModal, children, modalType = 'info' }: ModalProps) {
+  const { width, shadow, showCloseButton } = modalStyles[modalType]
+
   return (
     <div className="fixed inset-0 z-40 flex items-center justify-center overflow-y-auto bg-black/20">
       <div
-        className={`relative my-6 max-h-[90vh] w-[${width}] rounded-2xl bg-white shadow-small`}
+        className={`relative my-6 max-h-[90vh] ${width} rounded-2xl bg-white ${shadow}`}
       >
         {showCloseButton && closeModal && (
           <button
