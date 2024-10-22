@@ -1,3 +1,5 @@
+'use client'
+
 import { useState } from 'react'
 
 import Image from 'next/image'
@@ -12,7 +14,7 @@ interface YoutubeParserProps {
 
 const YoutubeParser = ({ closeModal }: YoutubeParserProps) => {
   const [youtubeUrl, setYoutubeUrl] = useState<string>('')
-  const [errorMessage, setErrorMessage] = useState<string>('')
+  const [isInvalid, setIsInvalid] = useState<boolean>(false)
 
   const extractVideoId = (url: string): string | null => {
     const regex =
@@ -22,14 +24,10 @@ const YoutubeParser = ({ closeModal }: YoutubeParserProps) => {
   }
 
   const handleParseClick = () => {
-    setErrorMessage('')
     const videoId = extractVideoId(youtubeUrl)
+    setIsInvalid(!videoId)
     if (videoId) {
       console.log(`Parsed Video ID: ${videoId}`)
-    } else {
-      setErrorMessage(
-        'Incorrect link. Example: https://www.youtube.com/watch?v=Dl56yoDQAJc'
-      )
     }
   }
 
@@ -56,12 +54,19 @@ const YoutubeParser = ({ closeModal }: YoutubeParserProps) => {
                 value={youtubeUrl}
                 onChange={(e) => {
                   setYoutubeUrl(e.target.value)
+                  setIsInvalid(false)
                 }}
-                isInvalid={!!errorMessage}
+                isInvalid={isInvalid}
                 description="Example: https://www.youtube.com/watch?v=Dl56yoDQAJc"
-                errorMessage={errorMessage && <p>{errorMessage}</p>}
+                errorMessage={
+                  isInvalid && (
+                    <p>
+                      Incorrect link. Example: https://www.youtube.com/watch?v=Dl56yoDQAJc
+                    </p>
+                  )
+                }
                 endContent={
-                  errorMessage && (
+                  isInvalid && (
                     <Image
                       src="/icons/warning.svg"
                       alt="warning"
@@ -78,7 +83,8 @@ const YoutubeParser = ({ closeModal }: YoutubeParserProps) => {
             </div>
           </div>
 
-          <div className="rounded-xlarge bg-tertiary-100 p-4 text-medium text-tertiary-700 md:text-large">
+          <div className="rounded-xl bg-tertiary-100 p-4 text-medium text-tertiary-700 md:text-large">
+            {/* TODO: Replace the text below with the correct text */}
             Helper text: Lorem ipsum dolor sit amet consectetur. Id enim eu maecenas at.
             Tortor diam nisl eu suspendisse eros scelerisque. Elementum et neque viverra
             ipsum faucibus. Porttitor et nisi aenean id dui risus quis nunc ut.
