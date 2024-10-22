@@ -40,6 +40,7 @@ export const CustomInput = extendVariants(Input, {
         ],
         input: ['font-medium'],
         errorMessage: 'text-tiny text-darger-800',
+        description: '',
       },
       color: {
         default: {},
@@ -129,6 +130,7 @@ export const CustomInput = extendVariants(Input, {
       size: 'sm',
       class: {
         input: ['px-4 py-3.5'],
+        description: 'text-base text-black-300',
       },
     },
     {

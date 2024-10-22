@@ -9,10 +9,10 @@ import { CustomInput } from './CustomInput'
 import { Modal } from './Modal'
 
 interface YouTubeParserProps {
-  closeModal: () => void
+  onClose: () => void
 }
 
-const YouTubeParser = ({ closeModal }: YouTubeParserProps) => {
+const YouTubeParser = ({ onClose }: YouTubeParserProps) => {
   const [youtubeUrl, setYoutubeUrl] = useState<string>('')
   const [isInvalid, setIsInvalid] = useState<boolean>(false)
 
@@ -33,7 +33,7 @@ const YouTubeParser = ({ closeModal }: YouTubeParserProps) => {
 
   return (
     <>
-      <Modal closeModal={closeModal}>
+      <Modal onClose={onClose}>
         <div>
           <div className="mb-12 flex items-center justify-center gap-3">
             <Image
@@ -48,7 +48,7 @@ const YouTubeParser = ({ closeModal }: YouTubeParserProps) => {
           <div className="mb-12">
             <div className="flex items-center gap-3">
               <CustomInput
-                className="mb-3 mt-9"
+                className="mb-3 mt-11"
                 variant="bordered"
                 size="sm"
                 value={youtubeUrl}
@@ -59,11 +59,13 @@ const YouTubeParser = ({ closeModal }: YouTubeParserProps) => {
                 isInvalid={isInvalid}
                 description="Example: https://www.youtube.com/watch?v=Dl56yoDQAJc"
                 errorMessage={
-                  isInvalid && (
+                  <div
+                    className={`h-6 overflow-hidden ${isInvalid ? 'block' : 'hidden'}`}
+                  >
                     <p>
                       Incorrect link. Example: https://www.youtube.com/watch?v=Dl56yoDQAJc
                     </p>
-                  )
+                  </div>
                 }
                 endContent={
                   isInvalid && (
