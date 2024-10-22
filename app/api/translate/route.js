@@ -8,7 +8,13 @@ export async function POST(request) {
   const usage = await translator.getUsage()
   const result = await translator.translateText(text, 'ru', 'en-US')
   return NextResponse.json(
-    { ...result, usage },
+    {
+      text: result.text,
+      detectedSourceLang: result.detectedSourceLang,
+      billedCharacters: result.billedCharacters,
+      totalUsed: usage.character.count + result.billedCharacters,
+      remain: usage.character.limit - usage.character.count - result.billedCharacters,
+    },
     {
       status: 200,
       headers: { 'Content-Type': 'application/json' },
