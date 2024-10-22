@@ -34,7 +34,7 @@ const YoutubeParser = ({ closeModal }: YoutubeParserProps) => {
   return (
     <>
       <Modal closeModal={closeModal}>
-        <div className="relative w-full max-w-3xl rounded-2xl bg-secondary-foreground px-16 pb-16 pt-[52px]">
+        <div>
           <div className="mb-12 flex items-center justify-center gap-3">
             <Image
               src="/icons/youtube.svg"
@@ -77,7 +77,7 @@ const YoutubeParser = ({ closeModal }: YoutubeParserProps) => {
                   )
                 }
               />
-              <CustomButton className="w-28" color="primary" onClick={handleParseClick}>
+              <CustomButton color="primary" onClick={handleParseClick}>
                 Parse
               </CustomButton>
             </div>
