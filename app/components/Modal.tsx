@@ -9,7 +9,7 @@ export function Modal({
 }) {
   return (
     <div className="fixed inset-0 z-40 flex items-center justify-center overflow-y-auto bg-black/20">
-      <div className="shadow-window relative my-6 max-h-[90vh] w-[800px] rounded-[18px] bg-white">
+      <div className="relative my-6 max-h-[90vh] w-[800px] rounded-2xl bg-white shadow-small">
         <button
           onClick={closeModal}
           className="absolute right-5 top-5 z-50 flex h-11 w-11 items-center justify-center p-3 text-black"
