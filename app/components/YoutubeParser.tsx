@@ -79,7 +79,11 @@ const YouTubeParser = ({ onClose }: YouTubeParserProps) => {
                   )
                 }
               />
-              <CustomButton color="primary" onClick={handleParseClick}>
+              <CustomButton
+                color="primary"
+                onClick={handleParseClick}
+                isDisabled={!youtubeUrl}
+              >
                 Parse
               </CustomButton>
             </div>
