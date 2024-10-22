@@ -1,3 +1,5 @@
+import Image from 'next/image'
+
 export function Modal({
   closeModal,
   children,
@@ -7,28 +9,16 @@ export function Modal({
 }) {
   return (
     <div className="fixed inset-0 z-40 flex items-center justify-center overflow-y-auto bg-black/20">
-      <div className={`relative my-6 max-h-[90vh] rounded-2xl shadow-medium`}>
+      <div className="shadow-window relative my-6 max-h-[90vh] w-[800px] rounded-[18px] bg-white">
         <button
           onClick={closeModal}
-          className={`absolute right-5 top-5 h-11 w-11 items-center justify-center p-3 text-black`}
+          className="absolute right-5 top-5 z-50 flex h-11 w-11 items-center justify-center p-3 text-black"
         >
-          <svg
-            width="16"
-            height="16"
-            viewBox="0 0 16 16"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M2 2L8 8M14 14L8 8M8 8L14 2L2 14"
-              stroke="currentColor"
-              strokeWidth="3"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            />
-          </svg>
+          <Image src="/icons/close.svg" alt="Close" width={24} height={24} />
         </button>
-        {children}
+        <div className="max-h-[calc(90vh-3rem)] overflow-y-auto px-16 py-[52px]">
+          {children}
+        </div>
       </div>
     </div>
   )
