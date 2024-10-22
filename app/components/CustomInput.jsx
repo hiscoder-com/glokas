@@ -134,7 +134,6 @@ export const CustomInput = extendVariants(Input, {
     {
       isInvalid: true,
       variant: 'bordered',
-      size: 'sm',
       class: {
         inputWrapper: ['!border-darger-500'],
         input: ['!text-danger-800'],
