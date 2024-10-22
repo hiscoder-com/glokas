@@ -71,7 +71,7 @@ export default function VideoCard() {
 
   return (
     <div>
-      <div className="flex flex-col rounded-xxxxlarge border border-tertiary-300 bg-tertiary-50 px-[26px] py-6 shadow-md md:flex-row">
+      <div className="flex flex-col rounded-2xl border border-tertiary-300 bg-tertiary-50 px-[26px] py-6 shadow-md md:flex-row">
         <div className="md:w-[50%]">
           <Image
             src="/preview.png"

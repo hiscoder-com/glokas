@@ -11,11 +11,6 @@ module.exports = {
       fontFamily: {
         roboto: ['Roboto', 'sans-serif'],
       },
-      borderRadius: {
-        xlarge: '10px', // rounded-xlarge
-        xxxxlarge: '18px', // rounded-xxxxlarge
-        mega: '2rem', // rounded-mega
-      },
     },
   },
   darkMode: 'class',
