@@ -18,7 +18,7 @@ const YoutubeParser = ({ closeModal }: YoutubeParserProps) => {
 
   const extractVideoId = (url: string): string | null => {
     const regex =
-      /^https?:\/\/(?:www\.)?(?:youtube\.com\/watch\?v=|youtu\.be\/)([\w-]{11})$/
+      /(?:https?:\/\/)?(?:www\.)?(?:m\.)?(?:youtube\.com\/(?:watch\?v=|embed\/|v\/|shorts\/|live\/|playlist\?list=.*&v=)|youtu\.be\/)([\w-]{11})(?:[\?\&\#]\S*)?/
     const match = url.match(regex)
     return match ? match[1] : null
   }
