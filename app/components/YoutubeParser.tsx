@@ -88,7 +88,6 @@ const YouTubeParser = ({ onClose }: YouTubeParserProps) => {
               </CustomButton>
             </div>
           </div>
-
           <div className="rounded-xl bg-tertiary-100 p-4 text-medium text-tertiary-700 md:text-large">
             {/* TODO: Replace the text below with the correct text */}
             Helper text: Lorem ipsum dolor sit amet consectetur. Id enim eu maecenas at.
