@@ -52,7 +52,7 @@ const Page: React.FC = () => {
           </CustomButton>
           <YouTubeCard />
           <CustomButton onClick={openModal}>Open Modal</CustomButton>
-          <YoutubeParser isOpen={isModalOpen} closeModal={closeModal} />
+          {isModalOpen && <YoutubeParser closeModal={closeModal} />}
         </div>
       </main>
     </>
