@@ -12,7 +12,7 @@ export function Modal({
       <div className="relative my-6 max-h-[90vh] w-[800px] rounded-2xl bg-white shadow-small">
         <button
           onClick={closeModal}
-          className="absolute right-5 top-5 z-50 flex h-11 w-11 items-center justify-center p-3 text-black"
+          className="absolute right-1 top-1 z-50 flex h-11 w-11 items-center justify-center p-3 text-black"
         >
           <Image src="/icons/close.svg" alt="Close" width={24} height={24} />
         </button>
