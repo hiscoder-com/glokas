@@ -10,7 +10,7 @@ const Page: React.FC = () => {
   const [isModalOpen, setIsModalOpen] = useState(false)
 
   const openModal = () => setIsModalOpen(true)
-  const closeModal = () => setIsModalOpen(false)
+  const onClose = () => setIsModalOpen(false)
   return (
     <>
       <main className="mx-auto w-full max-w-[1806px] flex-auto px-6 md:px-12">
@@ -52,7 +52,7 @@ const Page: React.FC = () => {
           </CustomButton>
           <YouTubeCard />
           <CustomButton onClick={openModal}>Open Modal</CustomButton>
-          {isModalOpen && <YouTubeParser closeModal={closeModal} />}
+          {isModalOpen && <YouTubeParser onClose={onClose} />}
         </div>
       </main>
     </>
