@@ -130,7 +130,7 @@ export const CustomInput = extendVariants(Input, {
       size: 'sm',
       class: {
         input: ['px-4 py-3.5'],
-        description: 'text-base text-black-300',
+        description: 'text-black-300',
       },
     },
     {

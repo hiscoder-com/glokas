@@ -48,26 +48,20 @@ const YouTubeParser = ({ onClose }: YouTubeParserProps) => {
           <div className="mb-12">
             <div className="flex items-center gap-3">
               <CustomInput
-                className="mb-3 mt-11"
+                className="mb-3 mt-9"
                 variant="bordered"
                 size="sm"
                 value={youtubeUrl}
                 onChange={(e) => {
                   setYoutubeUrl(e.target.value)
-                  if (isInvalid) {
-                    setIsInvalid(false)
-                  }
+                  setIsInvalid(false)
                 }}
                 isInvalid={isInvalid}
                 description="Example: https://www.youtube.com/watch?v=Dl56yoDQAJc"
                 errorMessage={
-                  <div
-                    className={`h-6 overflow-hidden ${isInvalid ? 'block' : 'hidden'}`}
-                  >
-                    <p>
-                      Incorrect link. Example: https://www.youtube.com/watch?v=Dl56yoDQAJc
-                    </p>
-                  </div>
+                  <p>
+                    Incorrect link. Example: https://www.youtube.com/watch?v=Dl56yoDQAJc
+                  </p>
                 }
                 endContent={
                   isInvalid && (

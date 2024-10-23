@@ -12,18 +12,20 @@ const modalStyles = {
   info: {
     width: 'w-[800px]',
     shadow: 'shadow-small',
+    paddingVertical: 'py-[52px]',
   },
   dialog: {
     width: 'w-auto',
     shadow: 'shadow-medium',
+    paddingVertical: 'py-12',
   },
 }
 
 export function Modal({ onClose, children, modalType = 'info' }: ModalProps) {
-  const { width, shadow } = modalStyles[modalType]
+  const { width, shadow, paddingVertical } = modalStyles[modalType]
 
   return (
-    <div className="fixed inset-0 z-40 flex items-center justify-center bg-black/20 md:m-6">
+    <div className="fixed inset-0 z-40 flex items-center justify-center bg-black/20">
       <div
         className={`relative my-6 max-h-[90vh] ${width} rounded-2xl bg-white ${shadow} overflow-hidden`}
       >
@@ -35,7 +37,7 @@ export function Modal({ onClose, children, modalType = 'info' }: ModalProps) {
             <Image src="/icons/close.svg" alt="Close" width={24} height={24} />
           </button>
         )}
-        <div className="max-h-[90vh] overflow-y-auto rounded-2xl px-16 py-[52px]">
+        <div className={`max-h-[90vh] overflow-y-auto px-16 ${paddingVertical}`}>
           {children}
         </div>
       </div>
