@@ -27,7 +27,7 @@ export function Modal({ onClose, children, modalType = 'info' }: ModalProps) {
   return (
     <div className="fixed inset-0 z-40 flex items-center justify-center bg-black/20">
       <div
-        className={`relative my-6 max-h-[90vh] ${width} rounded-2xl bg-white ${shadow} overflow-hidden`}
+        className={`relative max-h-[90vh] ${width} rounded-2xl bg-white ${shadow} overflow-hidden`}
       >
         {onClose && (
           <button
