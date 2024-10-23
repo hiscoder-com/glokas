@@ -1,121 +1,110 @@
-import { useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 
 import Image from 'next/image'
 
-import CustomTooltip from './CustomTooltip'
+import { Tooltip } from '@nextui-org/react'
+
 import { Modal } from './Modal'
-import VideoDescription from './VideoDescription'
 
 export default function VideoCard() {
   const [isModalOpen, setIsModalOpen] = useState(false)
-  const [isTooltipVisible, setIsTooltipVisible] = useState(false)
+  const [isTruncated, setIsTruncated] = useState(false)
 
-  const fullText = `Jesus Film Project is working on a new, animated family film called JESUS. 
-  The film will be anchored in the Christian Gospels. It will re-imagine the original "JESUS" film, 
-  using much of its dialogue but in a refreshed script. This means that this new animated film will 
-  eventually be available in 2,000+ heart languages! 2,000+ heart languages! 2,000+ heart languages! Jesus Film Project is working on a new, animated family film called JESUS.
-  The film will be anchored in the Christian Gospels. It will re-imagine the original "JESUS" film, 
-  using much of its dialogue but in a refreshed script. This means that this new animated film will 
-  eventually be available in 2,000+ heart languages! 2,000+ heart languages! 2,000+ heart languages!
-  Jesus Film Project is working on a new, animated family film called JESUS.
-  The film will be anchored in the Christian Gospels. It will re-imagine the original "JESUS" film, 
-  using much of its dialogue but in a refreshed script. This means that this new animated film will 
-  eventually be available in 2,000+ heart languages! 2,000+ heart languages! 2,000+ heart languages! 
-  Jesus Film Project is working on a new, animated family film called JESUS.
-  The film will be anchored in the Christian Gospels. It will re-imagine the original "JESUS" film, 
-  using much of its dialogue but in a refreshed script. This means that this new animated film will 
-  eventually be available in 2,000+ heart languages! 2,000+ heart languages! 2,000+ heart languages!
-  Jesus Film Project is working on a new, animated family film called JESUS.
-  The film will be anchored in the Christian Gospels. It will re-imagine the original "JESUS" film, 
-  using much of its dialogue but in a refreshed script. This means that this new animated film will 
-  eventually be available in 2,000+ heart languages! 2,000+ heart languages! 2,000+ heart languages!
-  Jesus Film Project is working on a new, animated family film called JESUS.
-  The film will be anchored in the Christian Gospels. It will re-imagine the original "JESUS" film, 
-  using much of its dialogue but in a refreshed script. This means that this new animated film will 
-  eventually be available in 2,000+ heart languages! 2,000+ heart languages! 2,000+ heart languages!
-  Jesus Film Project is working on a new, animated family film called JESUS.
-  The film will be anchored in the Christian Gospels. It will re-imagine the original "JESUS" film, 
-  using much of its dialogue but in a refreshed script. This means that this new animated film will 
-  eventually be available in 2,000+ heart languages! 2,000+ heart languages! 2,000+ heart languages!`
+  const descriptionContainer = useRef(null)
 
   const toggleModal = () => {
     setIsModalOpen(!isModalOpen)
   }
 
-  const isTextShort = (text) => {
-    const lineCount = text.split('\n').length
-    return lineCount < 6
+  const isTextTruncated = () => {
+    if (!descriptionContainer.current) return false
+    return (
+      descriptionContainer.current.scrollHeight >
+      descriptionContainer.current.clientHeight
+    )
   }
+
+  useEffect(() => {
+    setIsTruncated(isTextTruncated())
+
+    const handleResize = () => setIsTruncated(isTextTruncated())
+    window.addEventListener('resize', handleResize)
+
+    return () => window.removeEventListener('resize', handleResize)
+  }, [])
 
   return (
     <div>
-      <div className="flex flex-col gap-6 rounded-2xl border border-tertiary-300 bg-tertiary-50 px-[26px] py-6 md:flex-row">
-        <div className="md:w-[50%]">
-          <div className="h-[180px] w-[288px] overflow-hidden rounded-large">
-            <Image
-              src="/preview.png"
-              alt="Film Image"
-              width={288}
-              height={180}
-              objectFit="cover"
-            />
-          </div>
+      <div className="flex flex-col gap-6 rounded-2xl border border-tertiary-300 bg-tertiary-50 px-7 py-6 md:flex-row">
+        <div className="block h-[180px] w-[288px] shrink-0 md:hidden lg:block">
+          <Image
+            src="/preview.png"
+            alt="Film Image"
+            width={288}
+            height={180}
+            className="object-cover"
+          />
         </div>
-        <div className="flex flex-col justify-between pl-2">
-          <div className="flex flex-col gap-8 md:flex-row">
-            <div className="w-[30%]">
-              <h2
-                className="text-3xl font-bold text-black-950"
-                style={{
-                  display: '-webkit-box',
-                  WebkitLineClamp: 2,
-                  WebkitBoxOrient: 'vertical',
-                  overflow: 'hidden',
-                  textOverflow: 'ellipsis',
-                }}
-              >
-                Introducing JESUS: A new, animated family film
-              </h2>
-              <p className="text-lg text-black-900">Language: English</p>
-              <div className="mt-7 flex items-center gap-1">
-                <Image
-                  src="icons/youtube.svg"
-                  alt="YouTube"
-                  width={32}
-                  height={23}
-                  className="text-red-600"
-                />
+        <div className="flex h-full flex-col justify-between">
+          <div className="mr-4 flex flex-col gap-8 py-2 md:flex-row">
+            <div className="flex flex-col justify-between">
+              <div className="flex flex-col gap-1">
+                <h2
+                  title="Introducing JESUS: A new, animated family film"
+                  className="line-clamp-2 text-3xl font-semibold text-black-950"
+                >
+                  Introducing JESUS: A new, animated family film
+                </h2>
+                <p className="text-lg text-black-900">Language: English</p>
+              </div>
+              <div className="flex items-center gap-1">
+                <Image src="icons/youtube.svg" alt="YouTube" width={32} height={23} />
                 <span className="text-2xl font-medium text-black-950">YouTube</span>
               </div>
             </div>
-            <div className="w-[45%]">
+            <div className="w-full shrink-0 md:w-72 xl:w-96 2xl:w-[500px]">
               <p
-                className="overflow-hidden text-ellipsis text-base text-black-950"
-                style={{
-                  display: '-webkit-box',
-                  WebkitLineClamp: 6,
-                  WebkitBoxOrient: 'vertical',
-                }}
+                ref={descriptionContainer}
+                className="line-clamp-6 text-base text-black-950"
               >
                 {fullText}
               </p>
-              {!isTextShort(fullText) && (
+              {isTruncated && (
                 <button
                   onClick={toggleModal}
-                  className="mt-2 text-tertiary-700 underline focus:outline-none"
+                  className="text-tertiary-700 underline focus:outline-none"
                 >
                   View All
                 </button>
               )}
             </div>
-            <div className="relative w-[20%] flex-1">
-              <div className="flex items-center gap-1 text-lg text-black-950">
+            <div className="relative shrink-0 text-lg text-black-950">
+              <div className="flex items-center gap-1">
                 <p>Words: 88</p>
-                <CustomTooltip
-                  isVisible={isTooltipVisible}
-                  toggleTooltip={setIsTooltipVisible}
-                  message="The total word count number includes title and description"
-                />
+                <Tooltip
+                  showArrow
+                  placement="top"
+                  content="The total word count number includes title and description"
+                  classNames={{
+                    base: [
+                      'rounded-medium shadow-medium',
+                      'before:bg-primary-50 rounded-medium shadow-medium',
+                    ],
+                    content: [
+                      'max-w-64',
+                      'shadow-none',
+                      'py-4 px-5 text-center',
+                      'text-black-950 bg-primary-50',
+                    ],
+                  }}
+                >
+                  <Image
+                    src="icons/exclamation.svg"
+                    alt="Exclamation Icon"
+                    width={20}
+                    height={20}
+                  />
+                </Tooltip>
               </div>
               <p>Languages: 0</p>
               <p>Last update: 12.12.2024</p>
@@ -124,12 +113,20 @@ export default function VideoCard() {
         </div>
       </div>
       {isModalOpen && (
-        <Modal closeModal={toggleModal}>
-          <div className="relative flex h-full items-center justify-center">
-            <VideoDescription fullText={fullText} closeModal={toggleModal} />
-          </div>
+        <Modal onClose={toggleModal}>
+          <h3 className="mb-10 text-center text-4xl font-medium">
+            Video Description in English
+          </h3>
+          <p className="text-medium text-black-950">{fullText}</p>
         </Modal>
       )}
     </div>
   )
 }
+
+const fullText = `Jesus Film Project is working on a new, animated family film called JESUS.
+  The film will be anchored in the Christian Gospels. It will re-imagine the original "JESUS" film,
+  using much of its dialogue but in a refreshed script. This means that this new animated film will
+  using much of its dialogue but in a refreshed script. This means that this new animated film will
+  eventually be available in 2,000+ heart languages! 2,000+ heart languages! 2,000+ heart languages! Jesus Film Project is working on a new, animated family film called JESUS.
+  eventually be available in 2,000+ heart languages! 2,000+ heart languages! 2,000+ heart languages!`
