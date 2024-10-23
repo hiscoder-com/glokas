@@ -12,7 +12,7 @@ export const CustomButton = extendVariants(Button, {
       secondary:
         'text-secondary-900 bg-secondary-100 hover:bg-secondary-200 focus:bg-secondary-300 disabled:bg-black-300 disabled:text-black-100',
       danger:
-        'border-darger text-darger hover:border-darger-700 hover:text-darger-700 focus:border-darger-800 focus:text-darger-800 disabled:border-black-400 disabled:text-black-400',
+        'border-danger text-danger hover:border-danger-700 hover:text-danger-700 focus:border-danger-800 focus:text-danger-800 disabled:border-black-400 disabled:text-black-400',
     },
     isDisabled: {
       true: 'cursor-not-allowed',

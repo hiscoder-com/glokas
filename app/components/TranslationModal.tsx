@@ -76,8 +76,8 @@ export const TranslationModal: React.FC<TranslationModalProps> = ({
   if (!isOpen) return null
 
   return (
-    <Modal closeModal={onClose}>
-      <div className="flex flex-col gap-8 bg-background px-12 py-12 md:px-16">
+    <Modal onClose={onClose}>
+      <div className="flex flex-col gap-8 bg-background">
         <div className="mx-auto text-center md:w-3/4">
           <h2 className="mb-3 text-4xl font-semibold">Translate</h2>
           <p>
@@ -126,7 +126,7 @@ export const TranslationModal: React.FC<TranslationModalProps> = ({
           </div>
         </div>
 
-        <div className="self-center md:self-end">
+        <div className="flex justify-between md:self-end">
           <CustomButton variant="bordered" className="mr-4" onClick={onClose}>
             Cancel
           </CustomButton>

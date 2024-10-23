@@ -39,13 +39,15 @@ export const CustomInput = extendVariants(Input, {
           'group-data-[focus=true]:border-black shadow-none',
         ],
         input: ['font-medium'],
+        errorMessage: 'text-tiny text-danger-800',
+        description: '',
       },
-    },
-    color: {
-      default: {},
-      primary: {},
-      secondary: {},
-      danger: {},
+      color: {
+        default: {},
+        primary: {},
+        black: {},
+        danger: {},
+      },
     },
     size: {
       sm: {
@@ -106,6 +108,11 @@ export const CustomInput = extendVariants(Input, {
         input: 'resize-none data-[hide-scroll=true]:scrollbar-hide',
       },
     },
+    isInvalid: {
+      true: {
+        errorMessage: 'text-tiny text-danger-800',
+      },
+    },
   },
   defaultVariants: {
     variant: 'default',
@@ -123,6 +130,15 @@ export const CustomInput = extendVariants(Input, {
       size: 'sm',
       class: {
         input: ['px-4 py-3.5'],
+        description: 'text-black-300',
+      },
+    },
+    {
+      isInvalid: true,
+      variant: 'bordered',
+      class: {
+        inputWrapper: ['!border-danger-500'],
+        input: ['!text-danger-800'],
       },
     },
   ],

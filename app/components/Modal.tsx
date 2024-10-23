@@ -1,38 +1,43 @@
-export function Modal({
-  closeModal,
-  children,
-}: {
-  closeModal: () => void
+import Image from 'next/image'
+
+type ModalType = 'info' | 'dialog'
+
+interface ModalProps {
+  onClose?: () => void
   children: React.ReactNode
-}) {
+  modalType?: ModalType
+}
+
+const modalStyles = {
+  info: {
+    width: 'w-[800px]',
+    shadow: 'shadow-small',
+    paddingVertical: 'py-[52px]',
+  },
+  dialog: {
+    width: 'w-auto',
+    shadow: 'shadow-medium',
+    paddingVertical: 'py-12',
+  },
+}
+
+export function Modal({ onClose, children, modalType = 'info' }: ModalProps) {
+  const { width, shadow, paddingVertical } = modalStyles[modalType]
+
   return (
     <div className="fixed inset-0 z-40 flex items-center justify-center bg-black/20">
-      <div className="relative overflow-hidden rounded-2xl shadow-medium md:m-6">
-        <button onClick={closeModal} className="absolute right-5 top-5">
-          <svg
-            width="24"
-            height="25"
-            viewBox="0 0 24 25"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
+      <div className={`relative ${width} rounded-2xl bg-white ${shadow} overflow-hidden`}>
+        {onClose && (
+          <button
+            onClick={onClose}
+            className="absolute right-1 top-1 z-50 flex items-center justify-center p-3 text-black"
           >
-            <path
-              d="M6 6.5L18 18.5"
-              stroke="black"
-              strokeWidth="1.5"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            />
-            <path
-              d="M18 6.5L6 18.5"
-              stroke="black"
-              strokeWidth="1.5"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            />
-          </svg>
-        </button>
-        <div className="max-h-[90vh] overflow-y-auto rounded-2xl">{children}</div>
+            <Image src="/icons/close.svg" alt="Close" width={24} height={24} />
+          </button>
+        )}
+        <div className={`max-h-[90vh] overflow-y-auto px-12 md:px-16 ${paddingVertical}`}>
+          {children}
+        </div>
       </div>
     </div>
   )

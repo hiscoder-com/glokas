@@ -4,13 +4,16 @@ import { useState } from 'react'
 
 import { CustomButton } from '../components/CustomButton'
 import { TranslationModal } from '../components/TranslationModal'
+import YouTubeCard from '../components/YouTubeCard'
+import YouTubeParser from '../components/YouTubeParser'
 
 const Page: React.FC = () => {
-  const [isModalOpen, setIsModalOpen] = useState(false)
+  const [isTranslationModalOpen, setIsTranslationModalOpen] = useState(false)
+  const [isYouTubeParserOpen, setIsYouTubeParserOpen] = useState(false)
 
   const handleTranslate = () => {
     console.log('Starting translation...')
-    setIsModalOpen(false)
+    setIsTranslationModalOpen(false)
   }
 
   return (
@@ -53,15 +56,22 @@ const Page: React.FC = () => {
             </div>
           </CustomButton>
 
-          <CustomButton color="secondary" onClick={() => setIsModalOpen(true)}>
+          <CustomButton color="secondary" onClick={() => setIsTranslationModalOpen(true)}>
             Translate
           </CustomButton>
 
           <TranslationModal
-            isOpen={isModalOpen}
-            onClose={() => setIsModalOpen(false)}
+            isOpen={isTranslationModalOpen}
+            onClose={() => setIsTranslationModalOpen(false)}
             onTranslate={handleTranslate}
           />
+          <YouTubeCard />
+          <CustomButton onClick={() => setIsYouTubeParserOpen(true)}>
+            Open YouTube Parser
+          </CustomButton>
+          {isYouTubeParserOpen && (
+            <YouTubeParser onClose={() => setIsYouTubeParserOpen(false)} />
+          )}
         </div>
       </main>
     </>
