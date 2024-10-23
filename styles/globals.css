@@ -15,7 +15,7 @@
 
 /* Стиль фона скроллбара */
 ::-webkit-scrollbar-track {
-  background-color: hsl(var(--nextui-black-100)); /* Цвет фона */
+  background-color: hsl(var(--nextui-black-50)); /* Цвет фона */
   border-radius: 3px; /* Скругление углов */
 }
 

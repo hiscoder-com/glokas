@@ -6,8 +6,8 @@ export function Modal({
   children: React.ReactNode
 }) {
   return (
-    <div className="fixed inset-0 z-40 flex items-center justify-center overflow-y-auto bg-black/20">
-      <div className="relative my-6 max-h-[90vh] overflow-hidden rounded-2xl shadow-medium">
+    <div className="fixed inset-0 z-40 flex items-center justify-center bg-black/20">
+      <div className="relative overflow-hidden rounded-2xl shadow-medium md:m-6">
         <button onClick={closeModal} className="absolute right-5 top-5">
           <svg
             width="24"
@@ -19,20 +19,20 @@ export function Modal({
             <path
               d="M6 6.5L18 18.5"
               stroke="black"
-              stroke-width="1.5"
-              stroke-linecap="round"
-              stroke-linejoin="round"
+              strokeWidth="1.5"
+              strokeLinecap="round"
+              strokeLinejoin="round"
             />
             <path
               d="M18 6.5L6 18.5"
               stroke="black"
-              stroke-width="1.5"
-              stroke-linecap="round"
-              stroke-linejoin="round"
+              strokeWidth="1.5"
+              strokeLinecap="round"
+              strokeLinejoin="round"
             />
           </svg>
         </button>
-        {children}
+        <div className="max-h-[90vh] overflow-y-auto rounded-2xl">{children}</div>
       </div>
     </div>
   )

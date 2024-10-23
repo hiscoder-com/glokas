@@ -109,6 +109,21 @@ module.exports = {
               foreground: '#FFFFFF',
               DEFAULT: '#6d6d6d',
             },
+            darger: {
+              '50': '#fff1f1',
+              '100': '#ffe0e0',
+              '200': '#ffc6c6',
+              '300': '#ff9f9f',
+              '400': '#ff6868',
+              '500': '#fb3939', //Figma:Eror/colour
+              '600': '#e91919',
+              '700': '#c41111',
+              '800': '#961818', //Figma:Eror/text
+              '900': '#861616',
+              '950': '#490606',
+              foreground: '#FFFFFF',
+              DEFAULT: '#fb3939',
+            },
           },
           layout: {
             hoverOpacity: 1, //  this value is applied as opacity-[value] when the component is hovered
