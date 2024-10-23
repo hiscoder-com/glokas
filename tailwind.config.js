@@ -11,6 +11,10 @@ module.exports = {
       fontFamily: {
         roboto: ['Roboto', 'sans-serif'],
       },
+      boxShadow: {
+        small: '0px 4px 16px 7px rgba(0, 0, 0, 0.1)',
+        medium: '0px 8px 16px -2px rgba(27, 33, 44, 0.12)', // #1B212C1F to rgba
+      },
     },
   },
   darkMode: 'class',
@@ -94,7 +98,6 @@ module.exports = {
               DEFAULT: '#21a5ac',
             },
             black: {
-              '00': '#FFFFFF',
               '50': '#f6f6f6',
               '100': '#e7e7e7',
               '200': '#d1d1d1',
@@ -108,6 +111,21 @@ module.exports = {
               '950': '#000000',
               foreground: '#FFFFFF',
               DEFAULT: '#6d6d6d',
+            },
+            danger: {
+              '50': '#fff1f1',
+              '100': '#ffe0e0',
+              '200': '#ffc6c6',
+              '300': '#ff9f9f',
+              '400': '#ff6868',
+              '500': '#fb3939', //Figma:Eror/colour
+              '600': '#e91919',
+              '700': '#c41111',
+              '800': '#961818', //Figma:Eror/text
+              '900': '#861616',
+              '950': '#490606',
+              foreground: '#FFFFFF',
+              DEFAULT: '#fb3939',
             },
           },
           layout: {
