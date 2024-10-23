@@ -66,7 +66,7 @@ export const NavigationMenu = () => {
                     onClick={handleYoutubeClick}
                   >
                     <Image
-                      src={'/icons/youtube.svg'}
+                      src={'/icons/youtube-outline.svg'}
                       alt="youtube"
                       width={18}
                       height={18}

@@ -7,11 +7,11 @@ import { UsageSummary } from './UsageSummary'
 
 const PlaceholderItem = () => (
   <div className="flex items-center gap-3">
-    <div className="h-8 w-8 rounded-full bg-primary-200"></div>
-    <div className="h-5 w-5/6 animate-pulse rounded-medium bg-primary-200"></div>
+    <div className="h-5 w-5 rounded-full bg-primary-200"></div>
+    <div className="h-4 w-5/6 animate-pulse rounded-medium bg-primary-200"></div>
   </div>
 )
-function SearchBarFallback() {
+const NavigationMenuFallback = () => {
   return (
     <div className="flex flex-col gap-3 rounded-medium bg-primary-100 px-2 py-3">
       <PlaceholderItem />
@@ -28,7 +28,7 @@ export const Sidebar = () => {
         <div className="mx-auto">
           <MainLogo />
         </div>
-        <Suspense fallback={<SearchBarFallback />}>
+        <Suspense fallback={<NavigationMenuFallback />}>
           <NavigationMenu />
         </Suspense>
       </div>
