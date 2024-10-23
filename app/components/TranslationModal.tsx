@@ -67,17 +67,18 @@ export const TranslationModal: React.FC<TranslationModalProps> = ({
     setLanguages(languages.filter((lang) => lang !== languageToDelete))
   }
 
-  const remainingWordAvailable = 42654
+  const remainingWordAvailable = 500
   const numberOfLanguages = languages.length
   const wordsInSourceLanguage = 88
   const totalWords = numberOfLanguages * wordsInSourceLanguage
   const formula = `${wordsInSourceLanguage} x ${numberOfLanguages} = ${totalWords}`
+  const hasEnoughWords = totalWords <= remainingWordAvailable
 
   if (!isOpen) return null
 
   return (
     <Modal onClose={onClose}>
-      <div className="flex flex-col gap-8 bg-background">
+      <div className="flex flex-col gap-10 bg-background">
         <div className="mx-auto text-center md:w-3/4">
           <h2 className="mb-3 text-4xl font-semibold">Translate</h2>
           <p>
@@ -108,29 +109,52 @@ export const TranslationModal: React.FC<TranslationModalProps> = ({
           <div>
             <div className="mb-2 flex gap-2">
               <h4 className="text-xl font-semibold">Words for translation in total:</h4>
+              {/* TODO: add hint */}
               <WarningIcon />
             </div>
             {formula}
           </div>
         </div>
 
-        <div className="rounded-large bg-tertiary-100 p-5 text-xl">
-          <div className="mb-10 flex items-center justify-between md:mb-3">
-            <p>Total number of words to be translated</p>
-            <p className="ml-5 font-bold">{totalWords}</p>
+        <div className="font-medium">
+          <div
+            className={`rounded-large p-5 text-xl ${hasEnoughWords ? 'bg-tertiary-100' : 'bg-danger-50'}`}
+          >
+            <div
+              className={`mb-10 flex items-center justify-between md:mb-3 ${!hasEnoughWords ? 'text-danger-800' : ''}`}
+            >
+              <p>Total number of words to be translated</p>
+              <p className="ml-5 font-bold">{totalWords}</p>
+            </div>
+
+            <div className="flex items-center justify-between">
+              <p className={`${!hasEnoughWords ? 'text-danger-800' : ''}`}>
+                Remaining word available
+              </p>
+              <p className={`ml-5 font-bold ${!hasEnoughWords ? 'text-danger-500' : ''}`}>
+                {remainingWordAvailable}
+              </p>
+            </div>
           </div>
 
-          <div className="flex items-center justify-between">
-            <p>Remaining word available</p>
-            <p className="ml-5 font-bold">{remainingWordAvailable}</p>
-          </div>
+          {!hasEnoughWords && (
+            <div className="mx-1 mt-2 text-xl text-danger-800">
+              You don&apos;t have enough words to translate. Remove a language or{' '}
+              <a href="#" className="text-danger-500 underline">
+                update the plan
+              </a>
+              .
+            </div>
+          )}
         </div>
 
         <div className="flex justify-between md:self-end">
           <CustomButton variant="bordered" className="mr-4" onClick={onClose}>
             Cancel
           </CustomButton>
-          <CustomButton onClick={onTranslate}>Yes, translate</CustomButton>
+          <CustomButton disabled={!hasEnoughWords} onClick={onTranslate}>
+            Yes, translate
+          </CustomButton>
         </div>
       </div>
     </Modal>
