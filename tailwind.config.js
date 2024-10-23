@@ -11,6 +11,10 @@ module.exports = {
       fontFamily: {
         roboto: ['Roboto', 'sans-serif'],
       },
+      boxShadow: {
+        small: '0px 4px 16px 7px rgba(0, 0, 0, 0.1)',
+        medium: '0px 8px 16px -2px rgba(27, 33, 44, 0.12)', // #1B212C1F to rgba
+      },
     },
   },
   darkMode: 'class',
