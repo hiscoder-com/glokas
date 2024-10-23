@@ -39,7 +39,7 @@ export const CustomInput = extendVariants(Input, {
           'group-data-[focus=true]:border-black shadow-none',
         ],
         input: ['font-medium'],
-        errorMessage: 'text-tiny text-darger-800',
+        errorMessage: 'text-tiny text-danger-800',
         description: '',
       },
       color: {
@@ -110,7 +110,7 @@ export const CustomInput = extendVariants(Input, {
     },
     isInvalid: {
       true: {
-        errorMessage: 'text-tiny text-darger-800',
+        errorMessage: 'text-tiny text-danger-800',
       },
     },
   },
@@ -137,7 +137,7 @@ export const CustomInput = extendVariants(Input, {
       isInvalid: true,
       variant: 'bordered',
       class: {
-        inputWrapper: ['!border-darger-500'],
+        inputWrapper: ['!border-danger-500'],
         input: ['!text-danger-800'],
       },
     },

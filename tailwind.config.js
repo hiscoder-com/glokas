@@ -112,7 +112,7 @@ module.exports = {
               foreground: '#FFFFFF',
               DEFAULT: '#6d6d6d',
             },
-            darger: {
+            danger: {
               '50': '#fff1f1',
               '100': '#ffe0e0',
               '200': '#ffc6c6',
