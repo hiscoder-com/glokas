@@ -54,7 +54,9 @@ const YouTubeParser = ({ onClose }: YouTubeParserProps) => {
                 value={youtubeUrl}
                 onChange={(e) => {
                   setYoutubeUrl(e.target.value)
-                  setIsInvalid(false)
+                  if (isInvalid) {
+                    setIsInvalid(false)
+                  }
                 }}
                 isInvalid={isInvalid}
                 description="Example: https://www.youtube.com/watch?v=Dl56yoDQAJc"
