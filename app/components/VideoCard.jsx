@@ -1,14 +1,14 @@
-import { useEffect, useRef, useState } from 'react'
+import { useState } from 'react'
 
 import Image from 'next/image'
 
+import CustomTooltip from './CustomTooltip'
 import { Modal } from './Modal'
 import VideoDescription from './VideoDescription'
 
 export default function VideoCard() {
   const [isModalOpen, setIsModalOpen] = useState(false)
-  const [isWarningTooltipVisible, setIsWarningTooltipVisible] = useState(false)
-  const tooltipRef = useRef(null)
+  const [isTooltipVisible, setIsTooltipVisible] = useState(false)
 
   const fullText = `Jesus Film Project is working on a new, animated family film called JESUS. 
   The film will be anchored in the Christian Gospels. It will re-imagine the original "JESUS" film, 
@@ -46,28 +46,6 @@ export default function VideoCard() {
     const lineCount = text.split('\n').length
     return lineCount < 6
   }
-
-  const toggleWarningTooltip = () => {
-    setIsWarningTooltipVisible(!isWarningTooltipVisible)
-  }
-
-  useEffect(() => {
-    const handleClickOutside = (event) => {
-      if (tooltipRef.current && !tooltipRef.current.contains(event.target)) {
-        setIsWarningTooltipVisible(false)
-      }
-    }
-
-    if (isWarningTooltipVisible) {
-      document.addEventListener('mousedown', handleClickOutside)
-    } else {
-      document.removeEventListener('mousedown', handleClickOutside)
-    }
-
-    return () => {
-      document.removeEventListener('mousedown', handleClickOutside)
-    }
-  }, [isWarningTooltipVisible])
 
   return (
     <div>
@@ -122,24 +100,11 @@ export default function VideoCard() {
             <div className="relative w-[20%] flex-1">
               <div className="flex items-center gap-1 text-lg text-black-950">
                 <p>Words: 88</p>
-                <Image
-                  src="icons/exclamation.svg"
-                  alt="Exclamation"
-                  width={20}
-                  height={20}
-                  className="cursor-pointer"
-                  onClick={toggleWarningTooltip}
-                  style={{ filter: 'invert(0)' }}
+                <CustomTooltip
+                  isVisible={isTooltipVisible}
+                  toggleTooltip={setIsTooltipVisible}
+                  message="The total word count number includes title and description"
                 />
-                {isWarningTooltipVisible && (
-                  <div
-                    ref={tooltipRef}
-                    className="absolute bottom-full left-[-26px] z-10 mb-2 w-[240px] translate-x-0 rounded-lg border border-gray-300 bg-white p-4 text-center text-sm text-black-950 shadow-lg"
-                  >
-                    The total word count number includes title and description
-                    <div className="absolute left-1/2 top-full h-0 w-0 -translate-x-1/2 border-x-8 border-t-8 border-x-transparent border-t-white" />
-                  </div>
-                )}
               </div>
               <p>Languages: 0</p>
               <p>Last update: 12.12.2024</p>
