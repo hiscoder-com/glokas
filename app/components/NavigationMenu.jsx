@@ -2,18 +2,17 @@
 
 import { useEffect, useMemo, useState } from 'react'
 
+import Link from 'next/link'
 import { useRouter, useSearchParams } from 'next/navigation'
 
 import { Accordion, AccordionItem, Image } from '@nextui-org/react'
 
-import { CustomLink } from './CustomLink'
-
 const MenuItem = ({ href, iconSrc, label, active }) => (
-  <li className={`rounded-medium ${active ? 'bg-primary-200' : ''} p-2`}>
-    <CustomLink href={href} className="flex gap-3 text-sm font-medium text-black-950">
+  <li className={`rounded-medium ${active ? 'bg-primary-200' : ''}`}>
+    <Link href={href} className="flex gap-3 p-2 text-sm font-medium text-black-950">
       <Image src={iconSrc} alt={label} width={18} height={18} />
       <span>{label}</span>
-    </CustomLink>
+    </Link>
   </li>
 )
 
@@ -46,7 +45,6 @@ export const NavigationMenu = () => {
           className="px-0"
           itemClasses={{
             base: 'data-[open=true]:bg-primary-100 rounded-medium px-0 py-2',
-            trigger: 'w-full',
           }}
           defaultExpandedKeys={isYoutubePage || isAllVideoPage ? ['1'] : []}
         >
@@ -54,13 +52,14 @@ export const NavigationMenu = () => {
             classNames={{
               indicator: 'text-lg text-black-950 -rotate-90 data-[open=true]:rotate-90',
               trigger: `gap-1 w-full rounded-medium data-[open=true]:rounded-none p-2 ${isYoutubePage ? 'bg-primary-200' : ''}`,
-              content: `p-2 ${isAllVideoPage ? 'bg-primary-200' : ''}`,
+              content: `py-0 ${isAllVideoPage ? 'bg-primary-200' : ''}`,
             }}
             key="1"
-            aria-label="Accordion 1"
-            onPress={handleYoutubeClick}
             startContent={
-              <div className="flex w-fit items-center gap-3 font-medium">
+              <div
+                className="flex w-fit items-center gap-3 font-medium"
+                onClick={handleYoutubeClick}
+              >
                 <Image src={'/icons/youtube.svg'} alt="youtube" width={18} height={18} />
                 <span>YouTube Automatization</span>
               </div>
@@ -68,7 +67,7 @@ export const NavigationMenu = () => {
           >
             <div
               onClick={handleAllVideoClick}
-              className="flex cursor-pointer gap-3 font-medium"
+              className="flex cursor-pointer gap-3 p-2 font-medium"
             >
               <Image src={'/icons/time.svg'} alt="youtube" width={18} height={18} />
               <span>All video</span>

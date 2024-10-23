@@ -1,11 +1,8 @@
-'use client'
-
-import { Image } from '@nextui-org/image'
-
-import { CustomLink } from './CustomLink'
+import Image from 'next/image'
+import Link from 'next/link'
 
 export const MainLogo = () => (
-  <CustomLink href="/" className="hover:opacity-100">
+  <Link href="/" className="hover:opacity-100">
     <Image
       removeWrapper
       height={45}
@@ -14,5 +11,5 @@ export const MainLogo = () => (
       alt="Glokas Logo"
       radius="none"
     />
-  </CustomLink>
+  </Link>
 )

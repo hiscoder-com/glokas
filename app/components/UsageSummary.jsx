@@ -15,8 +15,8 @@ export const UsageSummary = () => {
   return (
     <div className="w-full rounded-large bg-primary-200 px-3 py-3.5">
       <ul>
-        {summaryData.map(({ label, value }, index) => (
-          <SummaryItem key={index} label={label} value={value} />
+        {summaryData.map(({ label, value }) => (
+          <SummaryItem key={label} label={label} value={value} />
         ))}
       </ul>
     </div>
