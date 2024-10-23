@@ -49,24 +49,35 @@ export default function VideoCard() {
 
   return (
     <div>
-      <div className="flex flex-col rounded-2xl border border-tertiary-300 bg-tertiary-50 px-[26px] py-6 shadow-md md:flex-row">
+      <div className="flex flex-col gap-6 rounded-2xl border border-tertiary-300 bg-tertiary-50 px-[26px] py-6 md:flex-row">
         <div className="md:w-[50%]">
-          <Image
-            src="/preview.png"
-            alt="Film Image"
-            width={288}
-            height={180}
-            className="rounded-large"
-          />
+          <div className="h-[180px] w-[288px] overflow-hidden rounded-large">
+            <Image
+              src="/preview.png"
+              alt="Film Image"
+              width={288}
+              height={180}
+              objectFit="cover"
+            />
+          </div>
         </div>
         <div className="flex flex-col justify-between pl-2">
           <div className="flex flex-col gap-8 md:flex-row">
             <div className="w-[30%]">
-              <h2 className="mb-1 text-3xl font-bold text-black-950">
+              <h2
+                className="text-3xl font-bold text-black-950"
+                style={{
+                  display: '-webkit-box',
+                  WebkitLineClamp: 2,
+                  WebkitBoxOrient: 'vertical',
+                  overflow: 'hidden',
+                  textOverflow: 'ellipsis',
+                }}
+              >
                 Introducing JESUS: A new, animated family film
               </h2>
-              <p className="mb-1 text-lg text-black-900">Language: English</p>
-              <div className="mt-5 flex items-center gap-1">
+              <p className="text-lg text-black-900">Language: English</p>
+              <div className="mt-7 flex items-center gap-1">
                 <Image
                   src="icons/youtube.svg"
                   alt="YouTube"
