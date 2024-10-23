@@ -1,8 +1,10 @@
 import { useState } from 'react'
 
+import Image from 'next/image'
+
 import { CustomButton } from './CustomButton'
+import CustomTooltip from './CustomTooltip'
 import { Modal } from './Modal'
-import { WarningIcon } from './WarningIcon'
 
 interface LanguageTagProps {
   language: string
@@ -17,28 +19,7 @@ const LanguageTag: React.FC<LanguageTagProps> = ({ language, onDelete }) => (
       className="flex items-center justify-center leading-none hover:opacity-hover"
       onClick={() => onDelete(language)}
     >
-      <svg
-        width="16"
-        height="17"
-        viewBox="0 0 16 17"
-        fill="none"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <path
-          d="M4 4.5L12 12.5"
-          stroke="black"
-          strokeWidth="1.5"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-        />
-        <path
-          d="M12 4.5L4 12.5"
-          stroke="black"
-          strokeWidth="1.5"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-        />
-      </svg>
+      <Image src="/icons/close.svg" alt="Close" width={16} height={16} />
     </button>
   </div>
 )
@@ -62,6 +43,7 @@ export const TranslationModal: React.FC<TranslationModalProps> = ({
     'Russian',
     'Chinese',
   ])
+  const [isTooltipVisible, setIsTooltipVisible] = useState(false)
 
   const handleDeleteLanguage = (languageToDelete: string) => {
     setLanguages(languages.filter((lang) => lang !== languageToDelete))
@@ -109,8 +91,11 @@ export const TranslationModal: React.FC<TranslationModalProps> = ({
           <div>
             <div className="mb-2 flex gap-2">
               <h4 className="text-xl font-semibold">Words for translation in total:</h4>
-              {/* TODO: add hint */}
-              <WarningIcon />
+              <CustomTooltip
+                isVisible={isTooltipVisible}
+                toggleTooltip={setIsTooltipVisible}
+                message="The number of words in the title and description of the original language is multiplied by the number of selected languages to get the total number of words required for translation"
+              />
             </div>
             {formula}
           </div>
