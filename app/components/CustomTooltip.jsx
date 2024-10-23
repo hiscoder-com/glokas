@@ -17,7 +17,7 @@ export default function CustomTooltip({ isVisible, toggleTooltip, message }) {
       {isVisible && (
         <div
           ref={tooltipRef}
-          className="absolute bottom-full left-[-150px] z-10 mb-2 w-[320px] translate-x-0 rounded-md bg-primary-50 p-4 text-center text-sm shadow-medium"
+          className="absolute bottom-full left-1/2 z-10 mb-2 w-80 -translate-x-1/2 rounded-md bg-primary-50 p-4 text-center text-sm shadow-medium"
         >
           {message}
           <div className="absolute left-1/2 top-full h-0 w-0 -translate-x-1/2 border-x-8 border-t-8 border-x-transparent border-t-primary-50" />
