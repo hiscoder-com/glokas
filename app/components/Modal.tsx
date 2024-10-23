@@ -1,34 +1,45 @@
-export function Modal({
-  closeModal,
-  children,
-}: {
-  closeModal: () => void
+import Image from 'next/image'
+
+type ModalType = 'info' | 'dialog'
+
+interface ModalProps {
+  onClose?: () => void
   children: React.ReactNode
-}) {
+  modalType?: ModalType
+}
+
+const modalStyles = {
+  info: {
+    width: 'w-[800px]',
+    shadow: 'shadow-small',
+    paddingVertical: 'py-[52px]',
+  },
+  dialog: {
+    width: 'w-auto',
+    shadow: 'shadow-medium',
+    paddingVertical: 'py-12',
+  },
+}
+
+export function Modal({ onClose, children, modalType = 'info' }: ModalProps) {
+  const { width, shadow, paddingVertical } = modalStyles[modalType]
+
   return (
-    <div className="fixed inset-0 z-40 flex items-center justify-center overflow-y-auto bg-black/20">
-      <div className={`relative my-6 max-h-[90vh] shadow-medium`}>
-        <button
-          onClick={closeModal}
-          className={`absolute right-5 top-5 h-11 w-11 items-center justify-center p-3 text-black`}
-        >
-          <svg
-            width="16"
-            height="16"
-            viewBox="0 0 16 16"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
+    <div className="fixed inset-0 z-40 flex items-center justify-center bg-black/20">
+      <div
+        className={`relative max-h-[90vh] ${width} rounded-2xl bg-white ${shadow} overflow-hidden`}
+      >
+        {onClose && (
+          <button
+            onClick={onClose}
+            className="absolute right-1 top-1 z-50 flex items-center justify-center p-3 text-black"
           >
-            <path
-              d="M2 2L8 8M14 14L8 8M8 8L14 2L2 14"
-              stroke="currentColor"
-              strokeWidth="3"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            />
-          </svg>
-        </button>
-        {children}
+            <Image src="/icons/close.svg" alt="Close" width={24} height={24} />
+          </button>
+        )}
+        <div className={`max-h-[90vh] overflow-y-auto px-16 ${paddingVertical}`}>
+          {children}
+        </div>
       </div>
     </div>
   )
