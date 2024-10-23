@@ -1,31 +1,17 @@
-import { useEffect, useRef } from 'react'
+import { useRef } from 'react'
 
 import Image from 'next/image'
 
 export default function CustomTooltip({ isVisible, toggleTooltip, message }) {
   const tooltipRef = useRef(null)
 
-  useEffect(() => {
-    const handleClickOutside = (event) => {
-      if (tooltipRef.current && !tooltipRef.current.contains(event.target)) {
-        toggleTooltip(false)
-      }
-    }
-
-    if (isVisible) {
-      document.addEventListener('mousedown', handleClickOutside)
-    } else {
-      document.removeEventListener('mousedown', handleClickOutside)
-    }
-
-    return () => {
-      document.removeEventListener('mousedown', handleClickOutside)
-    }
-  }, [isVisible, toggleTooltip])
-
   return (
-    <div className="relative">
-      <div className="cursor-pointer" onClick={() => toggleTooltip(!isVisible)}>
+    <div
+      className="relative"
+      onMouseEnter={() => toggleTooltip(true)}
+      onMouseLeave={() => toggleTooltip(false)}
+    >
+      <div className="cursor-pointer">
         <Image
           src="icons/exclamation.svg"
           alt="Exclamation Icon"
