@@ -8,7 +8,7 @@ import { UsageSummary } from './UsageSummary'
 const PlaceholderItem = () => (
   <div className="flex items-center gap-3">
     <div className="h-8 w-8 rounded-full bg-primary-200"></div>
-    <div className="h-5 w-5/6 animate-pulse rounded-xlarge bg-primary-200"></div>
+    <div className="h-5 w-5/6 animate-pulse rounded-medium bg-primary-200"></div>
   </div>
 )
 function SearchBarFallback() {
