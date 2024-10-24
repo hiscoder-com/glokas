@@ -4,6 +4,7 @@ import { useState } from 'react'
 
 import { CustomButton } from '../components/CustomButton'
 import { TranslationModal } from '../components/TranslationModal'
+import VideoCard from '../components/VideoCard'
 import YouTubeCard from '../components/YouTubeCard'
 import YouTubeParser from '../components/YouTubeParser'
 
@@ -74,6 +75,7 @@ const Page: React.FC = () => {
           {isYouTubeParserOpen && (
             <YouTubeParser onClose={() => setIsYouTubeParserOpen(false)} />
           )}
+          <VideoCard />
         </div>
       </main>
     </>

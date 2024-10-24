@@ -11,10 +11,6 @@ module.exports = {
       fontFamily: {
         roboto: ['Roboto', 'sans-serif'],
       },
-      boxShadow: {
-        small: '0px 4px 16px 7px rgba(0, 0, 0, 0.1)',
-        medium: '0px 8px 16px -2px rgba(27, 33, 44, 0.12)', // #1B212C1F to rgba
-      },
     },
   },
   darkMode: 'class',
@@ -131,15 +127,8 @@ module.exports = {
           layout: {
             hoverOpacity: 1, //  this value is applied as opacity-[value] when the component is hovered
             boxShadow: {
-              // shadow-small
-              small:
-                '0px 0px 5px 0px rgb(0 0 0 / 0.02), 0px 2px 10px 0px rgb(0 0 0 / 0.06), 0px 0px 1px 0px rgb(0 0 0 / 0.3)',
-              // shadow-medium
-              medium:
-                '0px 0px 15px 0px rgb(0 0 0 / 0.03), 0px 2px 30px 0px rgb(0 0 0 / 0.08), 0px 0px 1px 0px rgb(0 0 0 / 0.3)',
-              // shadow-large
-              large:
-                '0px 0px 30px 0px rgb(0 0 0 / 0.04), 0px 30px 60px 0px rgb(0 0 0 / 0.12), 0px 0px 1px 0px rgb(0 0 0 / 0.3)',
+              small: '0px 4px 16px 7px rgba(0, 0, 0, 0.1)',
+              medium: '0px 8px 16px -2px rgba(27, 33, 44, 0.12)',
             },
           },
         },
