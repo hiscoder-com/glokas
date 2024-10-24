@@ -34,81 +34,79 @@ export default function VideoCard() {
   }, [])
 
   return (
-    <div>
-      <div className="flex flex-col gap-6 rounded-2xl border border-tertiary-300 bg-tertiary-50 px-7 py-6 md:flex-row">
-        <div className="block h-[180px] w-[288px] shrink-0 md:hidden lg:block">
-          <Image
-            src="/preview.png"
-            alt="Film Image"
-            width={288}
-            height={180}
-            className="object-cover"
-          />
-        </div>
-        <div className="flex h-full flex-col justify-between">
-          <div className="mr-4 flex flex-col gap-8 py-2 md:flex-row">
-            <div className="flex flex-col justify-between">
-              <div className="flex flex-col gap-1">
-                <h2
-                  title="Introducing JESUS: A new, animated family film"
-                  className="line-clamp-2 text-3xl font-semibold text-black-950"
-                >
-                  Introducing JESUS: A new, animated family film
-                </h2>
-                <p className="text-lg text-black-900">Language: English</p>
-              </div>
-              <div className="flex items-center gap-1">
-                <Image src="icons/youtube.svg" alt="YouTube" width={32} height={23} />
-                <span className="text-2xl font-medium text-black-950">YouTube</span>
-              </div>
-            </div>
-            <div className="w-full shrink-0 md:w-72 xl:w-96 2xl:w-[500px]">
-              <p
-                ref={descriptionContainer}
-                className="line-clamp-6 text-base text-black-950"
+    <div className="flex w-full flex-col gap-6 rounded-2xl border border-tertiary-300 bg-tertiary-50 px-7 py-6 md:flex-row">
+      <div className="block shrink-0 md:hidden lg:block">
+        <Image
+          src="/preview.png"
+          alt="Film Image"
+          width={288}
+          height={180}
+          className="h-full rounded-large object-cover"
+        />
+      </div>
+      <div className="flex w-full flex-col justify-between self-stretch">
+        <div className="mr-4 flex h-full flex-col gap-8 py-2 md:flex-row">
+          <div className="flex basis-full flex-col justify-between">
+            <div>
+              <h2
+                title="Introducing JESUS: A new, animated family film"
+                className="mb-1 line-clamp-2 text-3xl font-semibold text-black-950"
               >
-                {fullText}
-              </p>
-              {isTruncated && (
-                <button
-                  onClick={toggleModal}
-                  className="text-tertiary-700 underline focus:outline-none"
-                >
-                  View All
-                </button>
-              )}
+                Introducing JESUS: A new, animated family film
+              </h2>
+              <p className="text-lg text-black-900">Language: English</p>
             </div>
-            <div className="relative shrink-0 text-lg text-black-950">
-              <div className="flex items-center gap-1">
-                <p>Words: 88</p>
-                <Tooltip
-                  showArrow
-                  placement="top"
-                  content="The total word count number includes title and description"
-                  classNames={{
-                    base: [
-                      'rounded-medium shadow-medium',
-                      'before:bg-primary-50 rounded-medium shadow-medium',
-                    ],
-                    content: [
-                      'max-w-64',
-                      'shadow-none',
-                      'py-4 px-5 text-center',
-                      'text-black-950 bg-primary-50',
-                    ],
-                  }}
-                >
-                  <Image
-                    src="icons/exclamation.svg"
-                    alt="Exclamation Icon"
-                    width={20}
-                    height={20}
-                  />
-                </Tooltip>
-              </div>
-              <p>Languages: 0</p>
-              <p>Last update: 12.12.2024</p>
+            <div className="flex items-center gap-1">
+              <Image src="icons/youtube.svg" alt="YouTube" width={32} height={23} />
+              <span className="text-2xl font-medium text-black-950">YouTube</span>
             </div>
+          </div>
+          <div className="w-full shrink-0 md:w-72 xl:w-96 2xl:w-[500px]">
+            <p
+              ref={descriptionContainer}
+              className="line-clamp-6 text-base text-black-950"
+            >
+              {fullText}
+            </p>
+            {isTruncated && (
+              <button
+                onClick={toggleModal}
+                className="text-tertiary-700 underline focus:outline-none"
+              >
+                View All
+              </button>
+            )}
+          </div>
+          <div className="relative w-56 shrink-0 text-lg text-black-950">
+            <div className="flex items-center gap-1">
+              <p>Words: 88</p>
+              <Tooltip
+                showArrow
+                placement="top"
+                content="The total word count number includes title and description"
+                classNames={{
+                  base: [
+                    'rounded-medium shadow-medium',
+                    'before:bg-primary-50 rounded-medium shadow-medium',
+                  ],
+                  content: [
+                    'max-w-64',
+                    'shadow-none',
+                    'py-4 px-5 text-center',
+                    'text-black-950 bg-primary-50',
+                  ],
+                }}
+              >
+                <Image
+                  src="icons/exclamation.svg"
+                  alt="Exclamation Icon"
+                  width={20}
+                  height={20}
+                />
+              </Tooltip>
+            </div>
+            <p>Languages: 0</p>
+            <p>Last update: 12.12.2024</p>
           </div>
         </div>
       </div>
