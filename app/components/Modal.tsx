@@ -10,9 +10,9 @@ interface ModalProps {
 
 const modalStyles = {
   info: {
-    width: 'w-[800px]',
+    width: 'w-[50rem]',
     shadow: 'shadow-small',
-    paddingVertical: 'py-[52px]',
+    paddingVertical: 'py-[3.25rem]',
   },
   dialog: {
     width: 'w-auto',

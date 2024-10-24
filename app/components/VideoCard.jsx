@@ -61,7 +61,7 @@ export default function VideoCard() {
               <span className="text-2xl font-medium text-black-950">YouTube</span>
             </div>
           </div>
-          <div className="w-full shrink-0 md:w-72 xl:w-96 2xl:w-[500px]">
+          <div className="w-full shrink-0 md:w-72 xl:w-96 2xl:w-[31.25rem]">
             <p
               ref={descriptionContainer}
               className="line-clamp-6 text-base text-black-950"
