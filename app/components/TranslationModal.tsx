@@ -13,7 +13,7 @@ interface LanguageTagProps {
 }
 
 const LanguageTag: React.FC<LanguageTagProps> = ({ language, onDelete }) => (
-  <div className="flex items-center gap-2.5 rounded-medium bg-tertiary-100 px-3 py-1.5 font-medium leading-4">
+  <div className="flex items-center gap-2.5 rounded-medium bg-tertiary-100 px-3 py-1.5 text-medium font-medium leading-4">
     <span>{language}</span>
     <button
       aria-label={`delete ${language}`}
