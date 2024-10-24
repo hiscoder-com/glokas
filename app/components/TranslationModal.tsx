@@ -92,10 +92,7 @@ export const TranslationModal: React.FC<TranslationModalProps> = ({
                 placement="top"
                 content="The number of words in the title and description of the original language is multiplied by the number of selected languages to get the total number of words required for translation"
                 classNames={{
-                  base: [
-                    'rounded-medium shadow-medium',
-                    'before:bg-primary-50 rounded-medium shadow-medium',
-                  ],
+                  base: ['rounded-medium shadow-medium', 'before:bg-primary-50'],
                   content: [
                     'max-w-64',
                     'shadow-none',

@@ -25,7 +25,7 @@ export function Modal({ onClose, children, modalType = 'info' }: ModalProps) {
   const { width, shadow, paddingVertical } = modalStyles[modalType]
 
   return (
-    <div className="fixed inset-0 z-40 flex items-center justify-center bg-black/20">
+    <div className="fixed inset-0 z-40 flex items-center justify-center bg-black-950/20">
       <div className={`relative ${width} rounded-2xl bg-white ${shadow} overflow-hidden`}>
         {onClose && (
           <button
