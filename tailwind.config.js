@@ -46,7 +46,7 @@ module.exports = {
         light: {
           colors: {
             background: '#FFFFFF',
-            foreground: '#2D2D2E',
+            foreground: '#000000',
             // https://uicolors.app/create используем для генерации палитры цветов
             primary: {
               '50': '#EFF5FE',
@@ -109,14 +109,14 @@ module.exports = {
               DEFAULT: '#6d6d6d',
             },
             danger: {
-              '50': '#fff1f1',
+              '50': '#FEF2F2', //Figma:Eror/bg
               '100': '#ffe0e0',
               '200': '#ffc6c6',
               '300': '#ff9f9f',
               '400': '#ff6868',
               '500': '#fb3939', //Figma:Eror/colour
               '600': '#e91919',
-              '700': '#c41111',
+              '700': '#B91C1C', //Figma:Eror/additional-text
               '800': '#961818', //Figma:Eror/text
               '900': '#861616',
               '950': '#490606',

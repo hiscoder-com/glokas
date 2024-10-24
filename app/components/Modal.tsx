@@ -1,4 +1,4 @@
-import Image from 'next/image'
+import { CloseIcon } from './CloseIcon'
 
 type ModalType = 'info' | 'dialog'
 
@@ -32,10 +32,10 @@ export function Modal({ onClose, children, modalType = 'info' }: ModalProps) {
             onClick={onClose}
             className="absolute right-1 top-1 z-50 flex items-center justify-center p-3 text-black"
           >
-            <Image src="/icons/close.svg" alt="Close" width={24} height={24} />
+            <CloseIcon />
           </button>
         )}
-        <div className={`max-h-[90vh] overflow-y-auto px-16 ${paddingVertical}`}>
+        <div className={`max-h-[90vh] overflow-y-auto px-12 md:px-16 ${paddingVertical}`}>
           {children}
         </div>
       </div>

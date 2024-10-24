@@ -3,12 +3,20 @@
 import { useState } from 'react'
 
 import { CustomButton } from '../components/CustomButton'
+import { TranslationModal } from '../components/TranslationModal'
 import VideoCard from '../components/VideoCard'
 import YouTubeCard from '../components/YouTubeCard'
 import YouTubeParser from '../components/YouTubeParser'
 
 const Page: React.FC = () => {
-  const [isModalOpen, setIsModalOpen] = useState(false)
+  const [isTranslationModalOpen, setIsTranslationModalOpen] = useState(false)
+  const [isYouTubeParserOpen, setIsYouTubeParserOpen] = useState(false)
+
+  const handleTranslate = () => {
+    console.log('Starting translation...')
+    setIsTranslationModalOpen(false)
+  }
+
   return (
     <>
       <main className="mx-auto w-full max-w-[1806px] flex-auto px-6 md:px-12">
@@ -48,9 +56,25 @@ const Page: React.FC = () => {
               </svg>
             </div>
           </CustomButton>
+
+          <CustomButton color="secondary" onClick={() => setIsTranslationModalOpen(true)}>
+            Translate
+          </CustomButton>
+
+          {isTranslationModalOpen && (
+            <TranslationModal
+              onClose={() => setIsTranslationModalOpen(false)}
+              onTranslate={handleTranslate}
+            />
+          )}
+
           <YouTubeCard />
-          <CustomButton onClick={() => setIsModalOpen(true)}>Open Modal</CustomButton>
-          {isModalOpen && <YouTubeParser onClose={() => setIsModalOpen(false)} />}
+          <CustomButton onClick={() => setIsYouTubeParserOpen(true)}>
+            Open YouTube Parser
+          </CustomButton>
+          {isYouTubeParserOpen && (
+            <YouTubeParser onClose={() => setIsYouTubeParserOpen(false)} />
+          )}
           <VideoCard />
         </div>
       </main>

@@ -5,6 +5,7 @@ import Image from 'next/image'
 import { Tooltip } from '@nextui-org/react'
 
 import { Modal } from './Modal'
+import WarningIcon from './WarningIcon'
 
 export default function VideoCard() {
   const [isModalOpen, setIsModalOpen] = useState(false)
@@ -85,10 +86,7 @@ export default function VideoCard() {
                 placement="top"
                 content="The total word count number includes title and description"
                 classNames={{
-                  base: [
-                    'rounded-medium shadow-medium',
-                    'before:bg-primary-50 rounded-medium shadow-medium',
-                  ],
+                  base: ['rounded-medium shadow-medium', 'before:bg-primary-50'],
                   content: [
                     'max-w-64',
                     'shadow-none',
@@ -97,12 +95,7 @@ export default function VideoCard() {
                   ],
                 }}
               >
-                <Image
-                  src="icons/exclamation.svg"
-                  alt="Exclamation Icon"
-                  width={20}
-                  height={20}
-                />
+                <WarningIcon className="h-5 w-5 self-center" />
               </Tooltip>
             </div>
             <p>Languages: 0</p>
