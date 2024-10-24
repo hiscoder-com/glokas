@@ -72,17 +72,17 @@ function CookiesModal({ handleAfterClick, children }) {
     <>
       {childrenWithClick}
       {modal && (
-        <Modal closeModal={hideBanner}>
-          <div className="rounded-xl bg-background p-10 text-xl font-medium text-foreground">
-            <p className="mb-8 font-semibold">Manage Cookies</p>
+        <Modal onClose={hideBanner}>
+          <div className="text-xl font-medium text-black-950">
+            <p className="mb-8 text-center text-4xl font-semibold">Manage Cookies</p>
             <div className="mb-5 flex items-center justify-between gap-4 text-medium">
               <p>Essential Cookies</p>
               <p className="mr-5 text-small">Always On</p>
             </div>
-
             <div className="mb-5 flex items-center justify-between gap-4 text-medium">
               <p>Analytics Cookies</p>
               <Switch
+                color="secondary"
                 isSelected={analytics}
                 onChange={() => {
                   setAnalytics((prev) => !prev)
@@ -96,6 +96,7 @@ function CookiesModal({ handleAfterClick, children }) {
             <div className="mb-5 flex items-center justify-between gap-4 text-medium">
               <p>Advertising Cookies</p>
               <Switch
+                color="secondary"
                 isSelected={ads}
                 onChange={() => {
                   setAds((prev) => !prev)

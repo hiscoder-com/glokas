@@ -3,14 +3,12 @@
 import { useState } from 'react'
 
 import { CustomButton } from '../components/CustomButton'
+import VideoCard from '../components/VideoCard'
 import YouTubeCard from '../components/YouTubeCard'
 import YouTubeParser from '../components/YouTubeParser'
 
 const Page: React.FC = () => {
   const [isModalOpen, setIsModalOpen] = useState(false)
-
-  const openModal = () => setIsModalOpen(true)
-  const onClose = () => setIsModalOpen(false)
   return (
     <>
       <main className="mx-auto w-full max-w-[1806px] flex-auto px-6 md:px-12">
@@ -51,8 +49,9 @@ const Page: React.FC = () => {
             </div>
           </CustomButton>
           <YouTubeCard />
-          <CustomButton onClick={openModal}>Open Modal</CustomButton>
-          {isModalOpen && <YouTubeParser onClose={onClose} />}
+          <CustomButton onClick={() => setIsModalOpen(true)}>Open Modal</CustomButton>
+          {isModalOpen && <YouTubeParser onClose={() => setIsModalOpen(false)} />}
+          <VideoCard />
         </div>
       </main>
     </>

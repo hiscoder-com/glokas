@@ -10,9 +10,9 @@ interface ModalProps {
 
 const modalStyles = {
   info: {
-    width: 'w-[800px]',
+    width: 'w-[50rem]',
     shadow: 'shadow-small',
-    paddingVertical: 'py-[52px]',
+    paddingVertical: 'py-[3.25rem]',
   },
   dialog: {
     width: 'w-auto',
@@ -25,10 +25,8 @@ export function Modal({ onClose, children, modalType = 'info' }: ModalProps) {
   const { width, shadow, paddingVertical } = modalStyles[modalType]
 
   return (
-    <div className="fixed inset-0 z-40 flex items-center justify-center bg-black/20">
-      <div
-        className={`relative max-h-[90vh] ${width} rounded-2xl bg-white ${shadow} overflow-hidden`}
-      >
+    <div className="fixed inset-0 z-40 flex items-center justify-center bg-black-950/20">
+      <div className={`relative ${width} rounded-2xl bg-white ${shadow} overflow-hidden`}>
         {onClose && (
           <button
             onClick={onClose}
