@@ -60,11 +60,13 @@ const Page: React.FC = () => {
             Translate
           </CustomButton>
 
-          <TranslationModal
-            isOpen={isTranslationModalOpen}
-            onClose={() => setIsTranslationModalOpen(false)}
-            onTranslate={handleTranslate}
-          />
+          {isTranslationModalOpen && (
+            <TranslationModal
+              onClose={() => setIsTranslationModalOpen(false)}
+              onTranslate={handleTranslate}
+            />
+          )}
+
           <YouTubeCard />
           <CustomButton onClick={() => setIsYouTubeParserOpen(true)}>
             Open YouTube Parser
